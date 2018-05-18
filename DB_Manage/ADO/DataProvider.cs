@@ -26,9 +26,14 @@ namespace DB_Manage.ADO
             }
         }
 
-        private DataProvider() { } //NPMGSQL2016\\NPMDBS2016
+        private DataProvider() { } 
 
-        private string connectstring = "Data Source=LAPTOP318;Initial Catalog=HUY_DONG;Integrated Security=True";//"Data Source=LAPTOP318;Initial Catalog=IMPORT_NPM;Integrated Security=True";
+        //private string connectstring = "Data Source=LAPTOP318;Initial Catalog=HUY_DONG;Integrated Security=True";//"Data Source=LAPTOP318;Initial Catalog=IMPORT_NPM;Integrated Security=True";
+
+        private string connectstring = "Data Source=LAPTOP318;" +
+                                        "Initial Catalog = HUY_DONG;" +
+                                        "User id=congtyHuyDong;" +
+                                        "Password=12345678;";//;LAPTOP318 //
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

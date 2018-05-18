@@ -1909,7 +1909,11 @@ namespace DB_Manage
             Import_File importfile = new Import_File();
             importfile.ShowDialog();
             //chithisx.ShowInTaskbar = true;
-            //chithisx.FormClosing += main_close;
+            importfile.FormClosing += main_close;
+        }
+        private void main_close(object sender, FormClosingEventArgs e)
+        {
+            getNhatKyNCC();
         }
     }
 }

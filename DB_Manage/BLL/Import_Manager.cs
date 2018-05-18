@@ -189,10 +189,8 @@ namespace DB_Manage.BLL
 
         public int ImportFileExcel(int idncc, string path, int idlogin)
         {
-            return DataProvider.Instance.ExecuteNonQuery("[PP_IMPORT_EXCEL] @ID_NCC , @FILE_PATH , @ID_LOGIN", new object[] { idncc, path, idlogin });
+            return DataProvider.Instance.ExecuteNonQuery("EXEC PP_IMPORT_EXCEL @ID_NCC , @FILE_PATH , @ID_LOGIN", new object[] { idncc, path, idlogin });
         }
-
-        //[PP_IMPORT_EXCEL]
     }
 
 }

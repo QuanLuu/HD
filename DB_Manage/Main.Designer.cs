@@ -32,14 +32,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.ribconManage = new DevComponents.DotNetBar.RibbonControl();
-            this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonBar4 = new DevComponents.DotNetBar.RibbonBar();
-            this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar5 = new DevComponents.DotNetBar.RibbonBar();
+            this.buttonItemImportDLNCC = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItemNKNCC = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
+            this.ribbonBar4 = new DevComponents.DotNetBar.RibbonBar();
+            this.buttonItemDonGia = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
+            this.buttonItemNHapXuaKho = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItemNKHH = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnrbXevc = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnrbHangHoa = new DevComponents.DotNetBar.ButtonItem();
+            this.btnrbKH = new DevComponents.DotNetBar.ButtonItem();
+            this.btnrbNCC = new DevComponents.DotNetBar.ButtonItem();
             this.ribDanhMuc = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribSLH = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
@@ -48,6 +57,48 @@
             this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlMain = new DevComponents.DotNetBar.TabControl();
+            this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dtgHangHoa = new System.Windows.Forms.DataGridView();
+            this.panelHH = new System.Windows.Forms.Panel();
+            this.numKLHH = new System.Windows.Forms.NumericUpDown();
+            this.label81 = new System.Windows.Forms.Label();
+            this.tbGhiChuHH = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbMaHH = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbTenHH = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnEditHH = new System.Windows.Forms.Button();
+            this.btnCancelHH = new System.Windows.Forms.Button();
+            this.btnSaveHH = new System.Windows.Forms.Button();
+            this.btnDeleteHH = new System.Windows.Forms.Button();
+            this.btnNewHH = new System.Windows.Forms.Button();
+            this.dtgDGGoc = new System.Windows.Forms.DataGridView();
+            this.panelDGGoc = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numDGGoc = new System.Windows.Forms.NumericUpDown();
+            this.cbNCCDGGoc = new System.Windows.Forms.ComboBox();
+            this.cbTenHangDGGoc = new System.Windows.Forms.ComboBox();
+            this.dtpDGGoc = new System.Windows.Forms.DateTimePicker();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.chbDuongboDGGoc = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.tbNoiGNDGGoc = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnEditDGGoc = new System.Windows.Forms.Button();
+            this.btnCancelDGGoc = new System.Windows.Forms.Button();
+            this.btnSaveDGGoc = new System.Windows.Forms.Button();
+            this.btnDeleteDGGoc = new System.Windows.Forms.Button();
+            this.btnNewDGGoc = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tabHH = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel6 = new DevComponents.DotNetBar.TabControlPanel();
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
@@ -73,6 +124,11 @@
             this.panel21 = new System.Windows.Forms.Panel();
             this.label65 = new System.Windows.Forms.Label();
             this.cbNCCNhapKho = new System.Windows.Forms.ComboBox();
+            this.btneditnhapkho = new System.Windows.Forms.Button();
+            this.btncancelnhapkho = new System.Windows.Forms.Button();
+            this.btnsavenhapkho = new System.Windows.Forms.Button();
+            this.btndeletenhapkho = new System.Windows.Forms.Button();
+            this.btnnewnhapkho = new System.Windows.Forms.Button();
             this.panel22 = new System.Windows.Forms.Panel();
             this.label75 = new System.Windows.Forms.Label();
             this.dtpKTNhapKhoFilter = new System.Windows.Forms.DateTimePicker();
@@ -106,6 +162,11 @@
             this.panel25 = new System.Windows.Forms.Panel();
             this.label66 = new System.Windows.Forms.Label();
             this.cbNCCXuatKho = new System.Windows.Forms.ComboBox();
+            this.btneditxuatkho = new System.Windows.Forms.Button();
+            this.btncancelxuatkho = new System.Windows.Forms.Button();
+            this.btnsavexuatkho = new System.Windows.Forms.Button();
+            this.btndeletexuatkho = new System.Windows.Forms.Button();
+            this.btnnewxuatkho = new System.Windows.Forms.Button();
             this.panel26 = new System.Windows.Forms.Panel();
             this.tbKHXuatKhoFilter = new System.Windows.Forms.TextBox();
             this.label79 = new System.Windows.Forms.Label();
@@ -130,6 +191,11 @@
             this.tbPLKH = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.btneditkh = new System.Windows.Forms.Button();
+            this.btncancelkh = new System.Windows.Forms.Button();
+            this.btnsavekh = new System.Windows.Forms.Button();
+            this.btndeletekh = new System.Windows.Forms.Button();
+            this.btnNewKH = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
             this.tbKHFilter = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label18 = new System.Windows.Forms.Label();
@@ -155,8 +221,53 @@
             this.label16 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label84 = new System.Windows.Forms.Label();
+            this.btnEditDC = new System.Windows.Forms.Button();
+            this.btnCancelDC = new System.Windows.Forms.Button();
+            this.btnSaveDC = new System.Windows.Forms.Button();
+            this.btnDeleteDC = new System.Windows.Forms.Button();
+            this.btnNewDC = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.tabItem8 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel7 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabControlPanel8 = new DevComponents.DotNetBar.TabControlPanel();
+            this.dtgNKNCC = new System.Windows.Forms.DataGridView();
+            this.panelNKNCC = new System.Windows.Forms.Panel();
+            this.tbMaSoNKNCC = new System.Windows.Forms.TextBox();
+            this.tbNoiNhanNKNCC = new System.Windows.Forms.TextBox();
+            this.label101 = new System.Windows.Forms.Label();
+            this.cbNCCNKNCC = new System.Windows.Forms.ComboBox();
+            this.label93 = new System.Windows.Forms.Label();
+            this.cbTaiXeNKNCC = new System.Windows.Forms.ComboBox();
+            this.label85 = new System.Windows.Forms.Label();
+            this.cbKHNKNCC = new System.Windows.Forms.ComboBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.cbBienSoNKNCC = new System.Windows.Forms.ComboBox();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label88 = new System.Windows.Forms.Label();
+            this.numSoLuongNKNCC = new System.Windows.Forms.NumericUpDown();
+            this.label89 = new System.Windows.Forms.Label();
+            this.cbHHNKNCC = new System.Windows.Forms.ComboBox();
+            this.dtpNgayNhanNKNCC = new System.Windows.Forms.DateTimePicker();
+            this.tbGhichuNKNCC = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label90 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label92 = new System.Windows.Forms.Label();
+            this.panel29 = new System.Windows.Forms.Panel();
+            this.btneditnkncc = new System.Windows.Forms.Button();
+            this.btncancelnkncc = new System.Windows.Forms.Button();
+            this.btnsavenkncc = new System.Windows.Forms.Button();
+            this.btndeletenkncc = new System.Windows.Forms.Button();
+            this.btnnewnkncc = new System.Windows.Forms.Button();
+            this.panel31 = new System.Windows.Forms.Panel();
+            this.label94 = new System.Windows.Forms.Label();
+            this.dtpKTLayHangNCC = new System.Windows.Forms.DateTimePicker();
+            this.label95 = new System.Windows.Forms.Label();
+            this.dtpBDLayHangNCC = new System.Windows.Forms.DateTimePicker();
+            this.tbHHNKNCCFilter = new System.Windows.Forms.TextBox();
+            this.tbNCCNKNCC = new System.Windows.Forms.TextBox();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label99 = new System.Windows.Forms.Label();
+            this.tabItem9 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
             this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
             this.dtgSLH = new System.Windows.Forms.DataGridView();
@@ -188,6 +299,11 @@
             this.dtpNgayGNNKHH = new System.Windows.Forms.DateTimePicker();
             this.label45 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.btneditnkhh = new System.Windows.Forms.Button();
+            this.btncancelnkhh = new System.Windows.Forms.Button();
+            this.btnsavenkhh = new System.Windows.Forms.Button();
+            this.btndeletenkhh = new System.Windows.Forms.Button();
+            this.btnnewnkhh = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
             this.tbTenHangNKHH = new System.Windows.Forms.TextBox();
             this.tbKHFilterNKHH = new System.Windows.Forms.TextBox();
@@ -219,6 +335,11 @@
             this.label28 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label82 = new System.Windows.Forms.Label();
+            this.btneditxevc = new System.Windows.Forms.Button();
+            this.btncancelxevc = new System.Windows.Forms.Button();
+            this.btnsavexevc = new System.Windows.Forms.Button();
+            this.btndeletexevc = new System.Windows.Forms.Button();
+            this.btnnewxevc = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.tbBienSoFilter = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label29 = new System.Windows.Forms.Label();
@@ -233,77 +354,15 @@
             this.label100 = new System.Windows.Forms.Label();
             this.panel32 = new System.Windows.Forms.Panel();
             this.label83 = new System.Windows.Forms.Label();
+            this.btneditxekh = new System.Windows.Forms.Button();
+            this.btncancelxekh = new System.Windows.Forms.Button();
+            this.btnsavexekh = new System.Windows.Forms.Button();
+            this.btndeletexekh = new System.Windows.Forms.Button();
+            this.btnnewxekh = new System.Windows.Forms.Button();
             this.panel33 = new System.Windows.Forms.Panel();
             this.tbBiensoXeKHFilter = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label80 = new System.Windows.Forms.Label();
             this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dtgHangHoa = new System.Windows.Forms.DataGridView();
-            this.panelHH = new System.Windows.Forms.Panel();
-            this.numKLHH = new System.Windows.Forms.NumericUpDown();
-            this.label81 = new System.Windows.Forms.Label();
-            this.tbGhiChuHH = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbMaHH = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbTenHH = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.dtgDGGoc = new System.Windows.Forms.DataGridView();
-            this.panelDGGoc = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numDGGoc = new System.Windows.Forms.NumericUpDown();
-            this.cbNCCDGGoc = new System.Windows.Forms.ComboBox();
-            this.cbTenHangDGGoc = new System.Windows.Forms.ComboBox();
-            this.dtpDGGoc = new System.Windows.Forms.DateTimePicker();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.chbDuongboDGGoc = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.tbNoiGNDGGoc = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tabHH = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel7 = new DevComponents.DotNetBar.TabControlPanel();
-            this.tabControlPanel8 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dtgNKNCC = new System.Windows.Forms.DataGridView();
-            this.panelNKNCC = new System.Windows.Forms.Panel();
-            this.tbMaSoNKNCC = new System.Windows.Forms.TextBox();
-            this.tbNoiNhanNKNCC = new System.Windows.Forms.TextBox();
-            this.label101 = new System.Windows.Forms.Label();
-            this.cbNCCNKNCC = new System.Windows.Forms.ComboBox();
-            this.label93 = new System.Windows.Forms.Label();
-            this.cbTaiXeNKNCC = new System.Windows.Forms.ComboBox();
-            this.label85 = new System.Windows.Forms.Label();
-            this.cbKHNKNCC = new System.Windows.Forms.ComboBox();
-            this.label86 = new System.Windows.Forms.Label();
-            this.cbBienSoNKNCC = new System.Windows.Forms.ComboBox();
-            this.label87 = new System.Windows.Forms.Label();
-            this.label88 = new System.Windows.Forms.Label();
-            this.numSoLuongNKNCC = new System.Windows.Forms.NumericUpDown();
-            this.label89 = new System.Windows.Forms.Label();
-            this.cbHHNKNCC = new System.Windows.Forms.ComboBox();
-            this.dtpNgayNhanNKNCC = new System.Windows.Forms.DateTimePicker();
-            this.tbGhichuNKNCC = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label90 = new System.Windows.Forms.Label();
-            this.label91 = new System.Windows.Forms.Label();
-            this.label92 = new System.Windows.Forms.Label();
-            this.panel29 = new System.Windows.Forms.Panel();
-            this.panel31 = new System.Windows.Forms.Panel();
-            this.label94 = new System.Windows.Forms.Label();
-            this.dtpKTLayHangNCC = new System.Windows.Forms.DateTimePicker();
-            this.label95 = new System.Windows.Forms.Label();
-            this.dtpBDLayHangNCC = new System.Windows.Forms.DateTimePicker();
-            this.tbHHNKNCCFilter = new System.Windows.Forms.TextBox();
-            this.tbNCCNKNCC = new System.Windows.Forms.TextBox();
-            this.label96 = new System.Windows.Forms.Label();
-            this.label99 = new System.Windows.Forms.Label();
-            this.tabItem9 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -316,6 +375,11 @@
             this.tbTenNCC = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label23 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.btneditncc = new System.Windows.Forms.Button();
+            this.btncancelncc = new System.Windows.Forms.Button();
+            this.btnsavencc = new System.Windows.Forms.Button();
+            this.btndeletencc = new System.Windows.Forms.Button();
+            this.btnnewncc = new System.Windows.Forms.Button();
             this.dtgChuyenDoiNCC = new System.Windows.Forms.DataGridView();
             this.panelChuyenDoiNCC = new System.Windows.Forms.Panel();
             this.tbGhiChuChuyenDoiNCC = new System.Windows.Forms.TextBox();
@@ -326,84 +390,35 @@
             this.label32 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.label46 = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.tabItem6 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.btneditnhapkho = new System.Windows.Forms.Button();
-            this.btncancelnhapkho = new System.Windows.Forms.Button();
-            this.btnsavenhapkho = new System.Windows.Forms.Button();
-            this.btndeletenhapkho = new System.Windows.Forms.Button();
-            this.btnnewnhapkho = new System.Windows.Forms.Button();
-            this.btneditxuatkho = new System.Windows.Forms.Button();
-            this.btncancelxuatkho = new System.Windows.Forms.Button();
-            this.btnsavexuatkho = new System.Windows.Forms.Button();
-            this.btndeletexuatkho = new System.Windows.Forms.Button();
-            this.btnnewxuatkho = new System.Windows.Forms.Button();
-            this.btneditkh = new System.Windows.Forms.Button();
-            this.btncancelkh = new System.Windows.Forms.Button();
-            this.btnsavekh = new System.Windows.Forms.Button();
-            this.btndeletekh = new System.Windows.Forms.Button();
-            this.btnNewKH = new System.Windows.Forms.Button();
-            this.btnEditDC = new System.Windows.Forms.Button();
-            this.btnCancelDC = new System.Windows.Forms.Button();
-            this.btnSaveDC = new System.Windows.Forms.Button();
-            this.btnDeleteDC = new System.Windows.Forms.Button();
-            this.btnNewDC = new System.Windows.Forms.Button();
-            this.btneditnkncc = new System.Windows.Forms.Button();
-            this.btncancelnkncc = new System.Windows.Forms.Button();
-            this.btnsavenkncc = new System.Windows.Forms.Button();
-            this.btndeletenkncc = new System.Windows.Forms.Button();
-            this.btnnewnkncc = new System.Windows.Forms.Button();
-            this.btnEditHH = new System.Windows.Forms.Button();
-            this.btnCancelHH = new System.Windows.Forms.Button();
-            this.btnSaveHH = new System.Windows.Forms.Button();
-            this.btnDeleteHH = new System.Windows.Forms.Button();
-            this.btnNewHH = new System.Windows.Forms.Button();
-            this.btnEditDGGoc = new System.Windows.Forms.Button();
-            this.btnCancelDGGoc = new System.Windows.Forms.Button();
-            this.btnSaveDGGoc = new System.Windows.Forms.Button();
-            this.btnDeleteDGGoc = new System.Windows.Forms.Button();
-            this.btnNewDGGoc = new System.Windows.Forms.Button();
-            this.btneditnkhh = new System.Windows.Forms.Button();
-            this.btncancelnkhh = new System.Windows.Forms.Button();
-            this.btnsavenkhh = new System.Windows.Forms.Button();
-            this.btndeletenkhh = new System.Windows.Forms.Button();
-            this.btnnewnkhh = new System.Windows.Forms.Button();
-            this.btneditxevc = new System.Windows.Forms.Button();
-            this.btncancelxevc = new System.Windows.Forms.Button();
-            this.btnsavexevc = new System.Windows.Forms.Button();
-            this.btndeletexevc = new System.Windows.Forms.Button();
-            this.btnnewxevc = new System.Windows.Forms.Button();
-            this.btneditxekh = new System.Windows.Forms.Button();
-            this.btncancelxekh = new System.Windows.Forms.Button();
-            this.btnsavexekh = new System.Windows.Forms.Button();
-            this.btndeletexekh = new System.Windows.Forms.Button();
-            this.btnnewxekh = new System.Windows.Forms.Button();
-            this.btneditncc = new System.Windows.Forms.Button();
-            this.btncancelncc = new System.Windows.Forms.Button();
-            this.btnsavencc = new System.Windows.Forms.Button();
-            this.btndeletencc = new System.Windows.Forms.Button();
-            this.btnnewncc = new System.Windows.Forms.Button();
             this.btneditdongiancc = new System.Windows.Forms.Button();
             this.btncanceldongianncc = new System.Windows.Forms.Button();
             this.btnsavedongiancc = new System.Windows.Forms.Button();
             this.btndeletedongiancc = new System.Windows.Forms.Button();
             this.btnnewdongiancc = new System.Windows.Forms.Button();
-            this.buttonItemDonGia = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItemNHapXuaKho = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItemNKHH = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItemImportDLNCC = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItemNKNCC = new DevComponents.DotNetBar.ButtonItem();
-            this.btnrbXevc = new DevComponents.DotNetBar.ButtonItem();
-            this.btnrbHangHoa = new DevComponents.DotNetBar.ButtonItem();
-            this.btnrbKH = new DevComponents.DotNetBar.ButtonItem();
-            this.btnrbNCC = new DevComponents.DotNetBar.ButtonItem();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.tabItem6 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.ribconManage.SuspendLayout();
-            this.ribbonPanel2.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
+            this.ribbonPanel2.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlMain)).BeginInit();
             this.tabControlMain.SuspendLayout();
+            this.tabControlPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgHangHoa)).BeginInit();
+            this.panelHH.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numKLHH)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDGGoc)).BeginInit();
+            this.panelDGGoc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDGGoc)).BeginInit();
+            this.panel4.SuspendLayout();
             this.tabControlPanel6.SuspendLayout();
             this.tabControlPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
@@ -438,6 +453,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numDC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGiaDC)).BeginInit();
             this.panel11.SuspendLayout();
+            this.tabControlPanel7.SuspendLayout();
+            this.tabControlPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgNKNCC)).BeginInit();
+            this.panelNKNCC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSoLuongNKNCC)).BeginInit();
+            this.panel29.SuspendLayout();
+            this.panel31.SuspendLayout();
             this.tabControlPanel5.SuspendLayout();
             this.tabControlPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgSLH)).BeginInit();
@@ -460,28 +482,6 @@
             this.panelXeKH.SuspendLayout();
             this.panel32.SuspendLayout();
             this.panel33.SuspendLayout();
-            this.tabControlPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgHangHoa)).BeginInit();
-            this.panelHH.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numKLHH)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgDGGoc)).BeginInit();
-            this.panelDGGoc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDGGoc)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.tabControlPanel7.SuspendLayout();
-            this.tabControlPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgNKNCC)).BeginInit();
-            this.panelNKNCC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numSoLuongNKNCC)).BeginInit();
-            this.panel29.SuspendLayout();
-            this.panel31.SuspendLayout();
             this.tabControlPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
@@ -544,6 +544,86 @@
             this.ribconManage.SystemText.QatRemoveItemText = "&Remove from Quick Access Toolbar";
             this.ribconManage.TabGroupHeight = 14;
             this.ribconManage.TabIndex = 0;
+            // 
+            // ribbonPanel3
+            // 
+            this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel3.Controls.Add(this.ribbonBar5);
+            this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel3.Location = new System.Drawing.Point(0, 54);
+            this.ribbonPanel3.Name = "ribbonPanel3";
+            this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel3.Size = new System.Drawing.Size(974, 104);
+            // 
+            // 
+            // 
+            this.ribbonPanel3.Style.Class = "";
+            this.ribbonPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel3.StyleMouseDown.Class = "";
+            this.ribbonPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel3.StyleMouseOver.Class = "";
+            this.ribbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonPanel3.TabIndex = 3;
+            // 
+            // ribbonBar5
+            // 
+            this.ribbonBar5.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar5.BackgroundMouseOverStyle.Class = "";
+            this.ribbonBar5.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar5.BackgroundStyle.Class = "";
+            this.ribbonBar5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar5.ContainerControlProcessDialogKey = true;
+            this.ribbonBar5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar5.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.buttonItemImportDLNCC,
+            this.buttonItemNKNCC});
+            this.ribbonBar5.Location = new System.Drawing.Point(3, 0);
+            this.ribbonBar5.Name = "ribbonBar5";
+            this.ribbonBar5.Size = new System.Drawing.Size(409, 101);
+            this.ribbonBar5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar5.TabIndex = 0;
+            this.ribbonBar5.Text = "ribbonBar5";
+            // 
+            // 
+            // 
+            this.ribbonBar5.TitleStyle.Class = "";
+            this.ribbonBar5.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar5.TitleStyleMouseOver.Class = "";
+            this.ribbonBar5.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar5.TitleVisible = false;
+            // 
+            // buttonItemImportDLNCC
+            // 
+            this.buttonItemImportDLNCC.Image = ((System.Drawing.Image)(resources.GetObject("buttonItemImportDLNCC.Image")));
+            this.buttonItemImportDLNCC.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItemImportDLNCC.Name = "buttonItemImportDLNCC";
+            this.buttonItemImportDLNCC.SubItemsExpandWidth = 14;
+            this.buttonItemImportDLNCC.Text = "Import Dữ Liệu";
+            this.buttonItemImportDLNCC.Click += new System.EventHandler(this.buttonItemImportDLNCC_Click);
+            // 
+            // buttonItemNKNCC
+            // 
+            this.buttonItemNKNCC.Image = ((System.Drawing.Image)(resources.GetObject("buttonItemNKNCC.Image")));
+            this.buttonItemNKNCC.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItemNKNCC.Name = "buttonItemNKNCC";
+            this.buttonItemNKNCC.SubItemsExpandWidth = 14;
+            this.buttonItemNKNCC.Text = "Dữ Liệu NCC";
+            this.buttonItemNKNCC.Click += new System.EventHandler(this.buttonItemNKNCC_Click);
             // 
             // ribbonPanel2
             // 
@@ -608,6 +688,14 @@
             this.ribbonBar4.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonBar4.TitleVisible = false;
             // 
+            // buttonItemDonGia
+            // 
+            this.buttonItemDonGia.Image = ((System.Drawing.Image)(resources.GetObject("buttonItemDonGia.Image")));
+            this.buttonItemDonGia.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItemDonGia.Name = "buttonItemDonGia";
+            this.buttonItemDonGia.SubItemsExpandWidth = 14;
+            this.buttonItemDonGia.Text = "Tinhs Đơn Giá";
+            // 
             // ribbonBar3
             // 
             this.ribbonBar3.AutoOverflowEnabled = true;
@@ -644,67 +732,23 @@
             this.ribbonBar3.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonBar3.TitleVisible = false;
             // 
-            // ribbonPanel3
+            // buttonItemNHapXuaKho
             // 
-            this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel3.Controls.Add(this.ribbonBar5);
-            this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel3.Location = new System.Drawing.Point(0, 54);
-            this.ribbonPanel3.Name = "ribbonPanel3";
-            this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel3.Size = new System.Drawing.Size(974, 104);
+            this.buttonItemNHapXuaKho.Image = ((System.Drawing.Image)(resources.GetObject("buttonItemNHapXuaKho.Image")));
+            this.buttonItemNHapXuaKho.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItemNHapXuaKho.Name = "buttonItemNHapXuaKho";
+            this.buttonItemNHapXuaKho.SubItemsExpandWidth = 14;
+            this.buttonItemNHapXuaKho.Text = "Nhập - Xuất Kho";
+            this.buttonItemNHapXuaKho.Click += new System.EventHandler(this.buttonItemNHapXuaKho_Click);
             // 
+            // buttonItemNKHH
             // 
-            // 
-            this.ribbonPanel3.Style.Class = "";
-            this.ribbonPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel3.StyleMouseDown.Class = "";
-            this.ribbonPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel3.StyleMouseOver.Class = "";
-            this.ribbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel3.TabIndex = 3;
-            // 
-            // ribbonBar5
-            // 
-            this.ribbonBar5.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar5.BackgroundMouseOverStyle.Class = "";
-            this.ribbonBar5.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar5.BackgroundStyle.Class = "";
-            this.ribbonBar5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar5.ContainerControlProcessDialogKey = true;
-            this.ribbonBar5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar5.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItemImportDLNCC,
-            this.buttonItemNKNCC});
-            this.ribbonBar5.Location = new System.Drawing.Point(3, 0);
-            this.ribbonBar5.Name = "ribbonBar5";
-            this.ribbonBar5.Size = new System.Drawing.Size(409, 101);
-            this.ribbonBar5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar5.TabIndex = 0;
-            this.ribbonBar5.Text = "ribbonBar5";
-            // 
-            // 
-            // 
-            this.ribbonBar5.TitleStyle.Class = "";
-            this.ribbonBar5.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar5.TitleStyleMouseOver.Class = "";
-            this.ribbonBar5.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar5.TitleVisible = false;
+            this.buttonItemNKHH.Image = ((System.Drawing.Image)(resources.GetObject("buttonItemNKHH.Image")));
+            this.buttonItemNKHH.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItemNKHH.Name = "buttonItemNKHH";
+            this.buttonItemNKHH.SubItemsExpandWidth = 14;
+            this.buttonItemNKHH.Text = "HD - SLH";
+            this.buttonItemNKHH.Click += new System.EventHandler(this.buttonItemNKHH_Click);
             // 
             // ribbonPanel1
             // 
@@ -769,6 +813,15 @@
             this.ribbonBar2.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonBar2.TitleVisible = false;
             // 
+            // btnrbXevc
+            // 
+            this.btnrbXevc.Image = ((System.Drawing.Image)(resources.GetObject("btnrbXevc.Image")));
+            this.btnrbXevc.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnrbXevc.Name = "btnrbXevc";
+            this.btnrbXevc.SubItemsExpandWidth = 14;
+            this.btnrbXevc.Text = "Xe VC";
+            this.btnrbXevc.Click += new System.EventHandler(this.btnrbXevc_Click);
+            // 
             // ribbonBar1
             // 
             this.ribbonBar1.AutoOverflowEnabled = true;
@@ -806,6 +859,35 @@
             this.ribbonBar1.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonBar1.TitleVisible = false;
             this.ribbonBar1.UseNativeDragDrop = true;
+            // 
+            // btnrbHangHoa
+            // 
+            this.btnrbHangHoa.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnrbHangHoa.Image = ((System.Drawing.Image)(resources.GetObject("btnrbHangHoa.Image")));
+            this.btnrbHangHoa.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnrbHangHoa.Name = "btnrbHangHoa";
+            this.btnrbHangHoa.SubItemsExpandWidth = 14;
+            this.btnrbHangHoa.Text = "Hàng Hóa";
+            this.btnrbHangHoa.Click += new System.EventHandler(this.btnrbHangHoa_Click);
+            // 
+            // btnrbKH
+            // 
+            this.btnrbKH.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnrbKH.Image = ((System.Drawing.Image)(resources.GetObject("btnrbKH.Image")));
+            this.btnrbKH.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnrbKH.Name = "btnrbKH";
+            this.btnrbKH.SubItemsExpandWidth = 14;
+            this.btnrbKH.Text = "Khách Hàng";
+            this.btnrbKH.Click += new System.EventHandler(this.btnrbKH_Click);
+            // 
+            // btnrbNCC
+            // 
+            this.btnrbNCC.Image = ((System.Drawing.Image)(resources.GetObject("btnrbNCC.Image")));
+            this.btnrbNCC.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnrbNCC.Name = "btnrbNCC";
+            this.btnrbNCC.SubItemsExpandWidth = 14;
+            this.btnrbNCC.Text = "NCC";
+            this.btnrbNCC.Click += new System.EventHandler(this.btnrbNCC_Click);
             // 
             // ribDanhMuc
             // 
@@ -870,7 +952,7 @@
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.tabControlMain.SelectedTabIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(974, 548);
+            this.tabControlMain.Size = new System.Drawing.Size(974, 546);
             this.tabControlMain.Style = DevComponents.DotNetBar.eTabStripStyle.Metro;
             this.tabControlMain.TabIndex = 1;
             this.tabControlMain.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
@@ -884,6 +966,548 @@
             this.tabControlMain.TabsVisible = false;
             this.tabControlMain.SelectedTabChanging += new DevComponents.DotNetBar.TabStrip.SelectedTabChangingEventHandler(this.tabControlMain_SelectedTabChanging);
             // 
+            // tabControlPanel1
+            // 
+            this.tabControlPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
+            this.tabControlPanel1.Controls.Add(this.splitContainer1);
+            this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel1.Location = new System.Drawing.Point(0, 25);
+            this.tabControlPanel1.Name = "tabControlPanel1";
+            this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel1.Size = new System.Drawing.Size(974, 521);
+            this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.White;
+            this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel1.Style.GradientAngle = 90;
+            this.tabControlPanel1.TabIndex = 1;
+            this.tabControlPanel1.TabItem = this.tabHH;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(1, 1);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.panel2);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dtgDGGoc);
+            this.splitContainer1.Panel2.Controls.Add(this.panelDGGoc);
+            this.splitContainer1.Panel2.Controls.Add(this.panel4);
+            this.splitContainer1.Panel2.Controls.Add(this.panel1);
+            this.splitContainer1.Size = new System.Drawing.Size(972, 519);
+            this.splitContainer1.SplitterDistance = 422;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.panelHH);
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(422, 519);
+            this.panel2.TabIndex = 16;
+            // 
+            // panel3
+            // 
+            this.panel3.AutoSize = true;
+            this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.dtgHangHoa);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 128);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(422, 391);
+            this.panel3.TabIndex = 0;
+            // 
+            // dtgHangHoa
+            // 
+            this.dtgHangHoa.AllowUserToResizeRows = false;
+            this.dtgHangHoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgHangHoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgHangHoa.Location = new System.Drawing.Point(0, 0);
+            this.dtgHangHoa.Name = "dtgHangHoa";
+            this.dtgHangHoa.ReadOnly = true;
+            this.dtgHangHoa.RowHeadersVisible = false;
+            this.dtgHangHoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgHangHoa.Size = new System.Drawing.Size(420, 389);
+            this.dtgHangHoa.TabIndex = 2;
+            this.dtgHangHoa.SelectionChanged += new System.EventHandler(this.dtgHangHoa_SelectionChanged);
+            // 
+            // panelHH
+            // 
+            this.panelHH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelHH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelHH.Controls.Add(this.numKLHH);
+            this.panelHH.Controls.Add(this.label81);
+            this.panelHH.Controls.Add(this.tbGhiChuHH);
+            this.panelHH.Controls.Add(this.label4);
+            this.panelHH.Controls.Add(this.tbMaHH);
+            this.panelHH.Controls.Add(this.label3);
+            this.panelHH.Controls.Add(this.tbTenHH);
+            this.panelHH.Controls.Add(this.label7);
+            this.panelHH.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHH.Location = new System.Drawing.Point(0, 36);
+            this.panelHH.Name = "panelHH";
+            this.panelHH.Size = new System.Drawing.Size(422, 92);
+            this.panelHH.TabIndex = 1;
+            this.panelHH.Visible = false;
+            // 
+            // numKLHH
+            // 
+            this.numKLHH.Location = new System.Drawing.Point(54, 62);
+            this.numKLHH.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numKLHH.Name = "numKLHH";
+            this.numKLHH.Size = new System.Drawing.Size(52, 20);
+            this.numKLHH.TabIndex = 8;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(10, 66);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(44, 13);
+            this.label81.TabIndex = 7;
+            this.label81.Text = "KL(kg)";
+            // 
+            // tbGhiChuHH
+            // 
+            this.tbGhiChuHH.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbGhiChuHH.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbGhiChuHH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbGhiChuHH.HintForeColor = System.Drawing.Color.Empty;
+            this.tbGhiChuHH.HintText = "";
+            this.tbGhiChuHH.isPassword = false;
+            this.tbGhiChuHH.LineFocusedColor = System.Drawing.Color.Blue;
+            this.tbGhiChuHH.LineIdleColor = System.Drawing.Color.Gray;
+            this.tbGhiChuHH.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.tbGhiChuHH.LineThickness = 3;
+            this.tbGhiChuHH.Location = new System.Drawing.Point(176, 49);
+            this.tbGhiChuHH.Margin = new System.Windows.Forms.Padding(4);
+            this.tbGhiChuHH.Name = "tbGhiChuHH";
+            this.tbGhiChuHH.Size = new System.Drawing.Size(234, 30);
+            this.tbGhiChuHH.TabIndex = 3;
+            this.tbGhiChuHH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(118, 66);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Ghi chú";
+            // 
+            // tbMaHH
+            // 
+            this.tbMaHH.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbMaHH.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbMaHH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbMaHH.HintForeColor = System.Drawing.Color.Empty;
+            this.tbMaHH.HintText = "";
+            this.tbMaHH.isPassword = false;
+            this.tbMaHH.LineFocusedColor = System.Drawing.Color.Blue;
+            this.tbMaHH.LineIdleColor = System.Drawing.Color.Gray;
+            this.tbMaHH.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.tbMaHH.LineThickness = 3;
+            this.tbMaHH.Location = new System.Drawing.Point(41, 6);
+            this.tbMaHH.Margin = new System.Windows.Forms.Padding(4);
+            this.tbMaHH.Name = "tbMaHH";
+            this.tbMaHH.Size = new System.Drawing.Size(83, 30);
+            this.tbMaHH.TabIndex = 1;
+            this.tbMaHH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Mã";
+            // 
+            // tbTenHH
+            // 
+            this.tbTenHH.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbTenHH.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbTenHH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbTenHH.HintForeColor = System.Drawing.Color.Empty;
+            this.tbTenHH.HintText = "";
+            this.tbTenHH.isPassword = false;
+            this.tbTenHH.LineFocusedColor = System.Drawing.Color.Blue;
+            this.tbTenHH.LineIdleColor = System.Drawing.Color.Gray;
+            this.tbTenHH.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.tbTenHH.LineThickness = 3;
+            this.tbTenHH.Location = new System.Drawing.Point(176, 4);
+            this.tbTenHH.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTenHH.Name = "tbTenHH";
+            this.tbTenHH.Size = new System.Drawing.Size(234, 30);
+            this.tbTenHH.TabIndex = 2;
+            this.tbTenHH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(140, 21);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(29, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Tên";
+            // 
+            // panel5
+            // 
+            this.panel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.btnEditHH);
+            this.panel5.Controls.Add(this.btnCancelHH);
+            this.panel5.Controls.Add(this.btnSaveHH);
+            this.panel5.Controls.Add(this.btnDeleteHH);
+            this.panel5.Controls.Add(this.btnNewHH);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(422, 36);
+            this.panel5.TabIndex = 2;
+            // 
+            // btnEditHH
+            // 
+            this.btnEditHH.AutoSize = true;
+            this.btnEditHH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEditHH.Image = ((System.Drawing.Image)(resources.GetObject("btnEditHH.Image")));
+            this.btnEditHH.Location = new System.Drawing.Point(33, 3);
+            this.btnEditHH.Name = "btnEditHH";
+            this.btnEditHH.Size = new System.Drawing.Size(30, 30);
+            this.btnEditHH.TabIndex = 37;
+            this.btnEditHH.Tag = "Edit";
+            this.btnEditHH.UseVisualStyleBackColor = true;
+            this.btnEditHH.Click += new System.EventHandler(this.btnEditHH_Click);
+            // 
+            // btnCancelHH
+            // 
+            this.btnCancelHH.AutoSize = true;
+            this.btnCancelHH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCancelHH.Enabled = false;
+            this.btnCancelHH.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelHH.Image")));
+            this.btnCancelHH.Location = new System.Drawing.Point(123, 3);
+            this.btnCancelHH.Name = "btnCancelHH";
+            this.btnCancelHH.Size = new System.Drawing.Size(30, 30);
+            this.btnCancelHH.TabIndex = 36;
+            this.btnCancelHH.Tag = "Cancel";
+            this.btnCancelHH.UseVisualStyleBackColor = true;
+            this.btnCancelHH.Click += new System.EventHandler(this.btnCancelHH_Click);
+            // 
+            // btnSaveHH
+            // 
+            this.btnSaveHH.AutoSize = true;
+            this.btnSaveHH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSaveHH.Enabled = false;
+            this.btnSaveHH.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveHH.Image")));
+            this.btnSaveHH.Location = new System.Drawing.Point(93, 3);
+            this.btnSaveHH.Name = "btnSaveHH";
+            this.btnSaveHH.Size = new System.Drawing.Size(30, 30);
+            this.btnSaveHH.TabIndex = 35;
+            this.btnSaveHH.Tag = "Save";
+            this.btnSaveHH.UseVisualStyleBackColor = true;
+            this.btnSaveHH.Click += new System.EventHandler(this.btnSaveHH_Click);
+            // 
+            // btnDeleteHH
+            // 
+            this.btnDeleteHH.AutoSize = true;
+            this.btnDeleteHH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDeleteHH.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteHH.Image")));
+            this.btnDeleteHH.Location = new System.Drawing.Point(63, 3);
+            this.btnDeleteHH.Name = "btnDeleteHH";
+            this.btnDeleteHH.Size = new System.Drawing.Size(30, 30);
+            this.btnDeleteHH.TabIndex = 34;
+            this.btnDeleteHH.Tag = "Delete";
+            this.btnDeleteHH.UseVisualStyleBackColor = true;
+            this.btnDeleteHH.Click += new System.EventHandler(this.btnDeleteHH_Click);
+            // 
+            // btnNewHH
+            // 
+            this.btnNewHH.AutoSize = true;
+            this.btnNewHH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNewHH.Image = ((System.Drawing.Image)(resources.GetObject("btnNewHH.Image")));
+            this.btnNewHH.Location = new System.Drawing.Point(3, 3);
+            this.btnNewHH.Name = "btnNewHH";
+            this.btnNewHH.Size = new System.Drawing.Size(30, 30);
+            this.btnNewHH.TabIndex = 33;
+            this.btnNewHH.Tag = "New";
+            this.btnNewHH.UseVisualStyleBackColor = true;
+            this.btnNewHH.Click += new System.EventHandler(this.btnNewHH_Click);
+            // 
+            // dtgDGGoc
+            // 
+            this.dtgDGGoc.AllowUserToResizeRows = false;
+            this.dtgDGGoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgDGGoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgDGGoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgDGGoc.Location = new System.Drawing.Point(0, 128);
+            this.dtgDGGoc.Name = "dtgDGGoc";
+            this.dtgDGGoc.ReadOnly = true;
+            this.dtgDGGoc.RowHeadersVisible = false;
+            this.dtgDGGoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgDGGoc.Size = new System.Drawing.Size(546, 391);
+            this.dtgDGGoc.TabIndex = 5;
+            this.dtgDGGoc.SelectionChanged += new System.EventHandler(this.dtgDGGoc_SelectionChanged);
+            // 
+            // panelDGGoc
+            // 
+            this.panelDGGoc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelDGGoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDGGoc.Controls.Add(this.label8);
+            this.panelDGGoc.Controls.Add(this.label6);
+            this.panelDGGoc.Controls.Add(this.label5);
+            this.panelDGGoc.Controls.Add(this.label1);
+            this.panelDGGoc.Controls.Add(this.numDGGoc);
+            this.panelDGGoc.Controls.Add(this.cbNCCDGGoc);
+            this.panelDGGoc.Controls.Add(this.cbTenHangDGGoc);
+            this.panelDGGoc.Controls.Add(this.dtpDGGoc);
+            this.panelDGGoc.Controls.Add(this.bunifuCustomLabel2);
+            this.panelDGGoc.Controls.Add(this.chbDuongboDGGoc);
+            this.panelDGGoc.Controls.Add(this.tbNoiGNDGGoc);
+            this.panelDGGoc.Controls.Add(this.label2);
+            this.panelDGGoc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelDGGoc.Location = new System.Drawing.Point(0, 36);
+            this.panelDGGoc.Name = "panelDGGoc";
+            this.panelDGGoc.Size = new System.Drawing.Size(546, 92);
+            this.panelDGGoc.TabIndex = 3;
+            this.panelDGGoc.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(385, 57);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.TabIndex = 36;
+            this.label8.Text = "Đơn Giá";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(130, 57);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "Nơi GN";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(193, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Tên Hàng";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Ngày BĐ";
+            // 
+            // numDGGoc
+            // 
+            this.numDGGoc.Location = new System.Drawing.Point(442, 53);
+            this.numDGGoc.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numDGGoc.Name = "numDGGoc";
+            this.numDGGoc.Size = new System.Drawing.Size(91, 20);
+            this.numDGGoc.TabIndex = 6;
+            // 
+            // cbNCCDGGoc
+            // 
+            this.cbNCCDGGoc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbNCCDGGoc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbNCCDGGoc.FormattingEnabled = true;
+            this.cbNCCDGGoc.Location = new System.Drawing.Point(36, 53);
+            this.cbNCCDGGoc.Name = "cbNCCDGGoc";
+            this.cbNCCDGGoc.Size = new System.Drawing.Size(88, 21);
+            this.cbNCCDGGoc.TabIndex = 3;
+            // 
+            // cbTenHangDGGoc
+            // 
+            this.cbTenHangDGGoc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbTenHangDGGoc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbTenHangDGGoc.FormattingEnabled = true;
+            this.cbTenHangDGGoc.Location = new System.Drawing.Point(262, 16);
+            this.cbTenHangDGGoc.Name = "cbTenHangDGGoc";
+            this.cbTenHangDGGoc.Size = new System.Drawing.Size(269, 21);
+            this.cbTenHangDGGoc.TabIndex = 2;
+            // 
+            // dtpDGGoc
+            // 
+            this.dtpDGGoc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDGGoc.Location = new System.Drawing.Point(61, 15);
+            this.dtpDGGoc.Name = "dtpDGGoc";
+            this.dtpDGGoc.Size = new System.Drawing.Size(126, 20);
+            this.dtpDGGoc.TabIndex = 1;
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(309, 57);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(70, 13);
+            this.bunifuCustomLabel2.TabIndex = 27;
+            this.bunifuCustomLabel2.Text = "Đường Bộ?";
+            // 
+            // chbDuongboDGGoc
+            // 
+            this.chbDuongboDGGoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.chbDuongboDGGoc.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chbDuongboDGGoc.Checked = true;
+            this.chbDuongboDGGoc.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.chbDuongboDGGoc.ForeColor = System.Drawing.Color.White;
+            this.chbDuongboDGGoc.Location = new System.Drawing.Point(289, 53);
+            this.chbDuongboDGGoc.Name = "chbDuongboDGGoc";
+            this.chbDuongboDGGoc.Size = new System.Drawing.Size(20, 20);
+            this.chbDuongboDGGoc.TabIndex = 5;
+            // 
+            // tbNoiGNDGGoc
+            // 
+            this.tbNoiGNDGGoc.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbNoiGNDGGoc.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbNoiGNDGGoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbNoiGNDGGoc.HintForeColor = System.Drawing.Color.Empty;
+            this.tbNoiGNDGGoc.HintText = "";
+            this.tbNoiGNDGGoc.isPassword = false;
+            this.tbNoiGNDGGoc.LineFocusedColor = System.Drawing.Color.Blue;
+            this.tbNoiGNDGGoc.LineIdleColor = System.Drawing.Color.Gray;
+            this.tbNoiGNDGGoc.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.tbNoiGNDGGoc.LineThickness = 3;
+            this.tbNoiGNDGGoc.Location = new System.Drawing.Point(178, 43);
+            this.tbNoiGNDGGoc.Margin = new System.Windows.Forms.Padding(4);
+            this.tbNoiGNDGGoc.Name = "tbNoiGNDGGoc";
+            this.tbNoiGNDGGoc.Size = new System.Drawing.Size(104, 30);
+            this.tbNoiGNDGGoc.TabIndex = 4;
+            this.tbNoiGNDGGoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(2, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "NCC";
+            // 
+            // panel4
+            // 
+            this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.btnEditDGGoc);
+            this.panel4.Controls.Add(this.btnCancelDGGoc);
+            this.panel4.Controls.Add(this.btnSaveDGGoc);
+            this.panel4.Controls.Add(this.btnDeleteDGGoc);
+            this.panel4.Controls.Add(this.btnNewDGGoc);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(546, 36);
+            this.panel4.TabIndex = 4;
+            // 
+            // btnEditDGGoc
+            // 
+            this.btnEditDGGoc.AutoSize = true;
+            this.btnEditDGGoc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEditDGGoc.Image = ((System.Drawing.Image)(resources.GetObject("btnEditDGGoc.Image")));
+            this.btnEditDGGoc.Location = new System.Drawing.Point(30, 2);
+            this.btnEditDGGoc.Name = "btnEditDGGoc";
+            this.btnEditDGGoc.Size = new System.Drawing.Size(30, 30);
+            this.btnEditDGGoc.TabIndex = 42;
+            this.btnEditDGGoc.Tag = "Edit";
+            this.btnEditDGGoc.UseVisualStyleBackColor = true;
+            this.btnEditDGGoc.Click += new System.EventHandler(this.btnEditDGGoc_Click);
+            // 
+            // btnCancelDGGoc
+            // 
+            this.btnCancelDGGoc.AutoSize = true;
+            this.btnCancelDGGoc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCancelDGGoc.Enabled = false;
+            this.btnCancelDGGoc.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelDGGoc.Image")));
+            this.btnCancelDGGoc.Location = new System.Drawing.Point(120, 2);
+            this.btnCancelDGGoc.Name = "btnCancelDGGoc";
+            this.btnCancelDGGoc.Size = new System.Drawing.Size(30, 30);
+            this.btnCancelDGGoc.TabIndex = 41;
+            this.btnCancelDGGoc.Tag = "Cancel";
+            this.btnCancelDGGoc.UseVisualStyleBackColor = true;
+            this.btnCancelDGGoc.Click += new System.EventHandler(this.btnCancelDGGoc_Click);
+            // 
+            // btnSaveDGGoc
+            // 
+            this.btnSaveDGGoc.AutoSize = true;
+            this.btnSaveDGGoc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSaveDGGoc.Enabled = false;
+            this.btnSaveDGGoc.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveDGGoc.Image")));
+            this.btnSaveDGGoc.Location = new System.Drawing.Point(90, 2);
+            this.btnSaveDGGoc.Name = "btnSaveDGGoc";
+            this.btnSaveDGGoc.Size = new System.Drawing.Size(30, 30);
+            this.btnSaveDGGoc.TabIndex = 40;
+            this.btnSaveDGGoc.Tag = "Save";
+            this.btnSaveDGGoc.UseVisualStyleBackColor = true;
+            this.btnSaveDGGoc.Click += new System.EventHandler(this.btnSaveDGGoc_Click);
+            // 
+            // btnDeleteDGGoc
+            // 
+            this.btnDeleteDGGoc.AutoSize = true;
+            this.btnDeleteDGGoc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDeleteDGGoc.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteDGGoc.Image")));
+            this.btnDeleteDGGoc.Location = new System.Drawing.Point(60, 2);
+            this.btnDeleteDGGoc.Name = "btnDeleteDGGoc";
+            this.btnDeleteDGGoc.Size = new System.Drawing.Size(30, 30);
+            this.btnDeleteDGGoc.TabIndex = 39;
+            this.btnDeleteDGGoc.Tag = "Delete";
+            this.btnDeleteDGGoc.UseVisualStyleBackColor = true;
+            this.btnDeleteDGGoc.Click += new System.EventHandler(this.btnDeleteDGGoc_Click);
+            // 
+            // btnNewDGGoc
+            // 
+            this.btnNewDGGoc.AutoSize = true;
+            this.btnNewDGGoc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNewDGGoc.Image = ((System.Drawing.Image)(resources.GetObject("btnNewDGGoc.Image")));
+            this.btnNewDGGoc.Location = new System.Drawing.Point(0, 2);
+            this.btnNewDGGoc.Name = "btnNewDGGoc";
+            this.btnNewDGGoc.Size = new System.Drawing.Size(30, 30);
+            this.btnNewDGGoc.TabIndex = 38;
+            this.btnNewDGGoc.Tag = "New";
+            this.btnNewDGGoc.UseVisualStyleBackColor = true;
+            this.btnNewDGGoc.Click += new System.EventHandler(this.btnNewDGGoc_Click_1);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(546, 0);
+            this.panel1.TabIndex = 0;
+            // 
+            // tabHH
+            // 
+            this.tabHH.AttachedControl = this.tabControlPanel1;
+            this.tabHH.Name = "tabHH";
+            this.tabHH.Text = "Hàng Hóa";
+            // 
             // tabControlPanel6
             // 
             this.tabControlPanel6.Controls.Add(this.tabControlPanel2);
@@ -891,7 +1515,7 @@
             this.tabControlPanel6.Location = new System.Drawing.Point(0, 25);
             this.tabControlPanel6.Name = "tabControlPanel6";
             this.tabControlPanel6.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel6.Size = new System.Drawing.Size(974, 523);
+            this.tabControlPanel6.Size = new System.Drawing.Size(974, 521);
             this.tabControlPanel6.Style.BackColor1.Color = System.Drawing.Color.White;
             this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel6.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
@@ -907,7 +1531,7 @@
             this.tabControlPanel2.Location = new System.Drawing.Point(1, 1);
             this.tabControlPanel2.Name = "tabControlPanel2";
             this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel2.Size = new System.Drawing.Size(972, 521);
+            this.tabControlPanel2.Size = new System.Drawing.Size(972, 519);
             this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.White;
             this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
@@ -929,7 +1553,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.panel23);
-            this.splitContainer4.Size = new System.Drawing.Size(970, 519);
+            this.splitContainer4.Size = new System.Drawing.Size(970, 517);
             this.splitContainer4.SplitterDistance = 455;
             this.splitContainer4.TabIndex = 1;
             // 
@@ -942,7 +1566,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(455, 519);
+            this.panel8.Size = new System.Drawing.Size(455, 517);
             this.panel8.TabIndex = 16;
             // 
             // dtgNhapKho
@@ -956,7 +1580,7 @@
             this.dtgNhapKho.ReadOnly = true;
             this.dtgNhapKho.RowHeadersVisible = false;
             this.dtgNhapKho.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgNhapKho.Size = new System.Drawing.Size(455, 294);
+            this.dtgNhapKho.Size = new System.Drawing.Size(455, 292);
             this.dtgNhapKho.TabIndex = 5;
             this.dtgNhapKho.SelectionChanged += new System.EventHandler(this.dtgNhapKho_SelectionChanged);
             // 
@@ -1198,6 +1822,73 @@
             this.cbNCCNhapKho.TabIndex = 39;
             this.cbNCCNhapKho.SelectedIndexChanged += new System.EventHandler(this.cbNCCNhapKho_SelectedIndexChanged);
             // 
+            // btneditnhapkho
+            // 
+            this.btneditnhapkho.AutoSize = true;
+            this.btneditnhapkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btneditnhapkho.Image = ((System.Drawing.Image)(resources.GetObject("btneditnhapkho.Image")));
+            this.btneditnhapkho.Location = new System.Drawing.Point(33, 3);
+            this.btneditnhapkho.Name = "btneditnhapkho";
+            this.btneditnhapkho.Size = new System.Drawing.Size(30, 30);
+            this.btneditnhapkho.TabIndex = 37;
+            this.btneditnhapkho.Tag = "Edit";
+            this.btneditnhapkho.UseVisualStyleBackColor = true;
+            this.btneditnhapkho.Click += new System.EventHandler(this.btneditnhapkho_Click);
+            // 
+            // btncancelnhapkho
+            // 
+            this.btncancelnhapkho.AutoSize = true;
+            this.btncancelnhapkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btncancelnhapkho.Enabled = false;
+            this.btncancelnhapkho.Image = ((System.Drawing.Image)(resources.GetObject("btncancelnhapkho.Image")));
+            this.btncancelnhapkho.Location = new System.Drawing.Point(123, 3);
+            this.btncancelnhapkho.Name = "btncancelnhapkho";
+            this.btncancelnhapkho.Size = new System.Drawing.Size(30, 30);
+            this.btncancelnhapkho.TabIndex = 36;
+            this.btncancelnhapkho.Tag = "Cancel";
+            this.btncancelnhapkho.UseVisualStyleBackColor = true;
+            this.btncancelnhapkho.Click += new System.EventHandler(this.btncancelnhapkho_Click);
+            // 
+            // btnsavenhapkho
+            // 
+            this.btnsavenhapkho.AutoSize = true;
+            this.btnsavenhapkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnsavenhapkho.Enabled = false;
+            this.btnsavenhapkho.Image = ((System.Drawing.Image)(resources.GetObject("btnsavenhapkho.Image")));
+            this.btnsavenhapkho.Location = new System.Drawing.Point(93, 3);
+            this.btnsavenhapkho.Name = "btnsavenhapkho";
+            this.btnsavenhapkho.Size = new System.Drawing.Size(30, 30);
+            this.btnsavenhapkho.TabIndex = 35;
+            this.btnsavenhapkho.Tag = "Save";
+            this.btnsavenhapkho.UseVisualStyleBackColor = true;
+            this.btnsavenhapkho.Click += new System.EventHandler(this.btnsavenhapkho_Click);
+            // 
+            // btndeletenhapkho
+            // 
+            this.btndeletenhapkho.AutoSize = true;
+            this.btndeletenhapkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btndeletenhapkho.Image = ((System.Drawing.Image)(resources.GetObject("btndeletenhapkho.Image")));
+            this.btndeletenhapkho.Location = new System.Drawing.Point(63, 3);
+            this.btndeletenhapkho.Name = "btndeletenhapkho";
+            this.btndeletenhapkho.Size = new System.Drawing.Size(30, 30);
+            this.btndeletenhapkho.TabIndex = 34;
+            this.btndeletenhapkho.Tag = "Delete";
+            this.btndeletenhapkho.UseVisualStyleBackColor = true;
+            this.btndeletenhapkho.Click += new System.EventHandler(this.btndeletenhapkho_Click);
+            // 
+            // btnnewnhapkho
+            // 
+            this.btnnewnhapkho.AutoSize = true;
+            this.btnnewnhapkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnnewnhapkho.Image = ((System.Drawing.Image)(resources.GetObject("btnnewnhapkho.Image")));
+            this.btnnewnhapkho.Location = new System.Drawing.Point(3, 3);
+            this.btnnewnhapkho.Name = "btnnewnhapkho";
+            this.btnnewnhapkho.Size = new System.Drawing.Size(30, 30);
+            this.btnnewnhapkho.TabIndex = 33;
+            this.btnnewnhapkho.Tag = "New";
+            this.btnnewnhapkho.UseVisualStyleBackColor = true;
+            this.btnnewnhapkho.Click += new System.EventHandler(this.btnnewnhapkho_Click);
+            // 
             // panel22
             // 
             this.panel22.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -1295,7 +1986,7 @@
             this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel23.Location = new System.Drawing.Point(0, 0);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(511, 519);
+            this.panel23.Size = new System.Drawing.Size(511, 517);
             this.panel23.TabIndex = 17;
             // 
             // dtgXuatKho
@@ -1309,7 +2000,7 @@
             this.dtgXuatKho.ReadOnly = true;
             this.dtgXuatKho.RowHeadersVisible = false;
             this.dtgXuatKho.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgXuatKho.Size = new System.Drawing.Size(511, 293);
+            this.dtgXuatKho.Size = new System.Drawing.Size(511, 291);
             this.dtgXuatKho.TabIndex = 5;
             this.dtgXuatKho.SelectionChanged += new System.EventHandler(this.dtgXuatKho_SelectionChanged);
             // 
@@ -1574,6 +2265,73 @@
             this.cbNCCXuatKho.TabIndex = 40;
             this.cbNCCXuatKho.SelectedIndexChanged += new System.EventHandler(this.cbNCCXuatKho_SelectedIndexChanged);
             // 
+            // btneditxuatkho
+            // 
+            this.btneditxuatkho.AutoSize = true;
+            this.btneditxuatkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btneditxuatkho.Image = ((System.Drawing.Image)(resources.GetObject("btneditxuatkho.Image")));
+            this.btneditxuatkho.Location = new System.Drawing.Point(33, 3);
+            this.btneditxuatkho.Name = "btneditxuatkho";
+            this.btneditxuatkho.Size = new System.Drawing.Size(30, 30);
+            this.btneditxuatkho.TabIndex = 37;
+            this.btneditxuatkho.Tag = "Edit";
+            this.btneditxuatkho.UseVisualStyleBackColor = true;
+            this.btneditxuatkho.Click += new System.EventHandler(this.btneditxuatkho_Click);
+            // 
+            // btncancelxuatkho
+            // 
+            this.btncancelxuatkho.AutoSize = true;
+            this.btncancelxuatkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btncancelxuatkho.Enabled = false;
+            this.btncancelxuatkho.Image = ((System.Drawing.Image)(resources.GetObject("btncancelxuatkho.Image")));
+            this.btncancelxuatkho.Location = new System.Drawing.Point(123, 3);
+            this.btncancelxuatkho.Name = "btncancelxuatkho";
+            this.btncancelxuatkho.Size = new System.Drawing.Size(30, 30);
+            this.btncancelxuatkho.TabIndex = 36;
+            this.btncancelxuatkho.Tag = "Cancel";
+            this.btncancelxuatkho.UseVisualStyleBackColor = true;
+            this.btncancelxuatkho.Click += new System.EventHandler(this.btncancelxuatkho_Click);
+            // 
+            // btnsavexuatkho
+            // 
+            this.btnsavexuatkho.AutoSize = true;
+            this.btnsavexuatkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnsavexuatkho.Enabled = false;
+            this.btnsavexuatkho.Image = ((System.Drawing.Image)(resources.GetObject("btnsavexuatkho.Image")));
+            this.btnsavexuatkho.Location = new System.Drawing.Point(93, 3);
+            this.btnsavexuatkho.Name = "btnsavexuatkho";
+            this.btnsavexuatkho.Size = new System.Drawing.Size(30, 30);
+            this.btnsavexuatkho.TabIndex = 35;
+            this.btnsavexuatkho.Tag = "Save";
+            this.btnsavexuatkho.UseVisualStyleBackColor = true;
+            this.btnsavexuatkho.Click += new System.EventHandler(this.btnsavexuatkho_Click);
+            // 
+            // btndeletexuatkho
+            // 
+            this.btndeletexuatkho.AutoSize = true;
+            this.btndeletexuatkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btndeletexuatkho.Image = ((System.Drawing.Image)(resources.GetObject("btndeletexuatkho.Image")));
+            this.btndeletexuatkho.Location = new System.Drawing.Point(63, 3);
+            this.btndeletexuatkho.Name = "btndeletexuatkho";
+            this.btndeletexuatkho.Size = new System.Drawing.Size(30, 30);
+            this.btndeletexuatkho.TabIndex = 34;
+            this.btndeletexuatkho.Tag = "Delete";
+            this.btndeletexuatkho.UseVisualStyleBackColor = true;
+            this.btndeletexuatkho.Click += new System.EventHandler(this.btndeletexuatkho_Click);
+            // 
+            // btnnewxuatkho
+            // 
+            this.btnnewxuatkho.AutoSize = true;
+            this.btnnewxuatkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnnewxuatkho.Image = ((System.Drawing.Image)(resources.GetObject("btnnewxuatkho.Image")));
+            this.btnnewxuatkho.Location = new System.Drawing.Point(3, 3);
+            this.btnnewxuatkho.Name = "btnnewxuatkho";
+            this.btnnewxuatkho.Size = new System.Drawing.Size(30, 30);
+            this.btnnewxuatkho.TabIndex = 33;
+            this.btnnewxuatkho.Tag = "New";
+            this.btnnewxuatkho.UseVisualStyleBackColor = true;
+            this.btnnewxuatkho.Click += new System.EventHandler(this.btnnewxuatkho_Click);
+            // 
             // panel26
             // 
             this.panel26.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -1694,7 +2452,7 @@
             this.KhachHang.Location = new System.Drawing.Point(0, 25);
             this.KhachHang.Name = "KhachHang";
             this.KhachHang.Padding = new System.Windows.Forms.Padding(1);
-            this.KhachHang.Size = new System.Drawing.Size(974, 523);
+            this.KhachHang.Size = new System.Drawing.Size(974, 521);
             this.KhachHang.Style.BackColor1.Color = System.Drawing.Color.White;
             this.KhachHang.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.KhachHang.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
@@ -1719,7 +2477,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.panelDieuChinhGia);
             this.splitContainer2.Panel2.Controls.Add(this.panel11);
             this.splitContainer2.Panel2.Controls.Add(this.panel12);
-            this.splitContainer2.Size = new System.Drawing.Size(972, 521);
+            this.splitContainer2.Size = new System.Drawing.Size(972, 519);
             this.splitContainer2.SplitterDistance = 422;
             this.splitContainer2.TabIndex = 1;
             // 
@@ -1732,7 +2490,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(422, 521);
+            this.panel6.Size = new System.Drawing.Size(422, 519);
             this.panel6.TabIndex = 16;
             // 
             // dtgKH
@@ -1746,7 +2504,7 @@
             this.dtgKH.ReadOnly = true;
             this.dtgKH.RowHeadersVisible = false;
             this.dtgKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgKH.Size = new System.Drawing.Size(422, 349);
+            this.dtgKH.Size = new System.Drawing.Size(422, 347);
             this.dtgKH.TabIndex = 5;
             this.dtgKH.SelectionChanged += new System.EventHandler(this.dtgKH_SelectionChanged);
             // 
@@ -1866,6 +2624,73 @@
             this.panel9.Size = new System.Drawing.Size(422, 36);
             this.panel9.TabIndex = 2;
             // 
+            // btneditkh
+            // 
+            this.btneditkh.AutoSize = true;
+            this.btneditkh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btneditkh.Image = ((System.Drawing.Image)(resources.GetObject("btneditkh.Image")));
+            this.btneditkh.Location = new System.Drawing.Point(33, 3);
+            this.btneditkh.Name = "btneditkh";
+            this.btneditkh.Size = new System.Drawing.Size(30, 30);
+            this.btneditkh.TabIndex = 37;
+            this.btneditkh.Tag = "Edit";
+            this.btneditkh.UseVisualStyleBackColor = true;
+            this.btneditkh.Click += new System.EventHandler(this.btneditkh_Click);
+            // 
+            // btncancelkh
+            // 
+            this.btncancelkh.AutoSize = true;
+            this.btncancelkh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btncancelkh.Enabled = false;
+            this.btncancelkh.Image = ((System.Drawing.Image)(resources.GetObject("btncancelkh.Image")));
+            this.btncancelkh.Location = new System.Drawing.Point(123, 3);
+            this.btncancelkh.Name = "btncancelkh";
+            this.btncancelkh.Size = new System.Drawing.Size(30, 30);
+            this.btncancelkh.TabIndex = 36;
+            this.btncancelkh.Tag = "Cancel";
+            this.btncancelkh.UseVisualStyleBackColor = true;
+            this.btncancelkh.Click += new System.EventHandler(this.btncancelkh_Click);
+            // 
+            // btnsavekh
+            // 
+            this.btnsavekh.AutoSize = true;
+            this.btnsavekh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnsavekh.Enabled = false;
+            this.btnsavekh.Image = ((System.Drawing.Image)(resources.GetObject("btnsavekh.Image")));
+            this.btnsavekh.Location = new System.Drawing.Point(93, 3);
+            this.btnsavekh.Name = "btnsavekh";
+            this.btnsavekh.Size = new System.Drawing.Size(30, 30);
+            this.btnsavekh.TabIndex = 35;
+            this.btnsavekh.Tag = "Save";
+            this.btnsavekh.UseVisualStyleBackColor = true;
+            this.btnsavekh.Click += new System.EventHandler(this.btnsavekh_Click);
+            // 
+            // btndeletekh
+            // 
+            this.btndeletekh.AutoSize = true;
+            this.btndeletekh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btndeletekh.Image = ((System.Drawing.Image)(resources.GetObject("btndeletekh.Image")));
+            this.btndeletekh.Location = new System.Drawing.Point(63, 3);
+            this.btndeletekh.Name = "btndeletekh";
+            this.btndeletekh.Size = new System.Drawing.Size(30, 30);
+            this.btndeletekh.TabIndex = 34;
+            this.btndeletekh.Tag = "Delete";
+            this.btndeletekh.UseVisualStyleBackColor = true;
+            this.btndeletekh.Click += new System.EventHandler(this.btndeletekh_Click);
+            // 
+            // btnNewKH
+            // 
+            this.btnNewKH.AutoSize = true;
+            this.btnNewKH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNewKH.Image = ((System.Drawing.Image)(resources.GetObject("btnNewKH.Image")));
+            this.btnNewKH.Location = new System.Drawing.Point(3, 3);
+            this.btnNewKH.Name = "btnNewKH";
+            this.btnNewKH.Size = new System.Drawing.Size(30, 30);
+            this.btnNewKH.TabIndex = 33;
+            this.btnNewKH.Tag = "New";
+            this.btnNewKH.UseVisualStyleBackColor = true;
+            this.btnNewKH.Click += new System.EventHandler(this.btnNewKH_Click);
+            // 
             // panel13
             // 
             this.panel13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -1918,7 +2743,7 @@
             this.dtgDieuChinhGiaKH.ReadOnly = true;
             this.dtgDieuChinhGiaKH.RowHeadersVisible = false;
             this.dtgDieuChinhGiaKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDieuChinhGiaKH.Size = new System.Drawing.Size(546, 349);
+            this.dtgDieuChinhGiaKH.Size = new System.Drawing.Size(546, 347);
             this.dtgDieuChinhGiaKH.TabIndex = 5;
             this.dtgDieuChinhGiaKH.SelectionChanged += new System.EventHandler(this.dtgDieuChinhGiaKH_SelectionChanged);
             // 
@@ -2169,6 +2994,73 @@
             this.label84.Text = "Khuyến mại cho KH";
             this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnEditDC
+            // 
+            this.btnEditDC.AutoSize = true;
+            this.btnEditDC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEditDC.Image = ((System.Drawing.Image)(resources.GetObject("btnEditDC.Image")));
+            this.btnEditDC.Location = new System.Drawing.Point(30, 2);
+            this.btnEditDC.Name = "btnEditDC";
+            this.btnEditDC.Size = new System.Drawing.Size(30, 30);
+            this.btnEditDC.TabIndex = 42;
+            this.btnEditDC.Tag = "Edit";
+            this.btnEditDC.UseVisualStyleBackColor = true;
+            this.btnEditDC.Click += new System.EventHandler(this.btnEditDC_Click);
+            // 
+            // btnCancelDC
+            // 
+            this.btnCancelDC.AutoSize = true;
+            this.btnCancelDC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCancelDC.Enabled = false;
+            this.btnCancelDC.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelDC.Image")));
+            this.btnCancelDC.Location = new System.Drawing.Point(120, 2);
+            this.btnCancelDC.Name = "btnCancelDC";
+            this.btnCancelDC.Size = new System.Drawing.Size(30, 30);
+            this.btnCancelDC.TabIndex = 41;
+            this.btnCancelDC.Tag = "Cancel";
+            this.btnCancelDC.UseVisualStyleBackColor = true;
+            this.btnCancelDC.Click += new System.EventHandler(this.btnCancelDC_Click);
+            // 
+            // btnSaveDC
+            // 
+            this.btnSaveDC.AutoSize = true;
+            this.btnSaveDC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSaveDC.Enabled = false;
+            this.btnSaveDC.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveDC.Image")));
+            this.btnSaveDC.Location = new System.Drawing.Point(90, 2);
+            this.btnSaveDC.Name = "btnSaveDC";
+            this.btnSaveDC.Size = new System.Drawing.Size(30, 30);
+            this.btnSaveDC.TabIndex = 40;
+            this.btnSaveDC.Tag = "Save";
+            this.btnSaveDC.UseVisualStyleBackColor = true;
+            this.btnSaveDC.Click += new System.EventHandler(this.btnSaveDC_Click);
+            // 
+            // btnDeleteDC
+            // 
+            this.btnDeleteDC.AutoSize = true;
+            this.btnDeleteDC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDeleteDC.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteDC.Image")));
+            this.btnDeleteDC.Location = new System.Drawing.Point(60, 2);
+            this.btnDeleteDC.Name = "btnDeleteDC";
+            this.btnDeleteDC.Size = new System.Drawing.Size(30, 30);
+            this.btnDeleteDC.TabIndex = 39;
+            this.btnDeleteDC.Tag = "Delete";
+            this.btnDeleteDC.UseVisualStyleBackColor = true;
+            this.btnDeleteDC.Click += new System.EventHandler(this.btnDeleteDC_Click);
+            // 
+            // btnNewDC
+            // 
+            this.btnNewDC.AutoSize = true;
+            this.btnNewDC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNewDC.Image = ((System.Drawing.Image)(resources.GetObject("btnNewDC.Image")));
+            this.btnNewDC.Location = new System.Drawing.Point(0, 2);
+            this.btnNewDC.Name = "btnNewDC";
+            this.btnNewDC.Size = new System.Drawing.Size(30, 30);
+            this.btnNewDC.TabIndex = 38;
+            this.btnNewDC.Tag = "New";
+            this.btnNewDC.UseVisualStyleBackColor = true;
+            this.btnNewDC.Click += new System.EventHandler(this.btnNewDC_Click);
+            // 
             // panel12
             // 
             this.panel12.AutoSize = true;
@@ -2185,6 +3077,461 @@
             this.tabItem8.Name = "tabItem8";
             this.tabItem8.Text = "Nhập - Xuất Kho";
             // 
+            // tabControlPanel7
+            // 
+            this.tabControlPanel7.Controls.Add(this.tabControlPanel8);
+            this.tabControlPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel7.Location = new System.Drawing.Point(0, 25);
+            this.tabControlPanel7.Name = "tabControlPanel7";
+            this.tabControlPanel7.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel7.Size = new System.Drawing.Size(974, 521);
+            this.tabControlPanel7.Style.BackColor1.Color = System.Drawing.Color.White;
+            this.tabControlPanel7.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel7.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel7.Style.GradientAngle = 90;
+            this.tabControlPanel7.TabIndex = 7;
+            this.tabControlPanel7.TabItem = this.tabItem9;
+            // 
+            // tabControlPanel8
+            // 
+            this.tabControlPanel8.Controls.Add(this.dtgNKNCC);
+            this.tabControlPanel8.Controls.Add(this.panelNKNCC);
+            this.tabControlPanel8.Controls.Add(this.panel29);
+            this.tabControlPanel8.Controls.Add(this.panel31);
+            this.tabControlPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel8.Location = new System.Drawing.Point(1, 1);
+            this.tabControlPanel8.Name = "tabControlPanel8";
+            this.tabControlPanel8.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel8.Size = new System.Drawing.Size(972, 519);
+            this.tabControlPanel8.Style.BackColor1.Color = System.Drawing.Color.White;
+            this.tabControlPanel8.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel8.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel8.Style.GradientAngle = 90;
+            this.tabControlPanel8.TabIndex = 4;
+            this.tabControlPanel8.TabItem = this.tabItem5;
+            // 
+            // dtgNKNCC
+            // 
+            this.dtgNKNCC.AllowUserToResizeRows = false;
+            this.dtgNKNCC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgNKNCC.Location = new System.Drawing.Point(1, 201);
+            this.dtgNKNCC.Name = "dtgNKNCC";
+            this.dtgNKNCC.ReadOnly = true;
+            this.dtgNKNCC.RowHeadersVisible = false;
+            this.dtgNKNCC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgNKNCC.Size = new System.Drawing.Size(970, 317);
+            this.dtgNKNCC.TabIndex = 9;
+            this.dtgNKNCC.VirtualMode = true;
+            this.dtgNKNCC.SelectionChanged += new System.EventHandler(this.dtgNKNCC_SelectionChanged);
+            // 
+            // panelNKNCC
+            // 
+            this.panelNKNCC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelNKNCC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelNKNCC.Controls.Add(this.tbMaSoNKNCC);
+            this.panelNKNCC.Controls.Add(this.tbNoiNhanNKNCC);
+            this.panelNKNCC.Controls.Add(this.label101);
+            this.panelNKNCC.Controls.Add(this.cbNCCNKNCC);
+            this.panelNKNCC.Controls.Add(this.label93);
+            this.panelNKNCC.Controls.Add(this.cbTaiXeNKNCC);
+            this.panelNKNCC.Controls.Add(this.label85);
+            this.panelNKNCC.Controls.Add(this.cbKHNKNCC);
+            this.panelNKNCC.Controls.Add(this.label86);
+            this.panelNKNCC.Controls.Add(this.cbBienSoNKNCC);
+            this.panelNKNCC.Controls.Add(this.label87);
+            this.panelNKNCC.Controls.Add(this.label88);
+            this.panelNKNCC.Controls.Add(this.numSoLuongNKNCC);
+            this.panelNKNCC.Controls.Add(this.label89);
+            this.panelNKNCC.Controls.Add(this.cbHHNKNCC);
+            this.panelNKNCC.Controls.Add(this.dtpNgayNhanNKNCC);
+            this.panelNKNCC.Controls.Add(this.tbGhichuNKNCC);
+            this.panelNKNCC.Controls.Add(this.label90);
+            this.panelNKNCC.Controls.Add(this.label91);
+            this.panelNKNCC.Controls.Add(this.label92);
+            this.panelNKNCC.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelNKNCC.Location = new System.Drawing.Point(1, 108);
+            this.panelNKNCC.Name = "panelNKNCC";
+            this.panelNKNCC.Size = new System.Drawing.Size(970, 93);
+            this.panelNKNCC.TabIndex = 6;
+            this.panelNKNCC.Visible = false;
+            // 
+            // tbMaSoNKNCC
+            // 
+            this.tbMaSoNKNCC.Location = new System.Drawing.Point(48, 33);
+            this.tbMaSoNKNCC.Name = "tbMaSoNKNCC";
+            this.tbMaSoNKNCC.Size = new System.Drawing.Size(103, 20);
+            this.tbMaSoNKNCC.TabIndex = 4;
+            // 
+            // tbNoiNhanNKNCC
+            // 
+            this.tbNoiNhanNKNCC.Location = new System.Drawing.Point(232, 31);
+            this.tbNoiNhanNKNCC.Name = "tbNoiNhanNKNCC";
+            this.tbNoiNhanNKNCC.Size = new System.Drawing.Size(131, 20);
+            this.tbNoiNhanNKNCC.TabIndex = 5;
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Location = new System.Drawing.Point(172, 36);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(60, 13);
+            this.label101.TabIndex = 53;
+            this.label101.Text = "Nơi Nhận";
+            // 
+            // cbNCCNKNCC
+            // 
+            this.cbNCCNKNCC.AllowDrop = true;
+            this.cbNCCNKNCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbNCCNKNCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbNCCNKNCC.FormattingEnabled = true;
+            this.cbNCCNKNCC.Location = new System.Drawing.Point(48, 4);
+            this.cbNCCNKNCC.Name = "cbNCCNKNCC";
+            this.cbNCCNKNCC.Size = new System.Drawing.Size(105, 21);
+            this.cbNCCNKNCC.TabIndex = 1;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(4, 8);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(32, 13);
+            this.label93.TabIndex = 52;
+            this.label93.Text = "NCC";
+            // 
+            // cbTaiXeNKNCC
+            // 
+            this.cbTaiXeNKNCC.AllowDrop = true;
+            this.cbTaiXeNKNCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbTaiXeNKNCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbTaiXeNKNCC.FormattingEnabled = true;
+            this.cbTaiXeNKNCC.Location = new System.Drawing.Point(445, 61);
+            this.cbTaiXeNKNCC.Name = "cbTaiXeNKNCC";
+            this.cbTaiXeNKNCC.Size = new System.Drawing.Size(105, 21);
+            this.cbTaiXeNKNCC.TabIndex = 9;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(401, 65);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(44, 13);
+            this.label85.TabIndex = 50;
+            this.label85.Text = "Tài Xế";
+            // 
+            // cbKHNKNCC
+            // 
+            this.cbKHNKNCC.AllowDrop = true;
+            this.cbKHNKNCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbKHNKNCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbKHNKNCC.FormattingEnabled = true;
+            this.cbKHNKNCC.Location = new System.Drawing.Point(232, 59);
+            this.cbKHNKNCC.Name = "cbKHNKNCC";
+            this.cbKHNKNCC.Size = new System.Drawing.Size(131, 21);
+            this.cbKHNKNCC.TabIndex = 8;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(191, 63);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(24, 13);
+            this.label86.TabIndex = 48;
+            this.label86.Text = "KH";
+            // 
+            // cbBienSoNKNCC
+            // 
+            this.cbBienSoNKNCC.AllowDrop = true;
+            this.cbBienSoNKNCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbBienSoNKNCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbBienSoNKNCC.FormattingEnabled = true;
+            this.cbBienSoNKNCC.Location = new System.Drawing.Point(48, 62);
+            this.cbBienSoNKNCC.Name = "cbBienSoNKNCC";
+            this.cbBienSoNKNCC.Size = new System.Drawing.Size(105, 21);
+            this.cbBienSoNKNCC.TabIndex = 7;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(-3, 66);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(49, 13);
+            this.label87.TabIndex = 46;
+            this.label87.Text = "Biển số";
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(397, 38);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(48, 13);
+            this.label88.TabIndex = 44;
+            this.label88.Text = "Số Tấn";
+            // 
+            // numSoLuongNKNCC
+            // 
+            this.numSoLuongNKNCC.DecimalPlaces = 1;
+            this.numSoLuongNKNCC.Location = new System.Drawing.Point(445, 34);
+            this.numSoLuongNKNCC.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numSoLuongNKNCC.Name = "numSoLuongNKNCC";
+            this.numSoLuongNKNCC.Size = new System.Drawing.Size(59, 20);
+            this.numSoLuongNKNCC.TabIndex = 6;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(2, 37);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(41, 13);
+            this.label89.TabIndex = 41;
+            this.label89.Text = "Mã số";
+            // 
+            // cbHHNKNCC
+            // 
+            this.cbHHNKNCC.AllowDrop = true;
+            this.cbHHNKNCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbHHNKNCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbHHNKNCC.FormattingEnabled = true;
+            this.cbHHNKNCC.Location = new System.Drawing.Point(445, 5);
+            this.cbHHNKNCC.Name = "cbHHNKNCC";
+            this.cbHHNKNCC.Size = new System.Drawing.Size(221, 21);
+            this.cbHHNKNCC.TabIndex = 3;
+            // 
+            // dtpNgayNhanNKNCC
+            // 
+            this.dtpNgayNhanNKNCC.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayNhanNKNCC.Location = new System.Drawing.Point(232, 3);
+            this.dtpNgayNhanNKNCC.Name = "dtpNgayNhanNKNCC";
+            this.dtpNgayNhanNKNCC.Size = new System.Drawing.Size(130, 20);
+            this.dtpNgayNhanNKNCC.TabIndex = 2;
+            // 
+            // tbGhichuNKNCC
+            // 
+            this.tbGhichuNKNCC.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbGhichuNKNCC.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbGhichuNKNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbGhichuNKNCC.HintForeColor = System.Drawing.Color.Empty;
+            this.tbGhichuNKNCC.HintText = "";
+            this.tbGhichuNKNCC.isPassword = false;
+            this.tbGhichuNKNCC.LineFocusedColor = System.Drawing.Color.Blue;
+            this.tbGhichuNKNCC.LineIdleColor = System.Drawing.Color.Gray;
+            this.tbGhichuNKNCC.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.tbGhichuNKNCC.LineThickness = 3;
+            this.tbGhichuNKNCC.Location = new System.Drawing.Point(627, 61);
+            this.tbGhichuNKNCC.Margin = new System.Windows.Forms.Padding(4);
+            this.tbGhichuNKNCC.Name = "tbGhichuNKNCC";
+            this.tbGhichuNKNCC.Size = new System.Drawing.Size(288, 21);
+            this.tbGhichuNKNCC.TabIndex = 10;
+            this.tbGhichuNKNCC.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(576, 65);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(51, 13);
+            this.label90.TabIndex = 6;
+            this.label90.Text = "Ghi chú";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(182, 6);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(36, 13);
+            this.label91.TabIndex = 4;
+            this.label91.Text = "Ngày";
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(382, 7);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(63, 13);
+            this.label92.TabIndex = 2;
+            this.label92.Text = "Tên Hàng";
+            // 
+            // panel29
+            // 
+            this.panel29.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel29.Controls.Add(this.btneditnkncc);
+            this.panel29.Controls.Add(this.btncancelnkncc);
+            this.panel29.Controls.Add(this.btnsavenkncc);
+            this.panel29.Controls.Add(this.btndeletenkncc);
+            this.panel29.Controls.Add(this.btnnewnkncc);
+            this.panel29.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel29.Location = new System.Drawing.Point(1, 72);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(970, 36);
+            this.panel29.TabIndex = 7;
+            // 
+            // btneditnkncc
+            // 
+            this.btneditnkncc.AutoSize = true;
+            this.btneditnkncc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btneditnkncc.Image = ((System.Drawing.Image)(resources.GetObject("btneditnkncc.Image")));
+            this.btneditnkncc.Location = new System.Drawing.Point(33, 3);
+            this.btneditnkncc.Name = "btneditnkncc";
+            this.btneditnkncc.Size = new System.Drawing.Size(30, 30);
+            this.btneditnkncc.TabIndex = 37;
+            this.btneditnkncc.Tag = "Edit";
+            this.btneditnkncc.UseVisualStyleBackColor = true;
+            this.btneditnkncc.Click += new System.EventHandler(this.btneditnkncc_Click);
+            // 
+            // btncancelnkncc
+            // 
+            this.btncancelnkncc.AutoSize = true;
+            this.btncancelnkncc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btncancelnkncc.Enabled = false;
+            this.btncancelnkncc.Image = ((System.Drawing.Image)(resources.GetObject("btncancelnkncc.Image")));
+            this.btncancelnkncc.Location = new System.Drawing.Point(123, 3);
+            this.btncancelnkncc.Name = "btncancelnkncc";
+            this.btncancelnkncc.Size = new System.Drawing.Size(30, 30);
+            this.btncancelnkncc.TabIndex = 36;
+            this.btncancelnkncc.Tag = "Cancel";
+            this.btncancelnkncc.UseVisualStyleBackColor = true;
+            this.btncancelnkncc.Click += new System.EventHandler(this.btncancelnkncc_Click);
+            // 
+            // btnsavenkncc
+            // 
+            this.btnsavenkncc.AutoSize = true;
+            this.btnsavenkncc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnsavenkncc.Enabled = false;
+            this.btnsavenkncc.Image = ((System.Drawing.Image)(resources.GetObject("btnsavenkncc.Image")));
+            this.btnsavenkncc.Location = new System.Drawing.Point(93, 3);
+            this.btnsavenkncc.Name = "btnsavenkncc";
+            this.btnsavenkncc.Size = new System.Drawing.Size(30, 30);
+            this.btnsavenkncc.TabIndex = 35;
+            this.btnsavenkncc.Tag = "Save";
+            this.btnsavenkncc.UseVisualStyleBackColor = true;
+            this.btnsavenkncc.Click += new System.EventHandler(this.btnsavenkncc_Click);
+            // 
+            // btndeletenkncc
+            // 
+            this.btndeletenkncc.AutoSize = true;
+            this.btndeletenkncc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btndeletenkncc.Image = ((System.Drawing.Image)(resources.GetObject("btndeletenkncc.Image")));
+            this.btndeletenkncc.Location = new System.Drawing.Point(63, 3);
+            this.btndeletenkncc.Name = "btndeletenkncc";
+            this.btndeletenkncc.Size = new System.Drawing.Size(30, 30);
+            this.btndeletenkncc.TabIndex = 34;
+            this.btndeletenkncc.Tag = "Delete";
+            this.btndeletenkncc.UseVisualStyleBackColor = true;
+            this.btndeletenkncc.Click += new System.EventHandler(this.btndeletenkncc_Click);
+            // 
+            // btnnewnkncc
+            // 
+            this.btnnewnkncc.AutoSize = true;
+            this.btnnewnkncc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnnewnkncc.Image = ((System.Drawing.Image)(resources.GetObject("btnnewnkncc.Image")));
+            this.btnnewnkncc.Location = new System.Drawing.Point(3, 3);
+            this.btnnewnkncc.Name = "btnnewnkncc";
+            this.btnnewnkncc.Size = new System.Drawing.Size(30, 30);
+            this.btnnewnkncc.TabIndex = 33;
+            this.btnnewnkncc.Tag = "New";
+            this.btnnewnkncc.UseVisualStyleBackColor = true;
+            this.btnnewnkncc.Click += new System.EventHandler(this.btnnewnkncc_Click);
+            // 
+            // panel31
+            // 
+            this.panel31.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel31.Controls.Add(this.label94);
+            this.panel31.Controls.Add(this.dtpKTLayHangNCC);
+            this.panel31.Controls.Add(this.label95);
+            this.panel31.Controls.Add(this.dtpBDLayHangNCC);
+            this.panel31.Controls.Add(this.tbHHNKNCCFilter);
+            this.panel31.Controls.Add(this.tbNCCNKNCC);
+            this.panel31.Controls.Add(this.label96);
+            this.panel31.Controls.Add(this.label99);
+            this.panel31.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel31.Location = new System.Drawing.Point(1, 1);
+            this.panel31.Name = "panel31";
+            this.panel31.Size = new System.Drawing.Size(970, 71);
+            this.panel31.TabIndex = 8;
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(174, 8);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(63, 13);
+            this.label94.TabIndex = 12;
+            this.label94.Text = "Đến Ngày";
+            // 
+            // dtpKTLayHangNCC
+            // 
+            this.dtpKTLayHangNCC.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpKTLayHangNCC.Location = new System.Drawing.Point(237, 4);
+            this.dtpKTLayHangNCC.Name = "dtpKTLayHangNCC";
+            this.dtpKTLayHangNCC.Size = new System.Drawing.Size(105, 20);
+            this.dtpKTLayHangNCC.TabIndex = 11;
+            this.dtpKTLayHangNCC.ValueChanged += new System.EventHandler(this.dtpKTLayHangNCC_ValueChanged);
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(5, 8);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(55, 13);
+            this.label95.TabIndex = 10;
+            this.label95.Text = "Từ Ngày";
+            // 
+            // dtpBDLayHangNCC
+            // 
+            this.dtpBDLayHangNCC.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBDLayHangNCC.Location = new System.Drawing.Point(64, 4);
+            this.dtpBDLayHangNCC.Name = "dtpBDLayHangNCC";
+            this.dtpBDLayHangNCC.Size = new System.Drawing.Size(105, 20);
+            this.dtpBDLayHangNCC.TabIndex = 9;
+            this.dtpBDLayHangNCC.ValueChanged += new System.EventHandler(this.dtpBDLayHangNCC_ValueChanged);
+            // 
+            // tbHHNKNCCFilter
+            // 
+            this.tbHHNKNCCFilter.Location = new System.Drawing.Point(237, 37);
+            this.tbHHNKNCCFilter.Name = "tbHHNKNCCFilter";
+            this.tbHHNKNCCFilter.Size = new System.Drawing.Size(205, 20);
+            this.tbHHNKNCCFilter.TabIndex = 8;
+            this.tbHHNKNCCFilter.TextChanged += new System.EventHandler(this.tbMasoNKNCCFilter_TextChanged);
+            // 
+            // tbNCCNKNCC
+            // 
+            this.tbNCCNKNCC.Location = new System.Drawing.Point(64, 37);
+            this.tbNCCNKNCC.Name = "tbNCCNKNCC";
+            this.tbNCCNKNCC.Size = new System.Drawing.Size(105, 20);
+            this.tbNCCNKNCC.TabIndex = 7;
+            this.tbNCCNKNCC.TextChanged += new System.EventHandler(this.tbTenHangNKNCC_TextChanged);
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(174, 41);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(63, 13);
+            this.label96.TabIndex = 6;
+            this.label96.Text = "Tên Hàng";
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Location = new System.Drawing.Point(5, 41);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(32, 13);
+            this.label99.TabIndex = 4;
+            this.label99.Text = "NCC";
+            // 
+            // tabItem9
+            // 
+            this.tabItem9.AttachedControl = this.tabControlPanel7;
+            this.tabItem9.Name = "tabItem9";
+            this.tabItem9.Text = "Nhật Ký NCC";
+            // 
             // tabControlPanel5
             // 
             this.tabControlPanel5.Controls.Add(this.tabControlPanel4);
@@ -2192,7 +3539,7 @@
             this.tabControlPanel5.Location = new System.Drawing.Point(0, 25);
             this.tabControlPanel5.Name = "tabControlPanel5";
             this.tabControlPanel5.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel5.Size = new System.Drawing.Size(974, 523);
+            this.tabControlPanel5.Size = new System.Drawing.Size(974, 521);
             this.tabControlPanel5.Style.BackColor1.Color = System.Drawing.Color.White;
             this.tabControlPanel5.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel5.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
@@ -2211,7 +3558,7 @@
             this.tabControlPanel4.Location = new System.Drawing.Point(1, 1);
             this.tabControlPanel4.Name = "tabControlPanel4";
             this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel4.Size = new System.Drawing.Size(972, 521);
+            this.tabControlPanel4.Size = new System.Drawing.Size(972, 519);
             this.tabControlPanel4.Style.BackColor1.Color = System.Drawing.Color.White;
             this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
@@ -2231,7 +3578,7 @@
             this.dtgSLH.ReadOnly = true;
             this.dtgSLH.RowHeadersVisible = false;
             this.dtgSLH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgSLH.Size = new System.Drawing.Size(970, 315);
+            this.dtgSLH.Size = new System.Drawing.Size(970, 313);
             this.dtgSLH.TabIndex = 9;
             this.dtgSLH.SelectionChanged += new System.EventHandler(this.dtgSLH_SelectionChanged);
             // 
@@ -2506,6 +3853,73 @@
             this.panel18.Size = new System.Drawing.Size(970, 36);
             this.panel18.TabIndex = 7;
             // 
+            // btneditnkhh
+            // 
+            this.btneditnkhh.AutoSize = true;
+            this.btneditnkhh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btneditnkhh.Image = ((System.Drawing.Image)(resources.GetObject("btneditnkhh.Image")));
+            this.btneditnkhh.Location = new System.Drawing.Point(33, 3);
+            this.btneditnkhh.Name = "btneditnkhh";
+            this.btneditnkhh.Size = new System.Drawing.Size(30, 30);
+            this.btneditnkhh.TabIndex = 37;
+            this.btneditnkhh.Tag = "Edit";
+            this.btneditnkhh.UseVisualStyleBackColor = true;
+            this.btneditnkhh.Click += new System.EventHandler(this.btneditnkhh_Click);
+            // 
+            // btncancelnkhh
+            // 
+            this.btncancelnkhh.AutoSize = true;
+            this.btncancelnkhh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btncancelnkhh.Enabled = false;
+            this.btncancelnkhh.Image = ((System.Drawing.Image)(resources.GetObject("btncancelnkhh.Image")));
+            this.btncancelnkhh.Location = new System.Drawing.Point(123, 3);
+            this.btncancelnkhh.Name = "btncancelnkhh";
+            this.btncancelnkhh.Size = new System.Drawing.Size(30, 30);
+            this.btncancelnkhh.TabIndex = 36;
+            this.btncancelnkhh.Tag = "Cancel";
+            this.btncancelnkhh.UseVisualStyleBackColor = true;
+            this.btncancelnkhh.Click += new System.EventHandler(this.btncancelnkhh_Click);
+            // 
+            // btnsavenkhh
+            // 
+            this.btnsavenkhh.AutoSize = true;
+            this.btnsavenkhh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnsavenkhh.Enabled = false;
+            this.btnsavenkhh.Image = ((System.Drawing.Image)(resources.GetObject("btnsavenkhh.Image")));
+            this.btnsavenkhh.Location = new System.Drawing.Point(93, 3);
+            this.btnsavenkhh.Name = "btnsavenkhh";
+            this.btnsavenkhh.Size = new System.Drawing.Size(30, 30);
+            this.btnsavenkhh.TabIndex = 35;
+            this.btnsavenkhh.Tag = "Save";
+            this.btnsavenkhh.UseVisualStyleBackColor = true;
+            this.btnsavenkhh.Click += new System.EventHandler(this.btnsavenkhh_Click);
+            // 
+            // btndeletenkhh
+            // 
+            this.btndeletenkhh.AutoSize = true;
+            this.btndeletenkhh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btndeletenkhh.Image = ((System.Drawing.Image)(resources.GetObject("btndeletenkhh.Image")));
+            this.btndeletenkhh.Location = new System.Drawing.Point(63, 3);
+            this.btndeletenkhh.Name = "btndeletenkhh";
+            this.btndeletenkhh.Size = new System.Drawing.Size(30, 30);
+            this.btndeletenkhh.TabIndex = 34;
+            this.btndeletenkhh.Tag = "Delete";
+            this.btndeletenkhh.UseVisualStyleBackColor = true;
+            this.btndeletenkhh.Click += new System.EventHandler(this.btndeletenkhh_Click);
+            // 
+            // btnnewnkhh
+            // 
+            this.btnnewnkhh.AutoSize = true;
+            this.btnnewnkhh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnnewnkhh.Image = ((System.Drawing.Image)(resources.GetObject("btnnewnkhh.Image")));
+            this.btnnewnkhh.Location = new System.Drawing.Point(3, 3);
+            this.btnnewnkhh.Name = "btnnewnkhh";
+            this.btnnewnkhh.Size = new System.Drawing.Size(30, 30);
+            this.btnnewnkhh.TabIndex = 33;
+            this.btnnewnkhh.Tag = "New";
+            this.btnnewnkhh.UseVisualStyleBackColor = true;
+            this.btnnewnkhh.Click += new System.EventHandler(this.btnnewnkhh_Click);
+            // 
             // panel19
             // 
             this.panel19.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -2664,7 +4078,7 @@
             this.tabControlPanelXeVC.Location = new System.Drawing.Point(0, 25);
             this.tabControlPanelXeVC.Name = "tabControlPanelXeVC";
             this.tabControlPanelXeVC.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanelXeVC.Size = new System.Drawing.Size(974, 523);
+            this.tabControlPanelXeVC.Size = new System.Drawing.Size(974, 521);
             this.tabControlPanelXeVC.Style.BackColor1.Color = System.Drawing.Color.White;
             this.tabControlPanelXeVC.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanelXeVC.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
@@ -2686,7 +4100,7 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.panel30);
-            this.splitContainer5.Size = new System.Drawing.Size(972, 521);
+            this.splitContainer5.Size = new System.Drawing.Size(972, 519);
             this.splitContainer5.SplitterDistance = 455;
             this.splitContainer5.TabIndex = 2;
             // 
@@ -2699,7 +4113,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(0, 0);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(455, 521);
+            this.panel20.Size = new System.Drawing.Size(455, 519);
             this.panel20.TabIndex = 16;
             // 
             // dtgXeVC
@@ -2713,7 +4127,7 @@
             this.dtgXeVC.ReadOnly = true;
             this.dtgXeVC.RowHeadersVisible = false;
             this.dtgXeVC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgXeVC.Size = new System.Drawing.Size(455, 361);
+            this.dtgXeVC.Size = new System.Drawing.Size(455, 359);
             this.dtgXeVC.TabIndex = 13;
             this.dtgXeVC.SelectionChanged += new System.EventHandler(this.dtgXeVC_SelectionChanged);
             // 
@@ -2868,6 +4282,73 @@
             this.label82.Text = "Xe Cty";
             this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btneditxevc
+            // 
+            this.btneditxevc.AutoSize = true;
+            this.btneditxevc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btneditxevc.Image = ((System.Drawing.Image)(resources.GetObject("btneditxevc.Image")));
+            this.btneditxevc.Location = new System.Drawing.Point(33, 3);
+            this.btneditxevc.Name = "btneditxevc";
+            this.btneditxevc.Size = new System.Drawing.Size(30, 30);
+            this.btneditxevc.TabIndex = 37;
+            this.btneditxevc.Tag = "Edit";
+            this.btneditxevc.UseVisualStyleBackColor = true;
+            this.btneditxevc.Click += new System.EventHandler(this.btneditxevc_Click);
+            // 
+            // btncancelxevc
+            // 
+            this.btncancelxevc.AutoSize = true;
+            this.btncancelxevc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btncancelxevc.Enabled = false;
+            this.btncancelxevc.Image = ((System.Drawing.Image)(resources.GetObject("btncancelxevc.Image")));
+            this.btncancelxevc.Location = new System.Drawing.Point(123, 3);
+            this.btncancelxevc.Name = "btncancelxevc";
+            this.btncancelxevc.Size = new System.Drawing.Size(30, 30);
+            this.btncancelxevc.TabIndex = 36;
+            this.btncancelxevc.Tag = "Cancel";
+            this.btncancelxevc.UseVisualStyleBackColor = true;
+            this.btncancelxevc.Click += new System.EventHandler(this.btncancelxevc_Click);
+            // 
+            // btnsavexevc
+            // 
+            this.btnsavexevc.AutoSize = true;
+            this.btnsavexevc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnsavexevc.Enabled = false;
+            this.btnsavexevc.Image = ((System.Drawing.Image)(resources.GetObject("btnsavexevc.Image")));
+            this.btnsavexevc.Location = new System.Drawing.Point(93, 3);
+            this.btnsavexevc.Name = "btnsavexevc";
+            this.btnsavexevc.Size = new System.Drawing.Size(30, 30);
+            this.btnsavexevc.TabIndex = 35;
+            this.btnsavexevc.Tag = "Save";
+            this.btnsavexevc.UseVisualStyleBackColor = true;
+            this.btnsavexevc.Click += new System.EventHandler(this.btnsavexevc_Click);
+            // 
+            // btndeletexevc
+            // 
+            this.btndeletexevc.AutoSize = true;
+            this.btndeletexevc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btndeletexevc.Image = ((System.Drawing.Image)(resources.GetObject("btndeletexevc.Image")));
+            this.btndeletexevc.Location = new System.Drawing.Point(63, 3);
+            this.btndeletexevc.Name = "btndeletexevc";
+            this.btndeletexevc.Size = new System.Drawing.Size(30, 30);
+            this.btndeletexevc.TabIndex = 34;
+            this.btndeletexevc.Tag = "Delete";
+            this.btndeletexevc.UseVisualStyleBackColor = true;
+            this.btndeletexevc.Click += new System.EventHandler(this.btndeletexevc_Click);
+            // 
+            // btnnewxevc
+            // 
+            this.btnnewxevc.AutoSize = true;
+            this.btnnewxevc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnnewxevc.Image = ((System.Drawing.Image)(resources.GetObject("btnnewxevc.Image")));
+            this.btnnewxevc.Location = new System.Drawing.Point(3, 3);
+            this.btnnewxevc.Name = "btnnewxevc";
+            this.btnnewxevc.Size = new System.Drawing.Size(30, 30);
+            this.btnnewxevc.TabIndex = 33;
+            this.btnnewxevc.Tag = "New";
+            this.btnnewxevc.UseVisualStyleBackColor = true;
+            this.btnnewxevc.Click += new System.EventHandler(this.btnnewxevc_Click);
+            // 
             // panel15
             // 
             this.panel15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -2918,7 +4399,7 @@
             this.panel30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel30.Location = new System.Drawing.Point(0, 0);
             this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(513, 521);
+            this.panel30.Size = new System.Drawing.Size(513, 519);
             this.panel30.TabIndex = 17;
             // 
             // dtgXeKH
@@ -2932,7 +4413,7 @@
             this.dtgXeKH.ReadOnly = true;
             this.dtgXeKH.RowHeadersVisible = false;
             this.dtgXeKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgXeKH.Size = new System.Drawing.Size(513, 361);
+            this.dtgXeKH.Size = new System.Drawing.Size(513, 359);
             this.dtgXeKH.TabIndex = 5;
             this.dtgXeKH.SelectionChanged += new System.EventHandler(this.dtgXeKH_SelectionChanged);
             // 
@@ -3045,6 +4526,73 @@
             this.label83.Text = "DS Xe KH";
             this.label83.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btneditxekh
+            // 
+            this.btneditxekh.AutoSize = true;
+            this.btneditxekh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btneditxekh.Image = ((System.Drawing.Image)(resources.GetObject("btneditxekh.Image")));
+            this.btneditxekh.Location = new System.Drawing.Point(33, 3);
+            this.btneditxekh.Name = "btneditxekh";
+            this.btneditxekh.Size = new System.Drawing.Size(30, 30);
+            this.btneditxekh.TabIndex = 37;
+            this.btneditxekh.Tag = "Edit";
+            this.btneditxekh.UseVisualStyleBackColor = true;
+            this.btneditxekh.Click += new System.EventHandler(this.btneditxekh_Click);
+            // 
+            // btncancelxekh
+            // 
+            this.btncancelxekh.AutoSize = true;
+            this.btncancelxekh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btncancelxekh.Enabled = false;
+            this.btncancelxekh.Image = ((System.Drawing.Image)(resources.GetObject("btncancelxekh.Image")));
+            this.btncancelxekh.Location = new System.Drawing.Point(123, 3);
+            this.btncancelxekh.Name = "btncancelxekh";
+            this.btncancelxekh.Size = new System.Drawing.Size(30, 30);
+            this.btncancelxekh.TabIndex = 36;
+            this.btncancelxekh.Tag = "Cancel";
+            this.btncancelxekh.UseVisualStyleBackColor = true;
+            this.btncancelxekh.Click += new System.EventHandler(this.btncancelxekh_Click);
+            // 
+            // btnsavexekh
+            // 
+            this.btnsavexekh.AutoSize = true;
+            this.btnsavexekh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnsavexekh.Enabled = false;
+            this.btnsavexekh.Image = ((System.Drawing.Image)(resources.GetObject("btnsavexekh.Image")));
+            this.btnsavexekh.Location = new System.Drawing.Point(93, 3);
+            this.btnsavexekh.Name = "btnsavexekh";
+            this.btnsavexekh.Size = new System.Drawing.Size(30, 30);
+            this.btnsavexekh.TabIndex = 35;
+            this.btnsavexekh.Tag = "Save";
+            this.btnsavexekh.UseVisualStyleBackColor = true;
+            this.btnsavexekh.Click += new System.EventHandler(this.btnsavexekh_Click);
+            // 
+            // btndeletexekh
+            // 
+            this.btndeletexekh.AutoSize = true;
+            this.btndeletexekh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btndeletexekh.Image = ((System.Drawing.Image)(resources.GetObject("btndeletexekh.Image")));
+            this.btndeletexekh.Location = new System.Drawing.Point(63, 3);
+            this.btndeletexekh.Name = "btndeletexekh";
+            this.btndeletexekh.Size = new System.Drawing.Size(30, 30);
+            this.btndeletexekh.TabIndex = 34;
+            this.btndeletexekh.Tag = "Delete";
+            this.btndeletexekh.UseVisualStyleBackColor = true;
+            this.btndeletexekh.Click += new System.EventHandler(this.btndeletexekh_Click);
+            // 
+            // btnnewxekh
+            // 
+            this.btnnewxekh.AutoSize = true;
+            this.btnnewxekh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnnewxekh.Image = ((System.Drawing.Image)(resources.GetObject("btnnewxekh.Image")));
+            this.btnnewxekh.Location = new System.Drawing.Point(3, 3);
+            this.btnnewxekh.Name = "btnnewxekh";
+            this.btnnewxekh.Size = new System.Drawing.Size(30, 30);
+            this.btnnewxekh.TabIndex = 33;
+            this.btnnewxekh.Tag = "New";
+            this.btnnewxekh.UseVisualStyleBackColor = true;
+            this.btnnewxekh.Click += new System.EventHandler(this.btnnewxekh_Click);
+            // 
             // panel33
             // 
             this.panel33.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -3092,802 +4640,6 @@
             this.tabItem4.Name = "tabItem4";
             this.tabItem4.Text = "NKHH";
             // 
-            // tabControlPanel1
-            // 
-            this.tabControlPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
-            this.tabControlPanel1.Controls.Add(this.splitContainer1);
-            this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel1.Location = new System.Drawing.Point(0, 25);
-            this.tabControlPanel1.Name = "tabControlPanel1";
-            this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(974, 523);
-            this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.White;
-            this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel1.Style.GradientAngle = 90;
-            this.tabControlPanel1.TabIndex = 1;
-            this.tabControlPanel1.TabItem = this.tabHH;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(1, 1);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.panel2);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.dtgDGGoc);
-            this.splitContainer1.Panel2.Controls.Add(this.panelDGGoc);
-            this.splitContainer1.Panel2.Controls.Add(this.panel4);
-            this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(972, 521);
-            this.splitContainer1.SplitterDistance = 422;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.panelHH);
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(422, 521);
-            this.panel2.TabIndex = 16;
-            // 
-            // panel3
-            // 
-            this.panel3.AutoSize = true;
-            this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.dtgHangHoa);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 128);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(422, 393);
-            this.panel3.TabIndex = 0;
-            // 
-            // dtgHangHoa
-            // 
-            this.dtgHangHoa.AllowUserToResizeRows = false;
-            this.dtgHangHoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dtgHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgHangHoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgHangHoa.Location = new System.Drawing.Point(0, 0);
-            this.dtgHangHoa.Name = "dtgHangHoa";
-            this.dtgHangHoa.ReadOnly = true;
-            this.dtgHangHoa.RowHeadersVisible = false;
-            this.dtgHangHoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgHangHoa.Size = new System.Drawing.Size(420, 391);
-            this.dtgHangHoa.TabIndex = 2;
-            this.dtgHangHoa.SelectionChanged += new System.EventHandler(this.dtgHangHoa_SelectionChanged);
-            // 
-            // panelHH
-            // 
-            this.panelHH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panelHH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelHH.Controls.Add(this.numKLHH);
-            this.panelHH.Controls.Add(this.label81);
-            this.panelHH.Controls.Add(this.tbGhiChuHH);
-            this.panelHH.Controls.Add(this.label4);
-            this.panelHH.Controls.Add(this.tbMaHH);
-            this.panelHH.Controls.Add(this.label3);
-            this.panelHH.Controls.Add(this.tbTenHH);
-            this.panelHH.Controls.Add(this.label7);
-            this.panelHH.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHH.Location = new System.Drawing.Point(0, 36);
-            this.panelHH.Name = "panelHH";
-            this.panelHH.Size = new System.Drawing.Size(422, 92);
-            this.panelHH.TabIndex = 1;
-            this.panelHH.Visible = false;
-            // 
-            // numKLHH
-            // 
-            this.numKLHH.Location = new System.Drawing.Point(54, 62);
-            this.numKLHH.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numKLHH.Name = "numKLHH";
-            this.numKLHH.Size = new System.Drawing.Size(52, 20);
-            this.numKLHH.TabIndex = 8;
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(10, 66);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(44, 13);
-            this.label81.TabIndex = 7;
-            this.label81.Text = "KL(kg)";
-            // 
-            // tbGhiChuHH
-            // 
-            this.tbGhiChuHH.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbGhiChuHH.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tbGhiChuHH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbGhiChuHH.HintForeColor = System.Drawing.Color.Empty;
-            this.tbGhiChuHH.HintText = "";
-            this.tbGhiChuHH.isPassword = false;
-            this.tbGhiChuHH.LineFocusedColor = System.Drawing.Color.Blue;
-            this.tbGhiChuHH.LineIdleColor = System.Drawing.Color.Gray;
-            this.tbGhiChuHH.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.tbGhiChuHH.LineThickness = 3;
-            this.tbGhiChuHH.Location = new System.Drawing.Point(176, 49);
-            this.tbGhiChuHH.Margin = new System.Windows.Forms.Padding(4);
-            this.tbGhiChuHH.Name = "tbGhiChuHH";
-            this.tbGhiChuHH.Size = new System.Drawing.Size(234, 30);
-            this.tbGhiChuHH.TabIndex = 3;
-            this.tbGhiChuHH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(118, 66);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Ghi chú";
-            // 
-            // tbMaHH
-            // 
-            this.tbMaHH.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbMaHH.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tbMaHH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbMaHH.HintForeColor = System.Drawing.Color.Empty;
-            this.tbMaHH.HintText = "";
-            this.tbMaHH.isPassword = false;
-            this.tbMaHH.LineFocusedColor = System.Drawing.Color.Blue;
-            this.tbMaHH.LineIdleColor = System.Drawing.Color.Gray;
-            this.tbMaHH.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.tbMaHH.LineThickness = 3;
-            this.tbMaHH.Location = new System.Drawing.Point(41, 6);
-            this.tbMaHH.Margin = new System.Windows.Forms.Padding(4);
-            this.tbMaHH.Name = "tbMaHH";
-            this.tbMaHH.Size = new System.Drawing.Size(83, 30);
-            this.tbMaHH.TabIndex = 1;
-            this.tbMaHH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Mã";
-            // 
-            // tbTenHH
-            // 
-            this.tbTenHH.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbTenHH.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tbTenHH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbTenHH.HintForeColor = System.Drawing.Color.Empty;
-            this.tbTenHH.HintText = "";
-            this.tbTenHH.isPassword = false;
-            this.tbTenHH.LineFocusedColor = System.Drawing.Color.Blue;
-            this.tbTenHH.LineIdleColor = System.Drawing.Color.Gray;
-            this.tbTenHH.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.tbTenHH.LineThickness = 3;
-            this.tbTenHH.Location = new System.Drawing.Point(176, 4);
-            this.tbTenHH.Margin = new System.Windows.Forms.Padding(4);
-            this.tbTenHH.Name = "tbTenHH";
-            this.tbTenHH.Size = new System.Drawing.Size(234, 30);
-            this.tbTenHH.TabIndex = 2;
-            this.tbTenHH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(140, 21);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Tên";
-            // 
-            // panel5
-            // 
-            this.panel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.btnEditHH);
-            this.panel5.Controls.Add(this.btnCancelHH);
-            this.panel5.Controls.Add(this.btnSaveHH);
-            this.panel5.Controls.Add(this.btnDeleteHH);
-            this.panel5.Controls.Add(this.btnNewHH);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(422, 36);
-            this.panel5.TabIndex = 2;
-            // 
-            // dtgDGGoc
-            // 
-            this.dtgDGGoc.AllowUserToResizeRows = false;
-            this.dtgDGGoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dtgDGGoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgDGGoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgDGGoc.Location = new System.Drawing.Point(0, 128);
-            this.dtgDGGoc.Name = "dtgDGGoc";
-            this.dtgDGGoc.ReadOnly = true;
-            this.dtgDGGoc.RowHeadersVisible = false;
-            this.dtgDGGoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDGGoc.Size = new System.Drawing.Size(546, 393);
-            this.dtgDGGoc.TabIndex = 5;
-            this.dtgDGGoc.SelectionChanged += new System.EventHandler(this.dtgDGGoc_SelectionChanged);
-            // 
-            // panelDGGoc
-            // 
-            this.panelDGGoc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panelDGGoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelDGGoc.Controls.Add(this.label8);
-            this.panelDGGoc.Controls.Add(this.label6);
-            this.panelDGGoc.Controls.Add(this.label5);
-            this.panelDGGoc.Controls.Add(this.label1);
-            this.panelDGGoc.Controls.Add(this.numDGGoc);
-            this.panelDGGoc.Controls.Add(this.cbNCCDGGoc);
-            this.panelDGGoc.Controls.Add(this.cbTenHangDGGoc);
-            this.panelDGGoc.Controls.Add(this.dtpDGGoc);
-            this.panelDGGoc.Controls.Add(this.bunifuCustomLabel2);
-            this.panelDGGoc.Controls.Add(this.chbDuongboDGGoc);
-            this.panelDGGoc.Controls.Add(this.tbNoiGNDGGoc);
-            this.panelDGGoc.Controls.Add(this.label2);
-            this.panelDGGoc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDGGoc.Location = new System.Drawing.Point(0, 36);
-            this.panelDGGoc.Name = "panelDGGoc";
-            this.panelDGGoc.Size = new System.Drawing.Size(546, 92);
-            this.panelDGGoc.TabIndex = 3;
-            this.panelDGGoc.Visible = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(385, 57);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 13);
-            this.label8.TabIndex = 36;
-            this.label8.Text = "Đơn Giá";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(130, 57);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 13);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Nơi GN";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(193, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 13);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Tên Hàng";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Ngày BĐ";
-            // 
-            // numDGGoc
-            // 
-            this.numDGGoc.Location = new System.Drawing.Point(442, 53);
-            this.numDGGoc.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.numDGGoc.Name = "numDGGoc";
-            this.numDGGoc.Size = new System.Drawing.Size(91, 20);
-            this.numDGGoc.TabIndex = 6;
-            // 
-            // cbNCCDGGoc
-            // 
-            this.cbNCCDGGoc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbNCCDGGoc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbNCCDGGoc.FormattingEnabled = true;
-            this.cbNCCDGGoc.Location = new System.Drawing.Point(36, 53);
-            this.cbNCCDGGoc.Name = "cbNCCDGGoc";
-            this.cbNCCDGGoc.Size = new System.Drawing.Size(88, 21);
-            this.cbNCCDGGoc.TabIndex = 3;
-            // 
-            // cbTenHangDGGoc
-            // 
-            this.cbTenHangDGGoc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbTenHangDGGoc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbTenHangDGGoc.FormattingEnabled = true;
-            this.cbTenHangDGGoc.Location = new System.Drawing.Point(262, 16);
-            this.cbTenHangDGGoc.Name = "cbTenHangDGGoc";
-            this.cbTenHangDGGoc.Size = new System.Drawing.Size(269, 21);
-            this.cbTenHangDGGoc.TabIndex = 2;
-            // 
-            // dtpDGGoc
-            // 
-            this.dtpDGGoc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDGGoc.Location = new System.Drawing.Point(61, 15);
-            this.dtpDGGoc.Name = "dtpDGGoc";
-            this.dtpDGGoc.Size = new System.Drawing.Size(126, 20);
-            this.dtpDGGoc.TabIndex = 1;
-            // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(309, 57);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(70, 13);
-            this.bunifuCustomLabel2.TabIndex = 27;
-            this.bunifuCustomLabel2.Text = "Đường Bộ?";
-            // 
-            // chbDuongboDGGoc
-            // 
-            this.chbDuongboDGGoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.chbDuongboDGGoc.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.chbDuongboDGGoc.Checked = true;
-            this.chbDuongboDGGoc.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.chbDuongboDGGoc.ForeColor = System.Drawing.Color.White;
-            this.chbDuongboDGGoc.Location = new System.Drawing.Point(289, 53);
-            this.chbDuongboDGGoc.Name = "chbDuongboDGGoc";
-            this.chbDuongboDGGoc.Size = new System.Drawing.Size(20, 20);
-            this.chbDuongboDGGoc.TabIndex = 5;
-            // 
-            // tbNoiGNDGGoc
-            // 
-            this.tbNoiGNDGGoc.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbNoiGNDGGoc.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tbNoiGNDGGoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbNoiGNDGGoc.HintForeColor = System.Drawing.Color.Empty;
-            this.tbNoiGNDGGoc.HintText = "";
-            this.tbNoiGNDGGoc.isPassword = false;
-            this.tbNoiGNDGGoc.LineFocusedColor = System.Drawing.Color.Blue;
-            this.tbNoiGNDGGoc.LineIdleColor = System.Drawing.Color.Gray;
-            this.tbNoiGNDGGoc.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.tbNoiGNDGGoc.LineThickness = 3;
-            this.tbNoiGNDGGoc.Location = new System.Drawing.Point(178, 43);
-            this.tbNoiGNDGGoc.Margin = new System.Windows.Forms.Padding(4);
-            this.tbNoiGNDGGoc.Name = "tbNoiGNDGGoc";
-            this.tbNoiGNDGGoc.Size = new System.Drawing.Size(104, 30);
-            this.tbNoiGNDGGoc.TabIndex = 4;
-            this.tbNoiGNDGGoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(2, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "NCC";
-            // 
-            // panel4
-            // 
-            this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.btnEditDGGoc);
-            this.panel4.Controls.Add(this.btnCancelDGGoc);
-            this.panel4.Controls.Add(this.btnSaveDGGoc);
-            this.panel4.Controls.Add(this.btnDeleteDGGoc);
-            this.panel4.Controls.Add(this.btnNewDGGoc);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(546, 36);
-            this.panel4.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.AutoSize = true;
-            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(546, 0);
-            this.panel1.TabIndex = 0;
-            // 
-            // tabHH
-            // 
-            this.tabHH.AttachedControl = this.tabControlPanel1;
-            this.tabHH.Name = "tabHH";
-            this.tabHH.Text = "Hàng Hóa";
-            // 
-            // tabControlPanel7
-            // 
-            this.tabControlPanel7.Controls.Add(this.tabControlPanel8);
-            this.tabControlPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel7.Location = new System.Drawing.Point(0, 25);
-            this.tabControlPanel7.Name = "tabControlPanel7";
-            this.tabControlPanel7.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel7.Size = new System.Drawing.Size(974, 523);
-            this.tabControlPanel7.Style.BackColor1.Color = System.Drawing.Color.White;
-            this.tabControlPanel7.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel7.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel7.Style.GradientAngle = 90;
-            this.tabControlPanel7.TabIndex = 7;
-            this.tabControlPanel7.TabItem = this.tabItem9;
-            // 
-            // tabControlPanel8
-            // 
-            this.tabControlPanel8.Controls.Add(this.dtgNKNCC);
-            this.tabControlPanel8.Controls.Add(this.panelNKNCC);
-            this.tabControlPanel8.Controls.Add(this.panel29);
-            this.tabControlPanel8.Controls.Add(this.panel31);
-            this.tabControlPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel8.Location = new System.Drawing.Point(1, 1);
-            this.tabControlPanel8.Name = "tabControlPanel8";
-            this.tabControlPanel8.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel8.Size = new System.Drawing.Size(972, 521);
-            this.tabControlPanel8.Style.BackColor1.Color = System.Drawing.Color.White;
-            this.tabControlPanel8.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel8.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel8.Style.GradientAngle = 90;
-            this.tabControlPanel8.TabIndex = 4;
-            this.tabControlPanel8.TabItem = this.tabItem5;
-            // 
-            // dtgNKNCC
-            // 
-            this.dtgNKNCC.AllowUserToResizeRows = false;
-            this.dtgNKNCC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgNKNCC.Location = new System.Drawing.Point(1, 201);
-            this.dtgNKNCC.Name = "dtgNKNCC";
-            this.dtgNKNCC.ReadOnly = true;
-            this.dtgNKNCC.RowHeadersVisible = false;
-            this.dtgNKNCC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgNKNCC.Size = new System.Drawing.Size(970, 319);
-            this.dtgNKNCC.TabIndex = 9;
-            this.dtgNKNCC.VirtualMode = true;
-            this.dtgNKNCC.SelectionChanged += new System.EventHandler(this.dtgNKNCC_SelectionChanged);
-            // 
-            // panelNKNCC
-            // 
-            this.panelNKNCC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panelNKNCC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelNKNCC.Controls.Add(this.tbMaSoNKNCC);
-            this.panelNKNCC.Controls.Add(this.tbNoiNhanNKNCC);
-            this.panelNKNCC.Controls.Add(this.label101);
-            this.panelNKNCC.Controls.Add(this.cbNCCNKNCC);
-            this.panelNKNCC.Controls.Add(this.label93);
-            this.panelNKNCC.Controls.Add(this.cbTaiXeNKNCC);
-            this.panelNKNCC.Controls.Add(this.label85);
-            this.panelNKNCC.Controls.Add(this.cbKHNKNCC);
-            this.panelNKNCC.Controls.Add(this.label86);
-            this.panelNKNCC.Controls.Add(this.cbBienSoNKNCC);
-            this.panelNKNCC.Controls.Add(this.label87);
-            this.panelNKNCC.Controls.Add(this.label88);
-            this.panelNKNCC.Controls.Add(this.numSoLuongNKNCC);
-            this.panelNKNCC.Controls.Add(this.label89);
-            this.panelNKNCC.Controls.Add(this.cbHHNKNCC);
-            this.panelNKNCC.Controls.Add(this.dtpNgayNhanNKNCC);
-            this.panelNKNCC.Controls.Add(this.tbGhichuNKNCC);
-            this.panelNKNCC.Controls.Add(this.label90);
-            this.panelNKNCC.Controls.Add(this.label91);
-            this.panelNKNCC.Controls.Add(this.label92);
-            this.panelNKNCC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelNKNCC.Location = new System.Drawing.Point(1, 108);
-            this.panelNKNCC.Name = "panelNKNCC";
-            this.panelNKNCC.Size = new System.Drawing.Size(970, 93);
-            this.panelNKNCC.TabIndex = 6;
-            this.panelNKNCC.Visible = false;
-            // 
-            // tbMaSoNKNCC
-            // 
-            this.tbMaSoNKNCC.Location = new System.Drawing.Point(48, 33);
-            this.tbMaSoNKNCC.Name = "tbMaSoNKNCC";
-            this.tbMaSoNKNCC.Size = new System.Drawing.Size(103, 20);
-            this.tbMaSoNKNCC.TabIndex = 4;
-            // 
-            // tbNoiNhanNKNCC
-            // 
-            this.tbNoiNhanNKNCC.Location = new System.Drawing.Point(232, 31);
-            this.tbNoiNhanNKNCC.Name = "tbNoiNhanNKNCC";
-            this.tbNoiNhanNKNCC.Size = new System.Drawing.Size(131, 20);
-            this.tbNoiNhanNKNCC.TabIndex = 5;
-            // 
-            // label101
-            // 
-            this.label101.AutoSize = true;
-            this.label101.Location = new System.Drawing.Point(172, 36);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(60, 13);
-            this.label101.TabIndex = 53;
-            this.label101.Text = "Nơi Nhận";
-            // 
-            // cbNCCNKNCC
-            // 
-            this.cbNCCNKNCC.AllowDrop = true;
-            this.cbNCCNKNCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbNCCNKNCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbNCCNKNCC.FormattingEnabled = true;
-            this.cbNCCNKNCC.Location = new System.Drawing.Point(48, 4);
-            this.cbNCCNKNCC.Name = "cbNCCNKNCC";
-            this.cbNCCNKNCC.Size = new System.Drawing.Size(105, 21);
-            this.cbNCCNKNCC.TabIndex = 1;
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(4, 8);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(32, 13);
-            this.label93.TabIndex = 52;
-            this.label93.Text = "NCC";
-            // 
-            // cbTaiXeNKNCC
-            // 
-            this.cbTaiXeNKNCC.AllowDrop = true;
-            this.cbTaiXeNKNCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbTaiXeNKNCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbTaiXeNKNCC.FormattingEnabled = true;
-            this.cbTaiXeNKNCC.Location = new System.Drawing.Point(445, 61);
-            this.cbTaiXeNKNCC.Name = "cbTaiXeNKNCC";
-            this.cbTaiXeNKNCC.Size = new System.Drawing.Size(105, 21);
-            this.cbTaiXeNKNCC.TabIndex = 9;
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(401, 65);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(44, 13);
-            this.label85.TabIndex = 50;
-            this.label85.Text = "Tài Xế";
-            // 
-            // cbKHNKNCC
-            // 
-            this.cbKHNKNCC.AllowDrop = true;
-            this.cbKHNKNCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbKHNKNCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbKHNKNCC.FormattingEnabled = true;
-            this.cbKHNKNCC.Location = new System.Drawing.Point(232, 59);
-            this.cbKHNKNCC.Name = "cbKHNKNCC";
-            this.cbKHNKNCC.Size = new System.Drawing.Size(131, 21);
-            this.cbKHNKNCC.TabIndex = 8;
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(191, 63);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(24, 13);
-            this.label86.TabIndex = 48;
-            this.label86.Text = "KH";
-            // 
-            // cbBienSoNKNCC
-            // 
-            this.cbBienSoNKNCC.AllowDrop = true;
-            this.cbBienSoNKNCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbBienSoNKNCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbBienSoNKNCC.FormattingEnabled = true;
-            this.cbBienSoNKNCC.Location = new System.Drawing.Point(48, 62);
-            this.cbBienSoNKNCC.Name = "cbBienSoNKNCC";
-            this.cbBienSoNKNCC.Size = new System.Drawing.Size(105, 21);
-            this.cbBienSoNKNCC.TabIndex = 7;
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(-3, 66);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(49, 13);
-            this.label87.TabIndex = 46;
-            this.label87.Text = "Biển số";
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(397, 38);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(48, 13);
-            this.label88.TabIndex = 44;
-            this.label88.Text = "Số Tấn";
-            // 
-            // numSoLuongNKNCC
-            // 
-            this.numSoLuongNKNCC.DecimalPlaces = 1;
-            this.numSoLuongNKNCC.Location = new System.Drawing.Point(445, 34);
-            this.numSoLuongNKNCC.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.numSoLuongNKNCC.Name = "numSoLuongNKNCC";
-            this.numSoLuongNKNCC.Size = new System.Drawing.Size(59, 20);
-            this.numSoLuongNKNCC.TabIndex = 6;
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(2, 37);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(41, 13);
-            this.label89.TabIndex = 41;
-            this.label89.Text = "Mã số";
-            // 
-            // cbHHNKNCC
-            // 
-            this.cbHHNKNCC.AllowDrop = true;
-            this.cbHHNKNCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbHHNKNCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbHHNKNCC.FormattingEnabled = true;
-            this.cbHHNKNCC.Location = new System.Drawing.Point(445, 5);
-            this.cbHHNKNCC.Name = "cbHHNKNCC";
-            this.cbHHNKNCC.Size = new System.Drawing.Size(221, 21);
-            this.cbHHNKNCC.TabIndex = 3;
-            // 
-            // dtpNgayNhanNKNCC
-            // 
-            this.dtpNgayNhanNKNCC.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayNhanNKNCC.Location = new System.Drawing.Point(232, 3);
-            this.dtpNgayNhanNKNCC.Name = "dtpNgayNhanNKNCC";
-            this.dtpNgayNhanNKNCC.Size = new System.Drawing.Size(130, 20);
-            this.dtpNgayNhanNKNCC.TabIndex = 2;
-            // 
-            // tbGhichuNKNCC
-            // 
-            this.tbGhichuNKNCC.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbGhichuNKNCC.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tbGhichuNKNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbGhichuNKNCC.HintForeColor = System.Drawing.Color.Empty;
-            this.tbGhichuNKNCC.HintText = "";
-            this.tbGhichuNKNCC.isPassword = false;
-            this.tbGhichuNKNCC.LineFocusedColor = System.Drawing.Color.Blue;
-            this.tbGhichuNKNCC.LineIdleColor = System.Drawing.Color.Gray;
-            this.tbGhichuNKNCC.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.tbGhichuNKNCC.LineThickness = 3;
-            this.tbGhichuNKNCC.Location = new System.Drawing.Point(627, 61);
-            this.tbGhichuNKNCC.Margin = new System.Windows.Forms.Padding(4);
-            this.tbGhichuNKNCC.Name = "tbGhichuNKNCC";
-            this.tbGhichuNKNCC.Size = new System.Drawing.Size(288, 21);
-            this.tbGhichuNKNCC.TabIndex = 10;
-            this.tbGhichuNKNCC.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Location = new System.Drawing.Point(576, 65);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(51, 13);
-            this.label90.TabIndex = 6;
-            this.label90.Text = "Ghi chú";
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(182, 6);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(36, 13);
-            this.label91.TabIndex = 4;
-            this.label91.Text = "Ngày";
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(382, 7);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(63, 13);
-            this.label92.TabIndex = 2;
-            this.label92.Text = "Tên Hàng";
-            // 
-            // panel29
-            // 
-            this.panel29.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel29.Controls.Add(this.btneditnkncc);
-            this.panel29.Controls.Add(this.btncancelnkncc);
-            this.panel29.Controls.Add(this.btnsavenkncc);
-            this.panel29.Controls.Add(this.btndeletenkncc);
-            this.panel29.Controls.Add(this.btnnewnkncc);
-            this.panel29.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel29.Location = new System.Drawing.Point(1, 72);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(970, 36);
-            this.panel29.TabIndex = 7;
-            // 
-            // panel31
-            // 
-            this.panel31.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel31.Controls.Add(this.label94);
-            this.panel31.Controls.Add(this.dtpKTLayHangNCC);
-            this.panel31.Controls.Add(this.label95);
-            this.panel31.Controls.Add(this.dtpBDLayHangNCC);
-            this.panel31.Controls.Add(this.tbHHNKNCCFilter);
-            this.panel31.Controls.Add(this.tbNCCNKNCC);
-            this.panel31.Controls.Add(this.label96);
-            this.panel31.Controls.Add(this.label99);
-            this.panel31.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel31.Location = new System.Drawing.Point(1, 1);
-            this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(970, 71);
-            this.panel31.TabIndex = 8;
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(174, 8);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(63, 13);
-            this.label94.TabIndex = 12;
-            this.label94.Text = "Đến Ngày";
-            // 
-            // dtpKTLayHangNCC
-            // 
-            this.dtpKTLayHangNCC.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpKTLayHangNCC.Location = new System.Drawing.Point(237, 4);
-            this.dtpKTLayHangNCC.Name = "dtpKTLayHangNCC";
-            this.dtpKTLayHangNCC.Size = new System.Drawing.Size(105, 20);
-            this.dtpKTLayHangNCC.TabIndex = 11;
-            this.dtpKTLayHangNCC.ValueChanged += new System.EventHandler(this.dtpKTLayHangNCC_ValueChanged);
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(5, 8);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(55, 13);
-            this.label95.TabIndex = 10;
-            this.label95.Text = "Từ Ngày";
-            // 
-            // dtpBDLayHangNCC
-            // 
-            this.dtpBDLayHangNCC.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBDLayHangNCC.Location = new System.Drawing.Point(64, 4);
-            this.dtpBDLayHangNCC.Name = "dtpBDLayHangNCC";
-            this.dtpBDLayHangNCC.Size = new System.Drawing.Size(105, 20);
-            this.dtpBDLayHangNCC.TabIndex = 9;
-            this.dtpBDLayHangNCC.ValueChanged += new System.EventHandler(this.dtpBDLayHangNCC_ValueChanged);
-            // 
-            // tbHHNKNCCFilter
-            // 
-            this.tbHHNKNCCFilter.Location = new System.Drawing.Point(237, 37);
-            this.tbHHNKNCCFilter.Name = "tbHHNKNCCFilter";
-            this.tbHHNKNCCFilter.Size = new System.Drawing.Size(205, 20);
-            this.tbHHNKNCCFilter.TabIndex = 8;
-            this.tbHHNKNCCFilter.TextChanged += new System.EventHandler(this.tbMasoNKNCCFilter_TextChanged);
-            // 
-            // tbNCCNKNCC
-            // 
-            this.tbNCCNKNCC.Location = new System.Drawing.Point(64, 37);
-            this.tbNCCNKNCC.Name = "tbNCCNKNCC";
-            this.tbNCCNKNCC.Size = new System.Drawing.Size(105, 20);
-            this.tbNCCNKNCC.TabIndex = 7;
-            this.tbNCCNKNCC.TextChanged += new System.EventHandler(this.tbTenHangNKNCC_TextChanged);
-            // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.Location = new System.Drawing.Point(174, 41);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(63, 13);
-            this.label96.TabIndex = 6;
-            this.label96.Text = "Tên Hàng";
-            // 
-            // label99
-            // 
-            this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(5, 41);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(32, 13);
-            this.label99.TabIndex = 4;
-            this.label99.Text = "NCC";
-            // 
-            // tabItem9
-            // 
-            this.tabItem9.AttachedControl = this.tabControlPanel7;
-            this.tabItem9.Name = "tabItem9";
-            this.tabItem9.Text = "Nhật Ký NCC";
-            // 
             // tabControlPanel3
             // 
             this.tabControlPanel3.Controls.Add(this.splitContainer3);
@@ -3895,7 +4647,7 @@
             this.tabControlPanel3.Location = new System.Drawing.Point(0, 25);
             this.tabControlPanel3.Name = "tabControlPanel3";
             this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel3.Size = new System.Drawing.Size(974, 523);
+            this.tabControlPanel3.Size = new System.Drawing.Size(974, 521);
             this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.White;
             this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
@@ -3920,7 +4672,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.panelChuyenDoiNCC);
             this.splitContainer3.Panel2.Controls.Add(this.panel16);
             this.splitContainer3.Panel2.Controls.Add(this.panel17);
-            this.splitContainer3.Size = new System.Drawing.Size(972, 521);
+            this.splitContainer3.Size = new System.Drawing.Size(972, 519);
             this.splitContainer3.SplitterDistance = 422;
             this.splitContainer3.TabIndex = 2;
             // 
@@ -3932,7 +4684,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(422, 521);
+            this.panel7.Size = new System.Drawing.Size(422, 519);
             this.panel7.TabIndex = 16;
             // 
             // dtgNCC
@@ -3946,7 +4698,7 @@
             this.dtgNCC.ReadOnly = true;
             this.dtgNCC.RowHeadersVisible = false;
             this.dtgNCC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgNCC.Size = new System.Drawing.Size(422, 393);
+            this.dtgNCC.Size = new System.Drawing.Size(422, 391);
             this.dtgNCC.TabIndex = 5;
             this.dtgNCC.SelectionChanged += new System.EventHandler(this.dtgNCC_SelectionChanged);
             // 
@@ -4066,6 +4818,73 @@
             this.panel10.Size = new System.Drawing.Size(422, 36);
             this.panel10.TabIndex = 2;
             // 
+            // btneditncc
+            // 
+            this.btneditncc.AutoSize = true;
+            this.btneditncc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btneditncc.Image = ((System.Drawing.Image)(resources.GetObject("btneditncc.Image")));
+            this.btneditncc.Location = new System.Drawing.Point(33, 3);
+            this.btneditncc.Name = "btneditncc";
+            this.btneditncc.Size = new System.Drawing.Size(30, 30);
+            this.btneditncc.TabIndex = 37;
+            this.btneditncc.Tag = "Edit";
+            this.btneditncc.UseVisualStyleBackColor = true;
+            this.btneditncc.Click += new System.EventHandler(this.btneditncc_Click);
+            // 
+            // btncancelncc
+            // 
+            this.btncancelncc.AutoSize = true;
+            this.btncancelncc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btncancelncc.Enabled = false;
+            this.btncancelncc.Image = ((System.Drawing.Image)(resources.GetObject("btncancelncc.Image")));
+            this.btncancelncc.Location = new System.Drawing.Point(123, 3);
+            this.btncancelncc.Name = "btncancelncc";
+            this.btncancelncc.Size = new System.Drawing.Size(30, 30);
+            this.btncancelncc.TabIndex = 36;
+            this.btncancelncc.Tag = "Cancel";
+            this.btncancelncc.UseVisualStyleBackColor = true;
+            this.btncancelncc.Click += new System.EventHandler(this.btncancelncc_Click);
+            // 
+            // btnsavencc
+            // 
+            this.btnsavencc.AutoSize = true;
+            this.btnsavencc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnsavencc.Enabled = false;
+            this.btnsavencc.Image = ((System.Drawing.Image)(resources.GetObject("btnsavencc.Image")));
+            this.btnsavencc.Location = new System.Drawing.Point(93, 3);
+            this.btnsavencc.Name = "btnsavencc";
+            this.btnsavencc.Size = new System.Drawing.Size(30, 30);
+            this.btnsavencc.TabIndex = 35;
+            this.btnsavencc.Tag = "Save";
+            this.btnsavencc.UseVisualStyleBackColor = true;
+            this.btnsavencc.Click += new System.EventHandler(this.btnsavencc_Click);
+            // 
+            // btndeletencc
+            // 
+            this.btndeletencc.AutoSize = true;
+            this.btndeletencc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btndeletencc.Image = ((System.Drawing.Image)(resources.GetObject("btndeletencc.Image")));
+            this.btndeletencc.Location = new System.Drawing.Point(63, 3);
+            this.btndeletencc.Name = "btndeletencc";
+            this.btndeletencc.Size = new System.Drawing.Size(30, 30);
+            this.btndeletencc.TabIndex = 34;
+            this.btndeletencc.Tag = "Delete";
+            this.btndeletencc.UseVisualStyleBackColor = true;
+            this.btndeletencc.Click += new System.EventHandler(this.btndeletencc_Click);
+            // 
+            // btnnewncc
+            // 
+            this.btnnewncc.AutoSize = true;
+            this.btnnewncc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnnewncc.Image = ((System.Drawing.Image)(resources.GetObject("btnnewncc.Image")));
+            this.btnnewncc.Location = new System.Drawing.Point(3, 3);
+            this.btnnewncc.Name = "btnnewncc";
+            this.btnnewncc.Size = new System.Drawing.Size(30, 30);
+            this.btnnewncc.TabIndex = 33;
+            this.btnnewncc.Tag = "New";
+            this.btnnewncc.UseVisualStyleBackColor = true;
+            this.btnnewncc.Click += new System.EventHandler(this.btnnewncc_Click);
+            // 
             // dtgChuyenDoiNCC
             // 
             this.dtgChuyenDoiNCC.AllowUserToResizeRows = false;
@@ -4077,7 +4896,7 @@
             this.dtgChuyenDoiNCC.ReadOnly = true;
             this.dtgChuyenDoiNCC.RowHeadersVisible = false;
             this.dtgChuyenDoiNCC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgChuyenDoiNCC.Size = new System.Drawing.Size(546, 441);
+            this.dtgChuyenDoiNCC.Size = new System.Drawing.Size(546, 439);
             this.dtgChuyenDoiNCC.TabIndex = 5;
             this.dtgChuyenDoiNCC.SelectionChanged += new System.EventHandler(this.dtgChuyenDoiNCC_SelectionChanged);
             // 
@@ -4180,766 +4999,6 @@
             this.label46.Text = "Bảng chuyển đổi để áp giá";
             this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel17
-            // 
-            this.panel17.AutoSize = true;
-            this.panel17.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel17.Location = new System.Drawing.Point(0, 0);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(546, 0);
-            this.panel17.TabIndex = 0;
-            // 
-            // tabItem6
-            // 
-            this.tabItem6.AttachedControl = this.tabControlPanel3;
-            this.tabItem6.Name = "tabItem6";
-            this.tabItem6.Text = "NCC";
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = null;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // btneditnhapkho
-            // 
-            this.btneditnhapkho.AutoSize = true;
-            this.btneditnhapkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btneditnhapkho.Image = ((System.Drawing.Image)(resources.GetObject("btneditnhapkho.Image")));
-            this.btneditnhapkho.Location = new System.Drawing.Point(33, 3);
-            this.btneditnhapkho.Name = "btneditnhapkho";
-            this.btneditnhapkho.Size = new System.Drawing.Size(30, 30);
-            this.btneditnhapkho.TabIndex = 37;
-            this.btneditnhapkho.Tag = "Edit";
-            this.btneditnhapkho.UseVisualStyleBackColor = true;
-            this.btneditnhapkho.Click += new System.EventHandler(this.btneditnhapkho_Click);
-            // 
-            // btncancelnhapkho
-            // 
-            this.btncancelnhapkho.AutoSize = true;
-            this.btncancelnhapkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btncancelnhapkho.Enabled = false;
-            this.btncancelnhapkho.Image = ((System.Drawing.Image)(resources.GetObject("btncancelnhapkho.Image")));
-            this.btncancelnhapkho.Location = new System.Drawing.Point(123, 3);
-            this.btncancelnhapkho.Name = "btncancelnhapkho";
-            this.btncancelnhapkho.Size = new System.Drawing.Size(30, 30);
-            this.btncancelnhapkho.TabIndex = 36;
-            this.btncancelnhapkho.Tag = "Cancel";
-            this.btncancelnhapkho.UseVisualStyleBackColor = true;
-            this.btncancelnhapkho.Click += new System.EventHandler(this.btncancelnhapkho_Click);
-            // 
-            // btnsavenhapkho
-            // 
-            this.btnsavenhapkho.AutoSize = true;
-            this.btnsavenhapkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnsavenhapkho.Enabled = false;
-            this.btnsavenhapkho.Image = ((System.Drawing.Image)(resources.GetObject("btnsavenhapkho.Image")));
-            this.btnsavenhapkho.Location = new System.Drawing.Point(93, 3);
-            this.btnsavenhapkho.Name = "btnsavenhapkho";
-            this.btnsavenhapkho.Size = new System.Drawing.Size(30, 30);
-            this.btnsavenhapkho.TabIndex = 35;
-            this.btnsavenhapkho.Tag = "Save";
-            this.btnsavenhapkho.UseVisualStyleBackColor = true;
-            this.btnsavenhapkho.Click += new System.EventHandler(this.btnsavenhapkho_Click);
-            // 
-            // btndeletenhapkho
-            // 
-            this.btndeletenhapkho.AutoSize = true;
-            this.btndeletenhapkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btndeletenhapkho.Image = ((System.Drawing.Image)(resources.GetObject("btndeletenhapkho.Image")));
-            this.btndeletenhapkho.Location = new System.Drawing.Point(63, 3);
-            this.btndeletenhapkho.Name = "btndeletenhapkho";
-            this.btndeletenhapkho.Size = new System.Drawing.Size(30, 30);
-            this.btndeletenhapkho.TabIndex = 34;
-            this.btndeletenhapkho.Tag = "Delete";
-            this.btndeletenhapkho.UseVisualStyleBackColor = true;
-            this.btndeletenhapkho.Click += new System.EventHandler(this.btndeletenhapkho_Click);
-            // 
-            // btnnewnhapkho
-            // 
-            this.btnnewnhapkho.AutoSize = true;
-            this.btnnewnhapkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnnewnhapkho.Image = ((System.Drawing.Image)(resources.GetObject("btnnewnhapkho.Image")));
-            this.btnnewnhapkho.Location = new System.Drawing.Point(3, 3);
-            this.btnnewnhapkho.Name = "btnnewnhapkho";
-            this.btnnewnhapkho.Size = new System.Drawing.Size(30, 30);
-            this.btnnewnhapkho.TabIndex = 33;
-            this.btnnewnhapkho.Tag = "New";
-            this.btnnewnhapkho.UseVisualStyleBackColor = true;
-            this.btnnewnhapkho.Click += new System.EventHandler(this.btnnewnhapkho_Click);
-            // 
-            // btneditxuatkho
-            // 
-            this.btneditxuatkho.AutoSize = true;
-            this.btneditxuatkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btneditxuatkho.Image = ((System.Drawing.Image)(resources.GetObject("btneditxuatkho.Image")));
-            this.btneditxuatkho.Location = new System.Drawing.Point(33, 3);
-            this.btneditxuatkho.Name = "btneditxuatkho";
-            this.btneditxuatkho.Size = new System.Drawing.Size(30, 30);
-            this.btneditxuatkho.TabIndex = 37;
-            this.btneditxuatkho.Tag = "Edit";
-            this.btneditxuatkho.UseVisualStyleBackColor = true;
-            this.btneditxuatkho.Click += new System.EventHandler(this.btneditxuatkho_Click);
-            // 
-            // btncancelxuatkho
-            // 
-            this.btncancelxuatkho.AutoSize = true;
-            this.btncancelxuatkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btncancelxuatkho.Enabled = false;
-            this.btncancelxuatkho.Image = ((System.Drawing.Image)(resources.GetObject("btncancelxuatkho.Image")));
-            this.btncancelxuatkho.Location = new System.Drawing.Point(123, 3);
-            this.btncancelxuatkho.Name = "btncancelxuatkho";
-            this.btncancelxuatkho.Size = new System.Drawing.Size(30, 30);
-            this.btncancelxuatkho.TabIndex = 36;
-            this.btncancelxuatkho.Tag = "Cancel";
-            this.btncancelxuatkho.UseVisualStyleBackColor = true;
-            this.btncancelxuatkho.Click += new System.EventHandler(this.btncancelxuatkho_Click);
-            // 
-            // btnsavexuatkho
-            // 
-            this.btnsavexuatkho.AutoSize = true;
-            this.btnsavexuatkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnsavexuatkho.Enabled = false;
-            this.btnsavexuatkho.Image = ((System.Drawing.Image)(resources.GetObject("btnsavexuatkho.Image")));
-            this.btnsavexuatkho.Location = new System.Drawing.Point(93, 3);
-            this.btnsavexuatkho.Name = "btnsavexuatkho";
-            this.btnsavexuatkho.Size = new System.Drawing.Size(30, 30);
-            this.btnsavexuatkho.TabIndex = 35;
-            this.btnsavexuatkho.Tag = "Save";
-            this.btnsavexuatkho.UseVisualStyleBackColor = true;
-            this.btnsavexuatkho.Click += new System.EventHandler(this.btnsavexuatkho_Click);
-            // 
-            // btndeletexuatkho
-            // 
-            this.btndeletexuatkho.AutoSize = true;
-            this.btndeletexuatkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btndeletexuatkho.Image = ((System.Drawing.Image)(resources.GetObject("btndeletexuatkho.Image")));
-            this.btndeletexuatkho.Location = new System.Drawing.Point(63, 3);
-            this.btndeletexuatkho.Name = "btndeletexuatkho";
-            this.btndeletexuatkho.Size = new System.Drawing.Size(30, 30);
-            this.btndeletexuatkho.TabIndex = 34;
-            this.btndeletexuatkho.Tag = "Delete";
-            this.btndeletexuatkho.UseVisualStyleBackColor = true;
-            this.btndeletexuatkho.Click += new System.EventHandler(this.btndeletexuatkho_Click);
-            // 
-            // btnnewxuatkho
-            // 
-            this.btnnewxuatkho.AutoSize = true;
-            this.btnnewxuatkho.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnnewxuatkho.Image = ((System.Drawing.Image)(resources.GetObject("btnnewxuatkho.Image")));
-            this.btnnewxuatkho.Location = new System.Drawing.Point(3, 3);
-            this.btnnewxuatkho.Name = "btnnewxuatkho";
-            this.btnnewxuatkho.Size = new System.Drawing.Size(30, 30);
-            this.btnnewxuatkho.TabIndex = 33;
-            this.btnnewxuatkho.Tag = "New";
-            this.btnnewxuatkho.UseVisualStyleBackColor = true;
-            this.btnnewxuatkho.Click += new System.EventHandler(this.btnnewxuatkho_Click);
-            // 
-            // btneditkh
-            // 
-            this.btneditkh.AutoSize = true;
-            this.btneditkh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btneditkh.Image = ((System.Drawing.Image)(resources.GetObject("btneditkh.Image")));
-            this.btneditkh.Location = new System.Drawing.Point(33, 3);
-            this.btneditkh.Name = "btneditkh";
-            this.btneditkh.Size = new System.Drawing.Size(30, 30);
-            this.btneditkh.TabIndex = 37;
-            this.btneditkh.Tag = "Edit";
-            this.btneditkh.UseVisualStyleBackColor = true;
-            this.btneditkh.Click += new System.EventHandler(this.btneditkh_Click);
-            // 
-            // btncancelkh
-            // 
-            this.btncancelkh.AutoSize = true;
-            this.btncancelkh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btncancelkh.Enabled = false;
-            this.btncancelkh.Image = ((System.Drawing.Image)(resources.GetObject("btncancelkh.Image")));
-            this.btncancelkh.Location = new System.Drawing.Point(123, 3);
-            this.btncancelkh.Name = "btncancelkh";
-            this.btncancelkh.Size = new System.Drawing.Size(30, 30);
-            this.btncancelkh.TabIndex = 36;
-            this.btncancelkh.Tag = "Cancel";
-            this.btncancelkh.UseVisualStyleBackColor = true;
-            this.btncancelkh.Click += new System.EventHandler(this.btncancelkh_Click);
-            // 
-            // btnsavekh
-            // 
-            this.btnsavekh.AutoSize = true;
-            this.btnsavekh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnsavekh.Enabled = false;
-            this.btnsavekh.Image = ((System.Drawing.Image)(resources.GetObject("btnsavekh.Image")));
-            this.btnsavekh.Location = new System.Drawing.Point(93, 3);
-            this.btnsavekh.Name = "btnsavekh";
-            this.btnsavekh.Size = new System.Drawing.Size(30, 30);
-            this.btnsavekh.TabIndex = 35;
-            this.btnsavekh.Tag = "Save";
-            this.btnsavekh.UseVisualStyleBackColor = true;
-            this.btnsavekh.Click += new System.EventHandler(this.btnsavekh_Click);
-            // 
-            // btndeletekh
-            // 
-            this.btndeletekh.AutoSize = true;
-            this.btndeletekh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btndeletekh.Image = ((System.Drawing.Image)(resources.GetObject("btndeletekh.Image")));
-            this.btndeletekh.Location = new System.Drawing.Point(63, 3);
-            this.btndeletekh.Name = "btndeletekh";
-            this.btndeletekh.Size = new System.Drawing.Size(30, 30);
-            this.btndeletekh.TabIndex = 34;
-            this.btndeletekh.Tag = "Delete";
-            this.btndeletekh.UseVisualStyleBackColor = true;
-            this.btndeletekh.Click += new System.EventHandler(this.btndeletekh_Click);
-            // 
-            // btnNewKH
-            // 
-            this.btnNewKH.AutoSize = true;
-            this.btnNewKH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnNewKH.Image = ((System.Drawing.Image)(resources.GetObject("btnNewKH.Image")));
-            this.btnNewKH.Location = new System.Drawing.Point(3, 3);
-            this.btnNewKH.Name = "btnNewKH";
-            this.btnNewKH.Size = new System.Drawing.Size(30, 30);
-            this.btnNewKH.TabIndex = 33;
-            this.btnNewKH.Tag = "New";
-            this.btnNewKH.UseVisualStyleBackColor = true;
-            this.btnNewKH.Click += new System.EventHandler(this.btnNewKH_Click);
-            // 
-            // btnEditDC
-            // 
-            this.btnEditDC.AutoSize = true;
-            this.btnEditDC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnEditDC.Image = ((System.Drawing.Image)(resources.GetObject("btnEditDC.Image")));
-            this.btnEditDC.Location = new System.Drawing.Point(30, 2);
-            this.btnEditDC.Name = "btnEditDC";
-            this.btnEditDC.Size = new System.Drawing.Size(30, 30);
-            this.btnEditDC.TabIndex = 42;
-            this.btnEditDC.Tag = "Edit";
-            this.btnEditDC.UseVisualStyleBackColor = true;
-            this.btnEditDC.Click += new System.EventHandler(this.btnEditDC_Click);
-            // 
-            // btnCancelDC
-            // 
-            this.btnCancelDC.AutoSize = true;
-            this.btnCancelDC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCancelDC.Enabled = false;
-            this.btnCancelDC.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelDC.Image")));
-            this.btnCancelDC.Location = new System.Drawing.Point(120, 2);
-            this.btnCancelDC.Name = "btnCancelDC";
-            this.btnCancelDC.Size = new System.Drawing.Size(30, 30);
-            this.btnCancelDC.TabIndex = 41;
-            this.btnCancelDC.Tag = "Cancel";
-            this.btnCancelDC.UseVisualStyleBackColor = true;
-            this.btnCancelDC.Click += new System.EventHandler(this.btnCancelDC_Click);
-            // 
-            // btnSaveDC
-            // 
-            this.btnSaveDC.AutoSize = true;
-            this.btnSaveDC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSaveDC.Enabled = false;
-            this.btnSaveDC.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveDC.Image")));
-            this.btnSaveDC.Location = new System.Drawing.Point(90, 2);
-            this.btnSaveDC.Name = "btnSaveDC";
-            this.btnSaveDC.Size = new System.Drawing.Size(30, 30);
-            this.btnSaveDC.TabIndex = 40;
-            this.btnSaveDC.Tag = "Save";
-            this.btnSaveDC.UseVisualStyleBackColor = true;
-            this.btnSaveDC.Click += new System.EventHandler(this.btnSaveDC_Click);
-            // 
-            // btnDeleteDC
-            // 
-            this.btnDeleteDC.AutoSize = true;
-            this.btnDeleteDC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnDeleteDC.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteDC.Image")));
-            this.btnDeleteDC.Location = new System.Drawing.Point(60, 2);
-            this.btnDeleteDC.Name = "btnDeleteDC";
-            this.btnDeleteDC.Size = new System.Drawing.Size(30, 30);
-            this.btnDeleteDC.TabIndex = 39;
-            this.btnDeleteDC.Tag = "Delete";
-            this.btnDeleteDC.UseVisualStyleBackColor = true;
-            this.btnDeleteDC.Click += new System.EventHandler(this.btnDeleteDC_Click);
-            // 
-            // btnNewDC
-            // 
-            this.btnNewDC.AutoSize = true;
-            this.btnNewDC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnNewDC.Image = ((System.Drawing.Image)(resources.GetObject("btnNewDC.Image")));
-            this.btnNewDC.Location = new System.Drawing.Point(0, 2);
-            this.btnNewDC.Name = "btnNewDC";
-            this.btnNewDC.Size = new System.Drawing.Size(30, 30);
-            this.btnNewDC.TabIndex = 38;
-            this.btnNewDC.Tag = "New";
-            this.btnNewDC.UseVisualStyleBackColor = true;
-            this.btnNewDC.Click += new System.EventHandler(this.btnNewDC_Click);
-            // 
-            // btneditnkncc
-            // 
-            this.btneditnkncc.AutoSize = true;
-            this.btneditnkncc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btneditnkncc.Image = ((System.Drawing.Image)(resources.GetObject("btneditnkncc.Image")));
-            this.btneditnkncc.Location = new System.Drawing.Point(33, 3);
-            this.btneditnkncc.Name = "btneditnkncc";
-            this.btneditnkncc.Size = new System.Drawing.Size(30, 30);
-            this.btneditnkncc.TabIndex = 37;
-            this.btneditnkncc.Tag = "Edit";
-            this.btneditnkncc.UseVisualStyleBackColor = true;
-            this.btneditnkncc.Click += new System.EventHandler(this.btneditnkncc_Click);
-            // 
-            // btncancelnkncc
-            // 
-            this.btncancelnkncc.AutoSize = true;
-            this.btncancelnkncc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btncancelnkncc.Enabled = false;
-            this.btncancelnkncc.Image = ((System.Drawing.Image)(resources.GetObject("btncancelnkncc.Image")));
-            this.btncancelnkncc.Location = new System.Drawing.Point(123, 3);
-            this.btncancelnkncc.Name = "btncancelnkncc";
-            this.btncancelnkncc.Size = new System.Drawing.Size(30, 30);
-            this.btncancelnkncc.TabIndex = 36;
-            this.btncancelnkncc.Tag = "Cancel";
-            this.btncancelnkncc.UseVisualStyleBackColor = true;
-            this.btncancelnkncc.Click += new System.EventHandler(this.btncancelnkncc_Click);
-            // 
-            // btnsavenkncc
-            // 
-            this.btnsavenkncc.AutoSize = true;
-            this.btnsavenkncc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnsavenkncc.Enabled = false;
-            this.btnsavenkncc.Image = ((System.Drawing.Image)(resources.GetObject("btnsavenkncc.Image")));
-            this.btnsavenkncc.Location = new System.Drawing.Point(93, 3);
-            this.btnsavenkncc.Name = "btnsavenkncc";
-            this.btnsavenkncc.Size = new System.Drawing.Size(30, 30);
-            this.btnsavenkncc.TabIndex = 35;
-            this.btnsavenkncc.Tag = "Save";
-            this.btnsavenkncc.UseVisualStyleBackColor = true;
-            this.btnsavenkncc.Click += new System.EventHandler(this.btnsavenkncc_Click);
-            // 
-            // btndeletenkncc
-            // 
-            this.btndeletenkncc.AutoSize = true;
-            this.btndeletenkncc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btndeletenkncc.Image = ((System.Drawing.Image)(resources.GetObject("btndeletenkncc.Image")));
-            this.btndeletenkncc.Location = new System.Drawing.Point(63, 3);
-            this.btndeletenkncc.Name = "btndeletenkncc";
-            this.btndeletenkncc.Size = new System.Drawing.Size(30, 30);
-            this.btndeletenkncc.TabIndex = 34;
-            this.btndeletenkncc.Tag = "Delete";
-            this.btndeletenkncc.UseVisualStyleBackColor = true;
-            this.btndeletenkncc.Click += new System.EventHandler(this.btndeletenkncc_Click);
-            // 
-            // btnnewnkncc
-            // 
-            this.btnnewnkncc.AutoSize = true;
-            this.btnnewnkncc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnnewnkncc.Image = ((System.Drawing.Image)(resources.GetObject("btnnewnkncc.Image")));
-            this.btnnewnkncc.Location = new System.Drawing.Point(3, 3);
-            this.btnnewnkncc.Name = "btnnewnkncc";
-            this.btnnewnkncc.Size = new System.Drawing.Size(30, 30);
-            this.btnnewnkncc.TabIndex = 33;
-            this.btnnewnkncc.Tag = "New";
-            this.btnnewnkncc.UseVisualStyleBackColor = true;
-            this.btnnewnkncc.Click += new System.EventHandler(this.btnnewnkncc_Click);
-            // 
-            // btnEditHH
-            // 
-            this.btnEditHH.AutoSize = true;
-            this.btnEditHH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnEditHH.Image = ((System.Drawing.Image)(resources.GetObject("btnEditHH.Image")));
-            this.btnEditHH.Location = new System.Drawing.Point(33, 3);
-            this.btnEditHH.Name = "btnEditHH";
-            this.btnEditHH.Size = new System.Drawing.Size(30, 30);
-            this.btnEditHH.TabIndex = 37;
-            this.btnEditHH.Tag = "Edit";
-            this.btnEditHH.UseVisualStyleBackColor = true;
-            this.btnEditHH.Click += new System.EventHandler(this.btnEditHH_Click);
-            // 
-            // btnCancelHH
-            // 
-            this.btnCancelHH.AutoSize = true;
-            this.btnCancelHH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCancelHH.Enabled = false;
-            this.btnCancelHH.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelHH.Image")));
-            this.btnCancelHH.Location = new System.Drawing.Point(123, 3);
-            this.btnCancelHH.Name = "btnCancelHH";
-            this.btnCancelHH.Size = new System.Drawing.Size(30, 30);
-            this.btnCancelHH.TabIndex = 36;
-            this.btnCancelHH.Tag = "Cancel";
-            this.btnCancelHH.UseVisualStyleBackColor = true;
-            this.btnCancelHH.Click += new System.EventHandler(this.btnCancelHH_Click);
-            // 
-            // btnSaveHH
-            // 
-            this.btnSaveHH.AutoSize = true;
-            this.btnSaveHH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSaveHH.Enabled = false;
-            this.btnSaveHH.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveHH.Image")));
-            this.btnSaveHH.Location = new System.Drawing.Point(93, 3);
-            this.btnSaveHH.Name = "btnSaveHH";
-            this.btnSaveHH.Size = new System.Drawing.Size(30, 30);
-            this.btnSaveHH.TabIndex = 35;
-            this.btnSaveHH.Tag = "Save";
-            this.btnSaveHH.UseVisualStyleBackColor = true;
-            this.btnSaveHH.Click += new System.EventHandler(this.btnSaveHH_Click);
-            // 
-            // btnDeleteHH
-            // 
-            this.btnDeleteHH.AutoSize = true;
-            this.btnDeleteHH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnDeleteHH.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteHH.Image")));
-            this.btnDeleteHH.Location = new System.Drawing.Point(63, 3);
-            this.btnDeleteHH.Name = "btnDeleteHH";
-            this.btnDeleteHH.Size = new System.Drawing.Size(30, 30);
-            this.btnDeleteHH.TabIndex = 34;
-            this.btnDeleteHH.Tag = "Delete";
-            this.btnDeleteHH.UseVisualStyleBackColor = true;
-            this.btnDeleteHH.Click += new System.EventHandler(this.btnDeleteHH_Click);
-            // 
-            // btnNewHH
-            // 
-            this.btnNewHH.AutoSize = true;
-            this.btnNewHH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnNewHH.Image = ((System.Drawing.Image)(resources.GetObject("btnNewHH.Image")));
-            this.btnNewHH.Location = new System.Drawing.Point(3, 3);
-            this.btnNewHH.Name = "btnNewHH";
-            this.btnNewHH.Size = new System.Drawing.Size(30, 30);
-            this.btnNewHH.TabIndex = 33;
-            this.btnNewHH.Tag = "New";
-            this.btnNewHH.UseVisualStyleBackColor = true;
-            this.btnNewHH.Click += new System.EventHandler(this.btnNewHH_Click);
-            // 
-            // btnEditDGGoc
-            // 
-            this.btnEditDGGoc.AutoSize = true;
-            this.btnEditDGGoc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnEditDGGoc.Image = ((System.Drawing.Image)(resources.GetObject("btnEditDGGoc.Image")));
-            this.btnEditDGGoc.Location = new System.Drawing.Point(30, 2);
-            this.btnEditDGGoc.Name = "btnEditDGGoc";
-            this.btnEditDGGoc.Size = new System.Drawing.Size(30, 30);
-            this.btnEditDGGoc.TabIndex = 42;
-            this.btnEditDGGoc.Tag = "Edit";
-            this.btnEditDGGoc.UseVisualStyleBackColor = true;
-            this.btnEditDGGoc.Click += new System.EventHandler(this.btnEditDGGoc_Click);
-            // 
-            // btnCancelDGGoc
-            // 
-            this.btnCancelDGGoc.AutoSize = true;
-            this.btnCancelDGGoc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCancelDGGoc.Enabled = false;
-            this.btnCancelDGGoc.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelDGGoc.Image")));
-            this.btnCancelDGGoc.Location = new System.Drawing.Point(120, 2);
-            this.btnCancelDGGoc.Name = "btnCancelDGGoc";
-            this.btnCancelDGGoc.Size = new System.Drawing.Size(30, 30);
-            this.btnCancelDGGoc.TabIndex = 41;
-            this.btnCancelDGGoc.Tag = "Cancel";
-            this.btnCancelDGGoc.UseVisualStyleBackColor = true;
-            this.btnCancelDGGoc.Click += new System.EventHandler(this.btnCancelDGGoc_Click);
-            // 
-            // btnSaveDGGoc
-            // 
-            this.btnSaveDGGoc.AutoSize = true;
-            this.btnSaveDGGoc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSaveDGGoc.Enabled = false;
-            this.btnSaveDGGoc.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveDGGoc.Image")));
-            this.btnSaveDGGoc.Location = new System.Drawing.Point(90, 2);
-            this.btnSaveDGGoc.Name = "btnSaveDGGoc";
-            this.btnSaveDGGoc.Size = new System.Drawing.Size(30, 30);
-            this.btnSaveDGGoc.TabIndex = 40;
-            this.btnSaveDGGoc.Tag = "Save";
-            this.btnSaveDGGoc.UseVisualStyleBackColor = true;
-            this.btnSaveDGGoc.Click += new System.EventHandler(this.btnSaveDGGoc_Click);
-            // 
-            // btnDeleteDGGoc
-            // 
-            this.btnDeleteDGGoc.AutoSize = true;
-            this.btnDeleteDGGoc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnDeleteDGGoc.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteDGGoc.Image")));
-            this.btnDeleteDGGoc.Location = new System.Drawing.Point(60, 2);
-            this.btnDeleteDGGoc.Name = "btnDeleteDGGoc";
-            this.btnDeleteDGGoc.Size = new System.Drawing.Size(30, 30);
-            this.btnDeleteDGGoc.TabIndex = 39;
-            this.btnDeleteDGGoc.Tag = "Delete";
-            this.btnDeleteDGGoc.UseVisualStyleBackColor = true;
-            this.btnDeleteDGGoc.Click += new System.EventHandler(this.btnDeleteDGGoc_Click);
-            // 
-            // btnNewDGGoc
-            // 
-            this.btnNewDGGoc.AutoSize = true;
-            this.btnNewDGGoc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnNewDGGoc.Image = ((System.Drawing.Image)(resources.GetObject("btnNewDGGoc.Image")));
-            this.btnNewDGGoc.Location = new System.Drawing.Point(0, 2);
-            this.btnNewDGGoc.Name = "btnNewDGGoc";
-            this.btnNewDGGoc.Size = new System.Drawing.Size(30, 30);
-            this.btnNewDGGoc.TabIndex = 38;
-            this.btnNewDGGoc.Tag = "New";
-            this.btnNewDGGoc.UseVisualStyleBackColor = true;
-            this.btnNewDGGoc.Click += new System.EventHandler(this.btnNewDGGoc_Click_1);
-            // 
-            // btneditnkhh
-            // 
-            this.btneditnkhh.AutoSize = true;
-            this.btneditnkhh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btneditnkhh.Image = ((System.Drawing.Image)(resources.GetObject("btneditnkhh.Image")));
-            this.btneditnkhh.Location = new System.Drawing.Point(33, 3);
-            this.btneditnkhh.Name = "btneditnkhh";
-            this.btneditnkhh.Size = new System.Drawing.Size(30, 30);
-            this.btneditnkhh.TabIndex = 37;
-            this.btneditnkhh.Tag = "Edit";
-            this.btneditnkhh.UseVisualStyleBackColor = true;
-            this.btneditnkhh.Click += new System.EventHandler(this.btneditnkhh_Click);
-            // 
-            // btncancelnkhh
-            // 
-            this.btncancelnkhh.AutoSize = true;
-            this.btncancelnkhh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btncancelnkhh.Enabled = false;
-            this.btncancelnkhh.Image = ((System.Drawing.Image)(resources.GetObject("btncancelnkhh.Image")));
-            this.btncancelnkhh.Location = new System.Drawing.Point(123, 3);
-            this.btncancelnkhh.Name = "btncancelnkhh";
-            this.btncancelnkhh.Size = new System.Drawing.Size(30, 30);
-            this.btncancelnkhh.TabIndex = 36;
-            this.btncancelnkhh.Tag = "Cancel";
-            this.btncancelnkhh.UseVisualStyleBackColor = true;
-            this.btncancelnkhh.Click += new System.EventHandler(this.btncancelnkhh_Click);
-            // 
-            // btnsavenkhh
-            // 
-            this.btnsavenkhh.AutoSize = true;
-            this.btnsavenkhh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnsavenkhh.Enabled = false;
-            this.btnsavenkhh.Image = ((System.Drawing.Image)(resources.GetObject("btnsavenkhh.Image")));
-            this.btnsavenkhh.Location = new System.Drawing.Point(93, 3);
-            this.btnsavenkhh.Name = "btnsavenkhh";
-            this.btnsavenkhh.Size = new System.Drawing.Size(30, 30);
-            this.btnsavenkhh.TabIndex = 35;
-            this.btnsavenkhh.Tag = "Save";
-            this.btnsavenkhh.UseVisualStyleBackColor = true;
-            this.btnsavenkhh.Click += new System.EventHandler(this.btnsavenkhh_Click);
-            // 
-            // btndeletenkhh
-            // 
-            this.btndeletenkhh.AutoSize = true;
-            this.btndeletenkhh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btndeletenkhh.Image = ((System.Drawing.Image)(resources.GetObject("btndeletenkhh.Image")));
-            this.btndeletenkhh.Location = new System.Drawing.Point(63, 3);
-            this.btndeletenkhh.Name = "btndeletenkhh";
-            this.btndeletenkhh.Size = new System.Drawing.Size(30, 30);
-            this.btndeletenkhh.TabIndex = 34;
-            this.btndeletenkhh.Tag = "Delete";
-            this.btndeletenkhh.UseVisualStyleBackColor = true;
-            this.btndeletenkhh.Click += new System.EventHandler(this.btndeletenkhh_Click);
-            // 
-            // btnnewnkhh
-            // 
-            this.btnnewnkhh.AutoSize = true;
-            this.btnnewnkhh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnnewnkhh.Image = ((System.Drawing.Image)(resources.GetObject("btnnewnkhh.Image")));
-            this.btnnewnkhh.Location = new System.Drawing.Point(3, 3);
-            this.btnnewnkhh.Name = "btnnewnkhh";
-            this.btnnewnkhh.Size = new System.Drawing.Size(30, 30);
-            this.btnnewnkhh.TabIndex = 33;
-            this.btnnewnkhh.Tag = "New";
-            this.btnnewnkhh.UseVisualStyleBackColor = true;
-            this.btnnewnkhh.Click += new System.EventHandler(this.btnnewnkhh_Click);
-            // 
-            // btneditxevc
-            // 
-            this.btneditxevc.AutoSize = true;
-            this.btneditxevc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btneditxevc.Image = ((System.Drawing.Image)(resources.GetObject("btneditxevc.Image")));
-            this.btneditxevc.Location = new System.Drawing.Point(33, 3);
-            this.btneditxevc.Name = "btneditxevc";
-            this.btneditxevc.Size = new System.Drawing.Size(30, 30);
-            this.btneditxevc.TabIndex = 37;
-            this.btneditxevc.Tag = "Edit";
-            this.btneditxevc.UseVisualStyleBackColor = true;
-            this.btneditxevc.Click += new System.EventHandler(this.btneditxevc_Click);
-            // 
-            // btncancelxevc
-            // 
-            this.btncancelxevc.AutoSize = true;
-            this.btncancelxevc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btncancelxevc.Enabled = false;
-            this.btncancelxevc.Image = ((System.Drawing.Image)(resources.GetObject("btncancelxevc.Image")));
-            this.btncancelxevc.Location = new System.Drawing.Point(123, 3);
-            this.btncancelxevc.Name = "btncancelxevc";
-            this.btncancelxevc.Size = new System.Drawing.Size(30, 30);
-            this.btncancelxevc.TabIndex = 36;
-            this.btncancelxevc.Tag = "Cancel";
-            this.btncancelxevc.UseVisualStyleBackColor = true;
-            this.btncancelxevc.Click += new System.EventHandler(this.btncancelxevc_Click);
-            // 
-            // btnsavexevc
-            // 
-            this.btnsavexevc.AutoSize = true;
-            this.btnsavexevc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnsavexevc.Enabled = false;
-            this.btnsavexevc.Image = ((System.Drawing.Image)(resources.GetObject("btnsavexevc.Image")));
-            this.btnsavexevc.Location = new System.Drawing.Point(93, 3);
-            this.btnsavexevc.Name = "btnsavexevc";
-            this.btnsavexevc.Size = new System.Drawing.Size(30, 30);
-            this.btnsavexevc.TabIndex = 35;
-            this.btnsavexevc.Tag = "Save";
-            this.btnsavexevc.UseVisualStyleBackColor = true;
-            this.btnsavexevc.Click += new System.EventHandler(this.btnsavexevc_Click);
-            // 
-            // btndeletexevc
-            // 
-            this.btndeletexevc.AutoSize = true;
-            this.btndeletexevc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btndeletexevc.Image = ((System.Drawing.Image)(resources.GetObject("btndeletexevc.Image")));
-            this.btndeletexevc.Location = new System.Drawing.Point(63, 3);
-            this.btndeletexevc.Name = "btndeletexevc";
-            this.btndeletexevc.Size = new System.Drawing.Size(30, 30);
-            this.btndeletexevc.TabIndex = 34;
-            this.btndeletexevc.Tag = "Delete";
-            this.btndeletexevc.UseVisualStyleBackColor = true;
-            this.btndeletexevc.Click += new System.EventHandler(this.btndeletexevc_Click);
-            // 
-            // btnnewxevc
-            // 
-            this.btnnewxevc.AutoSize = true;
-            this.btnnewxevc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnnewxevc.Image = ((System.Drawing.Image)(resources.GetObject("btnnewxevc.Image")));
-            this.btnnewxevc.Location = new System.Drawing.Point(3, 3);
-            this.btnnewxevc.Name = "btnnewxevc";
-            this.btnnewxevc.Size = new System.Drawing.Size(30, 30);
-            this.btnnewxevc.TabIndex = 33;
-            this.btnnewxevc.Tag = "New";
-            this.btnnewxevc.UseVisualStyleBackColor = true;
-            this.btnnewxevc.Click += new System.EventHandler(this.btnnewxevc_Click);
-            // 
-            // btneditxekh
-            // 
-            this.btneditxekh.AutoSize = true;
-            this.btneditxekh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btneditxekh.Image = ((System.Drawing.Image)(resources.GetObject("btneditxekh.Image")));
-            this.btneditxekh.Location = new System.Drawing.Point(33, 3);
-            this.btneditxekh.Name = "btneditxekh";
-            this.btneditxekh.Size = new System.Drawing.Size(30, 30);
-            this.btneditxekh.TabIndex = 37;
-            this.btneditxekh.Tag = "Edit";
-            this.btneditxekh.UseVisualStyleBackColor = true;
-            this.btneditxekh.Click += new System.EventHandler(this.btneditxekh_Click);
-            // 
-            // btncancelxekh
-            // 
-            this.btncancelxekh.AutoSize = true;
-            this.btncancelxekh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btncancelxekh.Enabled = false;
-            this.btncancelxekh.Image = ((System.Drawing.Image)(resources.GetObject("btncancelxekh.Image")));
-            this.btncancelxekh.Location = new System.Drawing.Point(123, 3);
-            this.btncancelxekh.Name = "btncancelxekh";
-            this.btncancelxekh.Size = new System.Drawing.Size(30, 30);
-            this.btncancelxekh.TabIndex = 36;
-            this.btncancelxekh.Tag = "Cancel";
-            this.btncancelxekh.UseVisualStyleBackColor = true;
-            this.btncancelxekh.Click += new System.EventHandler(this.btncancelxekh_Click);
-            // 
-            // btnsavexekh
-            // 
-            this.btnsavexekh.AutoSize = true;
-            this.btnsavexekh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnsavexekh.Enabled = false;
-            this.btnsavexekh.Image = ((System.Drawing.Image)(resources.GetObject("btnsavexekh.Image")));
-            this.btnsavexekh.Location = new System.Drawing.Point(93, 3);
-            this.btnsavexekh.Name = "btnsavexekh";
-            this.btnsavexekh.Size = new System.Drawing.Size(30, 30);
-            this.btnsavexekh.TabIndex = 35;
-            this.btnsavexekh.Tag = "Save";
-            this.btnsavexekh.UseVisualStyleBackColor = true;
-            this.btnsavexekh.Click += new System.EventHandler(this.btnsavexekh_Click);
-            // 
-            // btndeletexekh
-            // 
-            this.btndeletexekh.AutoSize = true;
-            this.btndeletexekh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btndeletexekh.Image = ((System.Drawing.Image)(resources.GetObject("btndeletexekh.Image")));
-            this.btndeletexekh.Location = new System.Drawing.Point(63, 3);
-            this.btndeletexekh.Name = "btndeletexekh";
-            this.btndeletexekh.Size = new System.Drawing.Size(30, 30);
-            this.btndeletexekh.TabIndex = 34;
-            this.btndeletexekh.Tag = "Delete";
-            this.btndeletexekh.UseVisualStyleBackColor = true;
-            this.btndeletexekh.Click += new System.EventHandler(this.btndeletexekh_Click);
-            // 
-            // btnnewxekh
-            // 
-            this.btnnewxekh.AutoSize = true;
-            this.btnnewxekh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnnewxekh.Image = ((System.Drawing.Image)(resources.GetObject("btnnewxekh.Image")));
-            this.btnnewxekh.Location = new System.Drawing.Point(3, 3);
-            this.btnnewxekh.Name = "btnnewxekh";
-            this.btnnewxekh.Size = new System.Drawing.Size(30, 30);
-            this.btnnewxekh.TabIndex = 33;
-            this.btnnewxekh.Tag = "New";
-            this.btnnewxekh.UseVisualStyleBackColor = true;
-            this.btnnewxekh.Click += new System.EventHandler(this.btnnewxekh_Click);
-            // 
-            // btneditncc
-            // 
-            this.btneditncc.AutoSize = true;
-            this.btneditncc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btneditncc.Image = ((System.Drawing.Image)(resources.GetObject("btneditncc.Image")));
-            this.btneditncc.Location = new System.Drawing.Point(33, 3);
-            this.btneditncc.Name = "btneditncc";
-            this.btneditncc.Size = new System.Drawing.Size(30, 30);
-            this.btneditncc.TabIndex = 37;
-            this.btneditncc.Tag = "Edit";
-            this.btneditncc.UseVisualStyleBackColor = true;
-            this.btneditncc.Click += new System.EventHandler(this.btneditncc_Click);
-            // 
-            // btncancelncc
-            // 
-            this.btncancelncc.AutoSize = true;
-            this.btncancelncc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btncancelncc.Enabled = false;
-            this.btncancelncc.Image = ((System.Drawing.Image)(resources.GetObject("btncancelncc.Image")));
-            this.btncancelncc.Location = new System.Drawing.Point(123, 3);
-            this.btncancelncc.Name = "btncancelncc";
-            this.btncancelncc.Size = new System.Drawing.Size(30, 30);
-            this.btncancelncc.TabIndex = 36;
-            this.btncancelncc.Tag = "Cancel";
-            this.btncancelncc.UseVisualStyleBackColor = true;
-            this.btncancelncc.Click += new System.EventHandler(this.btncancelncc_Click);
-            // 
-            // btnsavencc
-            // 
-            this.btnsavencc.AutoSize = true;
-            this.btnsavencc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnsavencc.Enabled = false;
-            this.btnsavencc.Image = ((System.Drawing.Image)(resources.GetObject("btnsavencc.Image")));
-            this.btnsavencc.Location = new System.Drawing.Point(93, 3);
-            this.btnsavencc.Name = "btnsavencc";
-            this.btnsavencc.Size = new System.Drawing.Size(30, 30);
-            this.btnsavencc.TabIndex = 35;
-            this.btnsavencc.Tag = "Save";
-            this.btnsavencc.UseVisualStyleBackColor = true;
-            this.btnsavencc.Click += new System.EventHandler(this.btnsavencc_Click);
-            // 
-            // btndeletencc
-            // 
-            this.btndeletencc.AutoSize = true;
-            this.btndeletencc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btndeletencc.Image = ((System.Drawing.Image)(resources.GetObject("btndeletencc.Image")));
-            this.btndeletencc.Location = new System.Drawing.Point(63, 3);
-            this.btndeletencc.Name = "btndeletencc";
-            this.btndeletencc.Size = new System.Drawing.Size(30, 30);
-            this.btndeletencc.TabIndex = 34;
-            this.btndeletencc.Tag = "Delete";
-            this.btndeletencc.UseVisualStyleBackColor = true;
-            this.btndeletencc.Click += new System.EventHandler(this.btndeletencc_Click);
-            // 
-            // btnnewncc
-            // 
-            this.btnnewncc.AutoSize = true;
-            this.btnnewncc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnnewncc.Image = ((System.Drawing.Image)(resources.GetObject("btnnewncc.Image")));
-            this.btnnewncc.Location = new System.Drawing.Point(3, 3);
-            this.btnnewncc.Name = "btnnewncc";
-            this.btnnewncc.Size = new System.Drawing.Size(30, 30);
-            this.btnnewncc.TabIndex = 33;
-            this.btnnewncc.Tag = "New";
-            this.btnnewncc.UseVisualStyleBackColor = true;
-            this.btnnewncc.Click += new System.EventHandler(this.btnnewncc_Click);
-            // 
             // btneditdongiancc
             // 
             this.btneditdongiancc.AutoSize = true;
@@ -5007,93 +5066,34 @@
             this.btnnewdongiancc.UseVisualStyleBackColor = true;
             this.btnnewdongiancc.Click += new System.EventHandler(this.btnnewdongiancc_Click);
             // 
-            // buttonItemDonGia
+            // panel17
             // 
-            this.buttonItemDonGia.Image = ((System.Drawing.Image)(resources.GetObject("buttonItemDonGia.Image")));
-            this.buttonItemDonGia.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItemDonGia.Name = "buttonItemDonGia";
-            this.buttonItemDonGia.SubItemsExpandWidth = 14;
-            this.buttonItemDonGia.Text = "Tinhs Đơn Giá";
+            this.panel17.AutoSize = true;
+            this.panel17.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel17.Location = new System.Drawing.Point(0, 0);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(546, 0);
+            this.panel17.TabIndex = 0;
             // 
-            // buttonItemNHapXuaKho
+            // tabItem6
             // 
-            this.buttonItemNHapXuaKho.Image = ((System.Drawing.Image)(resources.GetObject("buttonItemNHapXuaKho.Image")));
-            this.buttonItemNHapXuaKho.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItemNHapXuaKho.Name = "buttonItemNHapXuaKho";
-            this.buttonItemNHapXuaKho.SubItemsExpandWidth = 14;
-            this.buttonItemNHapXuaKho.Text = "Nhập - Xuất Kho";
-            this.buttonItemNHapXuaKho.Click += new System.EventHandler(this.buttonItemNHapXuaKho_Click);
+            this.tabItem6.AttachedControl = this.tabControlPanel3;
+            this.tabItem6.Name = "tabItem6";
+            this.tabItem6.Text = "NCC";
             // 
-            // buttonItemNKHH
+            // bunifuDragControl1
             // 
-            this.buttonItemNKHH.Image = ((System.Drawing.Image)(resources.GetObject("buttonItemNKHH.Image")));
-            this.buttonItemNKHH.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItemNKHH.Name = "buttonItemNKHH";
-            this.buttonItemNKHH.SubItemsExpandWidth = 14;
-            this.buttonItemNKHH.Text = "HD - SLH";
-            this.buttonItemNKHH.Click += new System.EventHandler(this.buttonItemNKHH_Click);
-            // 
-            // buttonItemImportDLNCC
-            // 
-            this.buttonItemImportDLNCC.Image = ((System.Drawing.Image)(resources.GetObject("buttonItemImportDLNCC.Image")));
-            this.buttonItemImportDLNCC.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItemImportDLNCC.Name = "buttonItemImportDLNCC";
-            this.buttonItemImportDLNCC.SubItemsExpandWidth = 14;
-            this.buttonItemImportDLNCC.Text = "Import Dữ Liệu";
-            this.buttonItemImportDLNCC.Click += new System.EventHandler(this.buttonItemImportDLNCC_Click);
-            // 
-            // buttonItemNKNCC
-            // 
-            this.buttonItemNKNCC.Image = ((System.Drawing.Image)(resources.GetObject("buttonItemNKNCC.Image")));
-            this.buttonItemNKNCC.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItemNKNCC.Name = "buttonItemNKNCC";
-            this.buttonItemNKNCC.SubItemsExpandWidth = 14;
-            this.buttonItemNKNCC.Text = "Dữ Liệu NCC";
-            this.buttonItemNKNCC.Click += new System.EventHandler(this.buttonItemNKNCC_Click);
-            // 
-            // btnrbXevc
-            // 
-            this.btnrbXevc.Image = ((System.Drawing.Image)(resources.GetObject("btnrbXevc.Image")));
-            this.btnrbXevc.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnrbXevc.Name = "btnrbXevc";
-            this.btnrbXevc.SubItemsExpandWidth = 14;
-            this.btnrbXevc.Text = "Xe VC";
-            this.btnrbXevc.Click += new System.EventHandler(this.btnrbXevc_Click);
-            // 
-            // btnrbHangHoa
-            // 
-            this.btnrbHangHoa.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnrbHangHoa.Image = ((System.Drawing.Image)(resources.GetObject("btnrbHangHoa.Image")));
-            this.btnrbHangHoa.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnrbHangHoa.Name = "btnrbHangHoa";
-            this.btnrbHangHoa.SubItemsExpandWidth = 14;
-            this.btnrbHangHoa.Text = "Hàng Hóa";
-            this.btnrbHangHoa.Click += new System.EventHandler(this.btnrbHangHoa_Click);
-            // 
-            // btnrbKH
-            // 
-            this.btnrbKH.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnrbKH.Image = ((System.Drawing.Image)(resources.GetObject("btnrbKH.Image")));
-            this.btnrbKH.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnrbKH.Name = "btnrbKH";
-            this.btnrbKH.SubItemsExpandWidth = 14;
-            this.btnrbKH.Text = "Khách Hàng";
-            this.btnrbKH.Click += new System.EventHandler(this.btnrbKH_Click);
-            // 
-            // btnrbNCC
-            // 
-            this.btnrbNCC.Image = ((System.Drawing.Image)(resources.GetObject("btnrbNCC.Image")));
-            this.btnrbNCC.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnrbNCC.Name = "btnrbNCC";
-            this.btnrbNCC.SubItemsExpandWidth = 14;
-            this.btnrbNCC.Text = "NCC";
-            this.btnrbNCC.Click += new System.EventHandler(this.btnrbNCC_Click);
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = null;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 711);
+            this.ClientSize = new System.Drawing.Size(984, 709);
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.ribconManage);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -5105,11 +5105,32 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ribconManage.ResumeLayout(false);
             this.ribconManage.PerformLayout();
-            this.ribbonPanel2.ResumeLayout(false);
             this.ribbonPanel3.ResumeLayout(false);
+            this.ribbonPanel2.ResumeLayout(false);
             this.ribbonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabControlMain)).EndInit();
             this.tabControlMain.ResumeLayout(false);
+            this.tabControlPanel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgHangHoa)).EndInit();
+            this.panelHH.ResumeLayout(false);
+            this.panelHH.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numKLHH)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDGGoc)).EndInit();
+            this.panelDGGoc.ResumeLayout(false);
+            this.panelDGGoc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDGGoc)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.tabControlPanel6.ResumeLayout(false);
             this.tabControlPanel2.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
@@ -5156,6 +5177,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.numGiaDC)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            this.tabControlPanel7.ResumeLayout(false);
+            this.tabControlPanel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgNKNCC)).EndInit();
+            this.panelNKNCC.ResumeLayout(false);
+            this.panelNKNCC.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSoLuongNKNCC)).EndInit();
+            this.panel29.ResumeLayout(false);
+            this.panel29.PerformLayout();
+            this.panel31.ResumeLayout(false);
+            this.panel31.PerformLayout();
             this.tabControlPanel5.ResumeLayout(false);
             this.tabControlPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgSLH)).EndInit();
@@ -5187,37 +5218,6 @@
             this.panel32.PerformLayout();
             this.panel33.ResumeLayout(false);
             this.panel33.PerformLayout();
-            this.tabControlPanel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgHangHoa)).EndInit();
-            this.panelHH.ResumeLayout(false);
-            this.panelHH.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numKLHH)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgDGGoc)).EndInit();
-            this.panelDGGoc.ResumeLayout(false);
-            this.panelDGGoc.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDGGoc)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.tabControlPanel7.ResumeLayout(false);
-            this.tabControlPanel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgNKNCC)).EndInit();
-            this.panelNKNCC.ResumeLayout(false);
-            this.panelNKNCC.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numSoLuongNKNCC)).EndInit();
-            this.panel29.ResumeLayout(false);
-            this.panel29.PerformLayout();
-            this.panel31.ResumeLayout(false);
-            this.panel31.PerformLayout();
             this.tabControlPanel3.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);

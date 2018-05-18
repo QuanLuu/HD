@@ -46,9 +46,8 @@ namespace QLHH_CN_HD
                 MessageBox.Show("Vui lòng chọn file lấy dữ liệu");
                 return;
             }
-            MessageBox.Show(id_ncc.ToString());
-            id_ncc = Int32.Parse(cbNCC.SelectedValue.ToString());
-            int result = Import_Manager.Instance.ImportFileExcel(id_ncc, tbpath.Text, 1);
+            id_ncc = (int)cbNCC.SelectedValue;
+            int results = Import_Manager.Instance.ImportFileExcel(id_ncc, tbpath.Text, 1);  
             MessageBox.Show("Đã lấy dữ liệu xong");
         }
 
