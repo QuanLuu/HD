@@ -1,0 +1,22 @@
+c:\users\quan.luu\documents\visual studio 2015\Projects\DB_Manage\DB_Manage\bin\Debug\DB_Manage.exe.config
+c:\users\quan.luu\documents\visual studio 2015\Projects\DB_Manage\DB_Manage\bin\Debug\DB_Manage.exe
+c:\users\quan.luu\documents\visual studio 2015\Projects\DB_Manage\DB_Manage\bin\Debug\DB_Manage.pdb
+c:\users\quan.luu\documents\visual studio 2015\Projects\DB_Manage\DB_Manage\obj\Debug\DB_Manage.Properties.Resources.resources
+c:\users\quan.luu\documents\visual studio 2015\Projects\DB_Manage\DB_Manage\obj\Debug\DB_Manage.csproj.GenerateResource.Cache
+c:\users\quan.luu\documents\visual studio 2015\Projects\DB_Manage\DB_Manage\obj\Debug\DB_Manage.exe
+c:\users\quan.luu\documents\visual studio 2015\Projects\DB_Manage\DB_Manage\obj\Debug\DB_Manage.pdb
+c:\users\quan.luu\documents\visual studio 2015\Projects\DB_Manage\DB_Manage\bin\Debug\DevComponents.DotNetBar2.dll
+c:\users\quan.luu\documents\visual studio 2015\Projects\DB_Manage\DB_Manage\bin\Debug\DevComponents.DotNetBar2.xml
+C:\Users\quan.luu\Documents\Visual Studio 2015\Projects\DB_Manage\DB_Manage\obj\Debug\DB_Manage.FrmMain.resources
+C:\Users\quan.luu\Documents\Visual Studio 2015\Projects\DB_Manage\DB_Manage\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\bin\Debug\QLHH_CN_HD.exe.config
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\bin\Debug\QLHH_CN_HD.exe
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\bin\Debug\QLHH_CN_HD.pdb
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\bin\Debug\DevComponents.DotNetBar2.xml
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\obj\Debug\DB_Manage.csprojResolveAssemblyReference.cache
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\obj\Debug\DB_Manage.FrmMain.resources
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\obj\Debug\QLHH_CN_HD.Properties.Resources.resources
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\obj\Debug\DB_Manage.csproj.GenerateResource.Cache
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\obj\Debug\QLHH_CN_HD.exe
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\obj\Debug\QLHH_CN_HD.pdb

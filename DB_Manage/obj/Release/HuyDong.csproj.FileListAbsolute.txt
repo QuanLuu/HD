@@ -1,0 +1,11 @@
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\bin\Release\QLHH_CN_HD.exe.config
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\obj\Release\DB_Manage.FrmMain.resources
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\obj\Release\QLHH_CN_HD.Properties.Resources.resources
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\obj\Release\HuyDong.csproj.GenerateResource.Cache
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\bin\Release\QLHH_CN_HD.exe
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\bin\Release\QLHH_CN_HD.pdb
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\bin\Release\DevComponents.DotNetBar2.dll
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\bin\Release\DevComponents.DotNetBar2.xml
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\obj\Release\HuyDong.csprojResolveAssemblyReference.cache
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\obj\Release\QLHH_CN_HD.exe
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\DB_Manage\obj\Release\QLHH_CN_HD.pdb
