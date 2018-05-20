@@ -88,9 +88,9 @@ namespace DB_Manage.BLL
             return DataProvider.Instance.ExecuteQuery("EXEC PP_UI_GET_DON_GIA_CHUYEN_DOI_NCC", new object[] {  });
         }
 
-        public DataTable GetMasoXuatKho(string ncc)
+        public DataTable GetMasoXuatKho(string ncc, string hh)
         {
-            return DataProvider.Instance.ExecuteQuery("EXEC PP_UI_GET_MA_SO_KHO_XUAT @NCC", new object[] {ncc});
+            return DataProvider.Instance.ExecuteQuery("EXEC PP_UI_GET_MA_SO_KHO_XUAT @NCC , @HH", new object[] {ncc,hh});
         }
 
         public DataTable GetMasoNhapKho(string hh)
@@ -110,8 +110,26 @@ namespace DB_Manage.BLL
         {
             return DataProvider.Instance.ExecuteQuery("EXEC PP_UI_GET_NHAT_KY_NCC @DATE_FROM , @DATE_TO , @NCC , @HH", new object[] { datefrom, dateto, ncc, hh });
         }
+        public DataTable GetUser( string tendn, string mk)
+        {
+            return DataProvider.Instance.ExecuteQuery("EXEC PP_GET_USER @NAME , @PASS", new object[] {tendn, mk });
+        }
+        public DataTable GetKhoLamViecUser(string kho)
+        {
+            return DataProvider.Instance.ExecuteQuery("EXEC PP_UI_GET_KHO_LAM_VIEC_USER @KHO", new object[] {kho});
+        }
 
-        //[PP_UI_GET_MA_SO_KHO_XUAT] --
+        public DataTable dongiatheongay(DateTime date,string ncc, string hh, string kh)
+        {
+            return DataProvider.Instance.ExecuteQuery("EXEC PP_TINH_DON_GIA_THEO_NGAY @DATE , @NCC , @HH , @KH", new object[] { date, ncc, hh, kh });
+        }
+
+        public DataTable gettaikhoandangnhap()
+        {
+            return DataProvider.Instance.ExecuteQuery("SELECT * FROM USER_LOGIN", new object[] {});
+        }
+
+        //[SELECT * FROM USER_LOGIN] --
 
         public DataTable TinhtoanDGDC(DateTime datefrom, string ncc, string hh, string noign, int duongbo, int dieuchinh)
         {          

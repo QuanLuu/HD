@@ -16,9 +16,16 @@ namespace DB_Manage
     public partial class FrmMain : DevComponents.DotNetBar.Office2007RibbonForm
     {
         int Action = 0;
+        public string tendn;
+        public int id_user;
+        public string kholamviec;
         public FrmMain()
         {
             InitializeComponent();
+            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["FrmDangNhap"];
+            ribNhapXuatKho.Select();
+            tabControlMain.SelectedTabIndex = 5;
+            //GetKhoTheoUser();
             getHH();
             getNCC();
             getKH();
@@ -34,10 +41,10 @@ namespace DB_Manage
             dtpBDXuatKho.Value = DateTime.Now.AddDays(-7);
             dtpKTNhapKhoFilter.Value = DateTime.Now;
             dtpBDNhapKhoFilter.Value = DateTime.Now.AddDays(-7);
-            getnhapkho();
-            getNKHH();
-            getNhatKyNCC();
-            getxuatkho();
+            //getnhapkho();
+            //getNKHH();
+            //getNhatKyNCC();
+            //getxuatkho();
             SetDropDown(this.panelXuatKho);
             SetDropDown(this.panelNhapKho);
             SetDropDown(this.panelNKNCC);
@@ -104,9 +111,21 @@ namespace DB_Manage
 
         void getMaSoXuatKho()
         {
-            DataTable data = Import_Manager.Instance.GetMasoXuatKho(cbNCCXuatKho.Text);
+            DataTable data = Import_Manager.Instance.GetMasoXuatKho(cbNCCXuatKho.Text, cbHHXuatKho.Text);
             cbMaSoXuatKho.DisplayMember = "MA_SO";
             cbMaSoXuatKho.DataSource = data;
+        }
+        public void GetKhoTheoUser()
+        {
+            DataTable data = Import_Manager.Instance.GetKhoLamViecUser(kholamviec);
+            cbNCCNhapKho.DisplayMember = "MA_NCC";
+            cbNCCNhapKho.DataSource = data;
+            cbNCCXuatKho.BindingContext = new BindingContext();
+            cbNCCXuatKho.DisplayMember = "MA_NCC";
+            cbNCCXuatKho.DataSource = data;
+            cbNCCDonGiaNgay.BindingContext = new BindingContext();
+            cbNCCDonGiaNgay.DisplayMember = "MA_NCC";
+            cbNCCDonGiaNgay.DataSource = data;
         }
 
         void getMaSoNhapKho()
@@ -178,11 +197,22 @@ namespace DB_Manage
             DataTable data = Import_Manager.Instance.getnhapkho(dtpBDNhapKhoFilter.Value, dtpKTNhapKhoFilter.Value,cbNCCNhapKho.Text, tbHHNhapKhoFilter.Text, tbMaSoNhapKhoFilter.Text);
             dtgNhapKho.DataSource = data;
         }
+        void getdongiangay()
+        {
+            DataTable data = Import_Manager.Instance.dongiatheongay(dtpDonGiaNGay.Value, cbNCCDonGiaNgay.Text, tbHHDonGiaNgay.Text, tbKHDonGiaNgay.Text);
+            dtgdongiangay.DataSource = data;
+        }
+
 
         void getxuatkho()
         {
             DataTable data = Import_Manager.Instance.getxuatkho(dtpBDXuatKho.Value, dtpKTXuatKho.Value, cbNCCXuatKho.Text, tbKHXuatKhoFilter.Text, tbHHXuatKhoFilter.Text, tbMaSoXuatKhoFilter.Text);
             dtgXuatKho.DataSource = data;
+        }
+        void gettaikhoandangnhap()
+        {
+            DataTable data = Import_Manager.Instance.gettaikhoandangnhap();
+            dtgTaiKhoanDN.DataSource = data;
         }
         public int dongiadieuchinh()
         {
@@ -223,12 +253,12 @@ namespace DB_Manage
             cbNCCNKHH.DisplayMember = "MA_NCC";
             cbNCCNKHH.DataSource = data;
 
-            cbNCCNhapKho.BindingContext = new BindingContext();
-            cbNCCNhapKho.DisplayMember = "MA_NCC";
-            cbNCCNhapKho.DataSource = data;
-            cbNCCXuatKho.BindingContext = new BindingContext();
-            cbNCCXuatKho.DisplayMember = "MA_NCC";
-            cbNCCXuatKho.DataSource = data;
+            //cbNCCNhapKho.BindingContext = new BindingContext();
+            //cbNCCNhapKho.DisplayMember = "MA_NCC";
+            //cbNCCNhapKho.DataSource = data;
+            //cbNCCXuatKho.BindingContext = new BindingContext();
+            //cbNCCXuatKho.DisplayMember = "MA_NCC";
+            //cbNCCXuatKho.DataSource = data;
             cbNCCNKNCC.BindingContext = new BindingContext();
             cbNCCNKNCC.DisplayMember = "MA_NCC";
             cbNCCNKNCC.DataSource = data;
@@ -315,11 +345,19 @@ namespace DB_Manage
 
                 getHH();
                 if (dtgHangHoa.Rows.Count > 2) dtgHangHoa.CurrentCell = dtgHangHoa.Rows[dtgHangHoa.Rows.Count - 2].Cells[0];
-                Action = 0;
-                Button curBut = sender as Button;
-                EnableControlDataEntry(curBut.Parent);
-                panelHH.Visible = false;
                 dtgHangHoa.CurrentCell = dtgHangHoa.Rows[currow].Cells[0];
+                if (Action == 1)
+                {
+                    Action = 0;
+                    btnNewHH_Click(btnNewHH, e);
+                }
+                else
+                {
+                    Action = 0;
+                    Button curBut = sender as Button;
+                    EnableControlDataEntry(curBut.Parent);
+                    panelHH.Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -484,14 +522,24 @@ namespace DB_Manage
             {
                 int results = Import_Manager.Instance.UpdateDGGoc(Action, (int)dtgDGGoc.CurrentRow.Cells[0].Value, dtpDGGoc.Value, cbTenHangDGGoc.Text, cbNCCDGGoc.Text, tbNoiGNDGGoc.Text, 1, (int)numDGGoc.Value);
                 getdongiagoc(dtgHangHoa.CurrentRow.Cells[1].Value.ToString());
+                if (Action == 1)
+                {
+                    Action = 0;
+                    btnNewDGGoc_Click(btnNewDGGoc, e);
+                }
+                else
+                {
+                    Action = 0;
+                    Button curBut = sender as Button;
+                    EnableControlDataEntry(curBut.Parent);
+                    panelDGGoc.Visible = false;
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            Action = 0;
-            Button curBut = sender as Button;
-            EnableControlDataEntry(curBut.Parent);
+
         }
 
         private void btnEditDGGoc_Click(object sender, EventArgs e)
@@ -651,11 +699,19 @@ namespace DB_Manage
 
                 getKH();
                 if (dtgKH.Rows.Count > 2) dtgKH.CurrentCell = dtgKH.Rows[dtgKH.Rows.Count - 2].Cells[0];
-                Action = 0;
-                Button curBut = sender as Button;
-                EnableControlDataEntry(curBut.Parent);
-                panelKH.Visible = false;
                 dtgKH.CurrentCell = dtgKH.Rows[currow].Cells[0];
+                if (Action == 1)
+                {
+                    Action = 0;
+                    btnNewKH_Click(btnNewKH, e);
+                }
+                else
+                {
+                    Action = 0;
+                    Button curBut = sender as Button;
+                    EnableControlDataEntry(curBut.Parent);
+                    panelKH.Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -710,11 +766,20 @@ namespace DB_Manage
 
                 getDieuChinhGia(dtgKH.CurrentRow.Cells[1].Value.ToString());
                 if (dtgDieuChinhGiaKH.Rows.Count > 2) dtgDieuChinhGiaKH.CurrentCell = dtgDieuChinhGiaKH.Rows[dtgDieuChinhGiaKH.Rows.Count - 2].Cells[0];
-                Action = 0;
-                Button curBut = sender as Button;
-                EnableControlDataEntry(curBut.Parent);
-                panelDieuChinhGia.Visible = false;
+               
                 dtgDieuChinhGiaKH.CurrentCell = dtgDieuChinhGiaKH.Rows[currow].Cells[0];
+                if (Action == 1)
+                {
+                    Action = 0;
+                    btnNewDC_Click(btnNewDC, e);
+                }
+                else
+                {
+                    Action = 0;
+                    Button curBut = sender as Button;
+                    EnableControlDataEntry(curBut.Parent);
+                    panelDieuChinhGia.Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -825,11 +890,21 @@ namespace DB_Manage
 
                 getNCC();
                 if (dtgNCC.Rows.Count > 2) dtgNCC.CurrentCell = dtgNCC.Rows[dtgNCC.Rows.Count - 2].Cells[0];
-                Action = 0;
-                Button curBut = sender as Button;
-                EnableControlDataEntry(curBut.Parent);
-                panelNCC.Visible = false;
+                
                 dtgNCC.CurrentCell = dtgNCC.Rows[currow].Cells[0];
+                if (Action == 1)
+                {
+                    Action = 0;
+                    btnnewncc_Click(btnnewncc, e);
+                }
+                else
+                {
+                    Action = 0;
+                    Button curBut = sender as Button;
+                    EnableControlDataEntry(curBut.Parent);
+                    panelNCC.Visible = false;
+                }
+
             }
             catch (Exception ex)
             {
@@ -926,11 +1001,20 @@ namespace DB_Manage
 
                 getChuyenDoiNCC();
                 if (dtgChuyenDoiNCC.Rows.Count > 2) dtgChuyenDoiNCC.CurrentCell = dtgChuyenDoiNCC.Rows[dtgChuyenDoiNCC.Rows.Count - 2].Cells[0];
-                Action = 0;
-                Button curBut = sender as Button;
-                EnableControlDataEntry(curBut.Parent);
-                panelChuyenDoiNCC.Visible = false;
                 dtgChuyenDoiNCC.CurrentCell = dtgChuyenDoiNCC.Rows[currow].Cells[0];
+                if (Action == 1)
+                {
+                    Action = 0;
+                    btnnewdongiancc_Click(btnnewdongiancc, e);
+                }
+                else
+                {
+                    Action = 0;
+                    Button curBut = sender as Button;
+                    EnableControlDataEntry(curBut.Parent);
+                    panelChuyenDoiNCC.Visible = false;
+                    
+                }
             }
             catch (Exception ex)
             {
@@ -1028,11 +1112,20 @@ namespace DB_Manage
 
                 getXeVC();
                 if (dtgXeVC.Rows.Count > 2) dtgXeVC.CurrentCell = dtgXeVC.Rows[dtgXeVC.Rows.Count - 2].Cells[0];
-                Action = 0;
-                Button curBut = sender as Button;
-                EnableControlDataEntry(curBut.Parent);
-                panelXeVC.Visible = false;
+               
                 dtgXeVC.CurrentCell = dtgXeVC.Rows[currow].Cells[0];
+                if (Action == 1)
+                {
+                    Action = 0;
+                    btnnewxevc_Click(btnnewxevc, e);
+                }
+                else
+                {
+                    Action = 0;
+                    Button curBut = sender as Button;
+                    EnableControlDataEntry(curBut.Parent);
+                    panelXeVC.Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -1090,7 +1183,9 @@ namespace DB_Manage
 
         private void buttonItemNKHH_Click(object sender, EventArgs e)
         {
-            tabControlMain.SelectedTabIndex = 4;
+            tabControlMain.SelectedTabIndex = 7;
+            dtpDonGiaNGay.Value = DateTime.Now;
+            //getdongiangay();
         }
 
         private void tbKHFilterNKHH_TextChanged(object sender, EventArgs e)
@@ -1191,11 +1286,21 @@ namespace DB_Manage
                 int results = Import_Manager.Instance.UpdatedNKHH(Action, id, dtpNgayGNNKHH.Value, cbNCCNKHH.Text, cbHHNKHH.Text, tbMaso.Text, tbNoiGNNKHH.Text, decimal.Parse(numSoLuongNKHH.Value.ToString()), tbTM.Text, tbBienSoNKHH.Text, cbKHNKHH.Text, tbCRT.Text, tbThuTienNKHH.Text, tbGhiChuNKHH.Text, tbTaiXeNKHH.Text);
 
                 getNKHH();
-                Action = 0;
-                Button curBut = sender as Button;
-                EnableControlDataEntry(curBut.Parent);
-                panelNKHH.Visible = false;
+               
                 dtgSLH.CurrentCell = dtgSLH.Rows[currow].Cells[0];
+                if (Action == 1)
+                {
+                    Action = 0;
+                    btnnewnkhh_Click(btnnewnkhh, e);
+                }
+                else
+                {
+                    Action = 0;
+                    Button curBut = sender as Button;
+                    EnableControlDataEntry(curBut.Parent);
+                    panelNKHH.Visible = false;
+
+                }
             }
             catch (Exception ex)
             {
@@ -1233,7 +1338,7 @@ namespace DB_Manage
 
         private void dtgSLH_SelectionChanged(object sender, EventArgs e)
         {
-            if(dtgSLH.CurrentRow != null)
+            if(dtgSLH.CurrentRow != null && Action != 1)
             {
                 dtpNgayBDNKHH.Value = DateTime.Parse(dtgSLH.CurrentRow.Cells[1].Value.ToString());
                 cbNCCNKHH.Text = dtgSLH.CurrentRow.Cells[2].Value.ToString();
@@ -1315,6 +1420,9 @@ namespace DB_Manage
 
         private void buttonItemNHapXuaKho_Click(object sender, EventArgs e)
         {
+            getnhapkho();
+            getxuatkho();
+            //GetKhoTheoUser();
             tabControlMain.SelectedTabIndex = 5;
             getMaSoNhapKho();
         }
@@ -1393,14 +1501,24 @@ namespace DB_Manage
             if (dtgNhapKho.Rows.Count > 1 && dtgNhapKho.CurrentRow.Cells[0].Value.ToString() != "") id = (int)dtgNhapKho.CurrentRow.Cells[0].Value;
             try
             {
-                int results = Import_Manager.Instance.UpdatedNhapKho(Action, id, dtpNhapKho.Value, cbhhNhapKho.Text, cbMaSoNhapKho.Text, (int)numSoBaoNhapKho.Value, cbBienSoNhapKho.Text, cbTaiXeNhapKho.Text, cbRoMocNhapKho.Text, tbGhiChuNhapKho.Text, "admin", cbNCCNhapKho.Text);
+                int results = Import_Manager.Instance.UpdatedNhapKho(Action, id, dtpNhapKho.Value, cbhhNhapKho.Text, cbMaSoNhapKho.Text, (int)numSoBaoNhapKho.Value, cbBienSoNhapKho.Text, cbTaiXeNhapKho.Text, cbRoMocNhapKho.Text, tbGhiChuNhapKho.Text, tendn, cbNCCNhapKho.Text);
 
                 getnhapkho();
-                Action = 0;
-                Button curBut = sender as Button;
-                EnableControlDataEntry(curBut.Parent);
-                panelNhapKho.Visible = false;
+                
                 dtgNhapKho.CurrentCell = dtgNhapKho.Rows[currow].Cells[0];
+                if (Action == 1)
+                {
+                    Action = 0;
+                    btnnewnhapkho_Click(btnnewnhapkho, e);
+                }
+                else
+                {
+                    Action = 0;
+                    Button curBut = sender as Button;
+                    EnableControlDataEntry(curBut.Parent);
+                    panelNhapKho.Visible = false;
+
+                }
             }
             catch (Exception ex)
             {
@@ -1459,11 +1577,21 @@ namespace DB_Manage
 
                 getXeKH();
                 if (dtgXeKH.Rows.Count > 2) dtgXeKH.CurrentCell = dtgXeKH.Rows[dtgXeKH.Rows.Count - 2].Cells[0];
-                Action = 0;
-                Button curBut = sender as Button;
-                EnableControlDataEntry(curBut.Parent);
-                panelXeKH.Visible = false;
+               
                 dtgXeKH.CurrentCell = dtgXeKH.Rows[currow].Cells[0];
+                if (Action == 1)
+                {
+                    Action = 0;
+                    btnnewxekh_Click(btnnewxekh, e);
+                }
+                else
+                {
+                    Action = 0;
+                    Button curBut = sender as Button;
+                    EnableControlDataEntry(curBut.Parent);
+                    panelXeKH.Visible = false;
+
+                }
             }
             catch (Exception ex)
             {
@@ -1549,15 +1677,15 @@ namespace DB_Manage
 
         private void cbBienSoNhapKho_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbTaiXeNhapKho.Text = getTXtheoBienSo(cbBienSoNhapKho.Text);
+            if(Action==1) cbTaiXeNhapKho.Text = getTXtheoBienSo(cbBienSoNhapKho.Text);
         }
 
         private void cbBienSoXuatKho_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Action == 1)
             {
-                cbTaiXeXuatKho.Text = getKHtheoBienSo(cbBienSoXuatKho.Text);
-                cbKHXuatKho.Text = getTXtheoBienSo(cbBienSoXuatKho.Text);
+                cbKHXuatKho.Text = getKHtheoBienSo(cbBienSoXuatKho.Text);
+                cbTaiXeXuatKho.Text = getTXtheoBienSo(cbBienSoXuatKho.Text);
             }
         }
 
@@ -1588,6 +1716,7 @@ namespace DB_Manage
 
         private void buttonItemNKNCC_Click(object sender, EventArgs e)
         {
+            getNhatKyNCC();
             tabControlMain.SelectedTabIndex = 6;
         }
 
@@ -1604,6 +1733,8 @@ namespace DB_Manage
             cbKHNKNCC.Text = "";
             cbTaiXeNKNCC.Text = "";
             tbGhichuNKNCC.Text = "";
+            dtpNgayNhanNKNCC.Value = DateTime.Now;
+            dtpNgayNhanNKNCC.Select();
             Action = 1;
             Button curBut = sender as Button;
             EnableControlDataEntry(curBut.Parent);
@@ -1648,14 +1779,24 @@ namespace DB_Manage
             if (dtgNKNCC.Rows.Count > 1 && dtgNKNCC.CurrentRow.Cells[0].Value.ToString() != "") id = (int)dtgNKNCC.CurrentRow.Cells[0].Value;
             try
             {
-                int results = Import_Manager.Instance.UpdateNhatKyNCC(Action, id, cbNCCNKNCC.Text, dtpNgayNhanNKNCC.Value, cbHHNKNCC.Text, tbMaSoNKNCC.Text, tbNoiNhanNKNCC.Text,decimal.Parse(numSoLuongNKNCC.Value.ToString()),cbBienSoNKNCC.Text, cbKHNKNCC.Text, cbTaiXeNKNCC.Text, tbGhichuNKNCC.Text, 1);
+                int results = Import_Manager.Instance.UpdateNhatKyNCC(Action, id, cbNCCNKNCC.Text, dtpNgayNhanNKNCC.Value, cbHHNKNCC.Text, tbMaSoNKNCC.Text, tbNoiNhanNKNCC.Text,decimal.Parse(numSoLuongNKNCC.Value.ToString()),cbBienSoNKNCC.Text, cbKHNKNCC.Text, cbTaiXeNKNCC.Text, tbGhichuNKNCC.Text, id_user);
 
                 getNhatKyNCC();
-                Action = 0;
-                Button curBut = sender as Button;
-                EnableControlDataEntry(curBut.Parent);
-                panelNKNCC.Visible = false;
+               
                 dtgNKNCC.CurrentCell = dtgNKNCC.Rows[currow].Cells[0];
+                if (Action == 1)
+                {
+                    Action = 0;
+                    btnnewnkncc_Click(btnnewnkncc, e);
+                }
+                else
+                {
+                    Action = 0;
+                    Button curBut = sender as Button;
+                    EnableControlDataEntry(curBut.Parent);
+                    panelNKNCC.Visible = false;
+
+                }
             }
             catch (Exception ex)
             {
@@ -1736,6 +1877,7 @@ namespace DB_Manage
         private void tbMaSoXuatKhoFilter_TextChanged(object sender, EventArgs e)
         {
             getxuatkho();
+            getMaSoXuatKho();
         }
 
         private void cbNCCXuatKho_SelectedIndexChanged(object sender, EventArgs e)
@@ -1786,14 +1928,24 @@ namespace DB_Manage
             if (dtgXuatKho.Rows.Count > 1 && dtgXuatKho.CurrentRow.Cells[0].Value.ToString() != "") id = (int)dtgXuatKho.CurrentRow.Cells[0].Value;
             try
             {
-                int results = Import_Manager.Instance.UpdatedXuatKho(Action, id, cbNCCXuatKho.Text, dtpNgayXuatKho.Value, cbHHXuatKho.Text, cbMaSoXuatKho.Text, (int)numSoBaoXuatKho.Value, cbBienSoXuatKho.Text, cbKHXuatKho.Text, cbTaiXeXuatKho.Text, tienmat, (int)numTienMatXuatKho.Value, tbGhiChuXuatKho.Text,1);
+                int results = Import_Manager.Instance.UpdatedXuatKho(Action, id, cbNCCXuatKho.Text, dtpNgayXuatKho.Value, cbHHXuatKho.Text, cbMaSoXuatKho.Text, (int)numSoBaoXuatKho.Value, cbBienSoXuatKho.Text, cbKHXuatKho.Text, cbTaiXeXuatKho.Text, tienmat, (int)numTienMatXuatKho.Value, tbGhiChuXuatKho.Text, id_user);
 
                 getxuatkho();
-                Action = 0;
-                Button curBut = sender as Button;
-                EnableControlDataEntry(curBut.Parent);
-                panelXuatKho.Visible = false;
+                
                 dtgXuatKho.CurrentCell = dtgXuatKho.Rows[currow].Cells[0];
+                if (Action == 1)
+                {
+                    Action = 0;
+                    btnnewxuatkho_Click(btnnewxuatkho, e);
+                }
+                else
+                {
+                    Action = 0;
+                    Button curBut = sender as Button;
+                    EnableControlDataEntry(curBut.Parent);
+                    panelXuatKho.Visible = false;
+
+                }
             }
             catch (Exception ex)
             {
@@ -1831,7 +1983,7 @@ namespace DB_Manage
 
         private void dtgNhapKho_SelectionChanged(object sender, EventArgs e)
         {
-            if (dtgNhapKho.CurrentRow != null && dtgNhapKho.CurrentRow.Cells[0].Value.ToString() != "")
+            if (dtgNhapKho.CurrentRow != null && dtgNhapKho.CurrentRow.Cells[0].Value.ToString() != "" && Action != 1)
             {
                 if (Action != 0) cbNCCNhapKho.Text = dtgNhapKho.CurrentRow.Cells[1].Value.ToString();
                 dtpNhapKho.Value = DateTime.Parse(dtgNhapKho.CurrentRow.Cells[2].Value.ToString());
@@ -1847,7 +1999,7 @@ namespace DB_Manage
 
         private void dtgXuatKho_SelectionChanged(object sender, EventArgs e)
         {
-            if(dtgXuatKho.CurrentRow != null && dtgXuatKho.CurrentRow.Cells[0].Value.ToString() != "")
+            if(dtgXuatKho.CurrentRow != null && dtgXuatKho.CurrentRow.Cells[0].Value.ToString() != "" && Action != 1)
             {
                               
                 if(Action != 0) cbNCCXuatKho.Text = dtgXuatKho.CurrentRow.Cells[1].Value.ToString();
@@ -1884,7 +2036,7 @@ namespace DB_Manage
 
         private void dtgNKNCC_SelectionChanged(object sender, EventArgs e)
         {
-            if (dtgNKNCC.CurrentRow != null && dtgNKNCC.CurrentRow.Cells[0].Value.ToString() != "")
+            if (dtgNKNCC.CurrentRow != null && dtgNKNCC.CurrentRow.Cells[0].Value.ToString() != "" && Action != 1)
             {
                 cbNCCNKNCC.Text = dtgNKNCC.CurrentRow.Cells[1].Value.ToString();
                 dtpNgayNhanNKNCC.Value = DateTime.Parse(dtgNKNCC.CurrentRow.Cells[2].Value.ToString());
@@ -1914,6 +2066,51 @@ namespace DB_Manage
         private void main_close(object sender, FormClosingEventArgs e)
         {
             getNhatKyNCC();
+        }
+
+        private void panelHH_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbBienSoNKNCC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Action == 1)
+            {
+                cbKHNKNCC.Text = getKHtheoBienSo(cbBienSoNKNCC.Text);
+                cbTaiXeNKNCC.Text = getTXtheoBienSo(cbBienSoNKNCC.Text);
+            }
+        }
+
+        private void dtpDonGiaNGay_ValueChanged(object sender, EventArgs e)
+        {
+            getdongiangay();
+        }
+
+        private void cbNCCDonGiaNgay_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getdongiangay();
+        }
+
+        private void tbHHDonGiaNgay_TextChanged(object sender, EventArgs e)
+        {
+            getdongiangay();
+        }
+
+        private void tbKHDonGiaNgay_TextChanged(object sender, EventArgs e)
+        {
+            getdongiangay();
+        }
+
+        private void cbHHXuatKho_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getMaSoXuatKho();
+        }
+
+        private void buttonItemUser_Click(object sender, EventArgs e)
+        {
+            gettaikhoandangnhap();
+            tabControlMain.SelectedTabIndex = 8;
         }
     }
 }

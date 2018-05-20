@@ -22,3 +22,4 @@ C:\Users\quan.luu\Documents\GitHub\DB_Manage\HD\DB_Manage\obj\Debug\QLHH_CN_HD.I
 C:\Users\quan.luu\Documents\GitHub\DB_Manage\HD\DB_Manage\obj\Debug\DB_Manage.FrmMain.resources
 C:\Users\quan.luu\Documents\GitHub\DB_Manage\HD\DB_Manage\obj\Debug\QLHH_CN_HD.Properties.Resources.resources
 C:\Users\quan.luu\Documents\GitHub\DB_Manage\HD\DB_Manage\obj\Debug\HuyDong.csproj.GenerateResource.Cache
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\HD\DB_Manage\obj\Debug\QLHH_CN_HD.FrmDangNhap.resources
