@@ -26,9 +26,9 @@ namespace DB_Manage.ADO
             }
         }
 
-        private DataProvider() { } 
+        private DataProvider() { }
 
-        //private string connectstring = "Data Source=LAPTOP318;Initial Catalog=HUY_DONG;Integrated Security=True";//"Data Source=LAPTOP318;Initial Catalog=IMPORT_NPM;Integrated Security=True";
+        //private string connectstring = "Data Source=192.168.1.114,1433;Initial Catalog=HUY_DONG;Integrated Security=True";//"Data Source=LAPTOP318;Initial Catalog=IMPORT_NPM;Integrated Security=True";
 
         private string connectstring = "Data Source=LAPTOP318;" +
                                         "Initial Catalog = HUY_DONG;" +

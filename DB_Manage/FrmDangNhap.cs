@@ -34,7 +34,9 @@ namespace QLHH_CN_HD
                     f.tendn = tbten.Text;
                     f.id_user = Int32.Parse(data.Rows[0][0].ToString());
                     f.kholamviec = data.Rows[0][4].ToString();
+                    f.quyentruycap = data.Rows[0][3].ToString();
                     f.GetKhoTheoUser();
+                    f.ribbon();
                     f.Show();
                     this.Hide();
                 }
