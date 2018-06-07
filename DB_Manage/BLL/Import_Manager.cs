@@ -166,7 +166,12 @@ namespace DB_Manage.BLL
         {
             return DataProvider.Instance.ExecuteQuery("PP_TAO_PHIEU_XUAT_TU_DONG @DATE , @NCC , @KH", new object[] { date, ncc, kh });
         }
-        //[PP_TAO_PHIEU_XUAT_TU_DONG] --
+
+        public DataTable kiemtranhaplieu(string ncc, string loainhaplieu)
+        {
+            return DataProvider.Instance.ExecuteQuery("PP_KIEM_TRA_NHAP_LIEU @NCC , @LOAI_DL", new object[] { ncc, loainhaplieu });
+        }
+        //[PP_KIEM_TRA_NHAP_LIEU] --
 
         public DataTable TinhtoanDGDC(DateTime datefrom, string ncc, string hh, string noign, int duongbo, int dieuchinh)
         {          

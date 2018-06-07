@@ -20,6 +20,7 @@ namespace DB_Manage
         public int id_user;
         public string kholamviec;
         public string quyentruycap ="";
+        public string kiemtra = "Xuat Kho";
         public FrmMain()
         {
             InitializeComponent();
@@ -1788,7 +1789,7 @@ namespace DB_Manage
                 return;
             }
             //cbMaSoXuatKho.Text = "";
-            //cbBienSoXuatKho.Text = "54-";
+            
             //cbKHXuatKho.Text = "";
             cbTaiXeXuatKho.Text = "";
             chbTienMatXuatKho.Checked = false;
@@ -1801,6 +1802,7 @@ namespace DB_Manage
             dtpNgayXuatKho.Value = DateTime.Now;
             dtpNgayXuatKho.Select();
             TbPhieuXuat.Text = taophieuxuat();
+            cbBienSoXuatKho.Text = "54-";
         }
 
         private void dtpBDXuatKho_ValueChanged(object sender, EventArgs e)
@@ -1889,11 +1891,12 @@ namespace DB_Manage
             { currow = dtgXuatKho.Rows.Count - 1; }
             else
             { currow = 0; }
-
+            string bienso = cbBienSoXuatKho.Text;
+            if (cbBienSoXuatKho.SelectedValue != null ) bienso = cbBienSoXuatKho.SelectedValue.ToString();
             if (dtgXuatKho.Rows.Count > 1 && dtgXuatKho.CurrentRow.Cells[0].Value.ToString() != "") id = (int)dtgXuatKho.CurrentRow.Cells[0].Value;
             try
             {
-                int results = Import_Manager.Instance.UpdatedXuatKho(Action, id, cbNCCXuatKho.Text, dtpNgayXuatKho.Value, cbHHXuatKho.Text, cbMaSoXuatKho.Text, (int)numSoBaoXuatKho.Value, cbBienSoXuatKho.SelectedValue.ToString(), cbKHXuatKho.Text, cbTaiXeXuatKho.Text, tienmat, (int)numTienMatXuatKho.Value, tbGhiChuXuatKho.Text, id_user, TbPhieuXuat.Text);
+                int results = Import_Manager.Instance.UpdatedXuatKho(Action, id, cbNCCXuatKho.Text, dtpNgayXuatKho.Value, cbHHXuatKho.Text, cbMaSoXuatKho.Text, (int)numSoBaoXuatKho.Value, bienso, cbKHXuatKho.Text, cbTaiXeXuatKho.Text, tienmat, (int)numTienMatXuatKho.Value, tbGhiChuXuatKho.Text, id_user, TbPhieuXuat.Text);
 
                 getxuatkho();
                 
@@ -2765,6 +2768,27 @@ namespace DB_Manage
         private void cbKHXuatKho_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(Action == 1) TbPhieuXuat.Text = taophieuxuat();
+        }
+
+        private void btnKiemTraXuatKho_Click(object sender, EventArgs e)
+        {
+            kiemtra = "Xuat Kho";
+            FrmCheck f = new FrmCheck();
+            f.KiemTraDL(cbNCCXuatKho.Text,kiemtra);
+            f.ShowDialog();
+        }
+
+        private void btnKiemTraNCC_Click(object sender, EventArgs e)
+        {
+            kiemtra = "NCC";
+            FrmCheck f = new FrmCheck();
+            f.KiemTraDL("", kiemtra);
+            f.ShowDialog();
+        }
+
+        private void dtpNgayXuatKho_ValueChanged(object sender, EventArgs e)
+        {
+            if (Action == 1) TbPhieuXuat.Text = taophieuxuat();
         }
     }
 }

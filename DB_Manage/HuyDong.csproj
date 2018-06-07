@@ -71,6 +71,12 @@
   <ItemGroup>
     <Compile Include="ADO\DataProvider.cs" />
     <Compile Include="BLL\Import_Manager.cs" />
+    <Compile Include="FrmCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCheck.Designer.cs">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCheck.resx">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
