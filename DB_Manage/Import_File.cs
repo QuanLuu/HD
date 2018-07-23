@@ -13,7 +13,6 @@ namespace QLHH_CN_HD
 {
     public partial class Import_File : Form
     {
-        int id_ncc = 0;
         public Import_File()
         {
             InitializeComponent();
@@ -30,7 +29,6 @@ namespace QLHH_CN_HD
             if (chbTonghop.Checked)
             {
                 cbNCC.Enabled = false;
-                id_ncc = 9999;
             }
         }
 
@@ -46,8 +44,9 @@ namespace QLHH_CN_HD
                 MessageBox.Show("Vui lòng chọn file lấy dữ liệu");
                 return;
             }
-            id_ncc = (int)cbNCC.SelectedValue;
-            int results = Import_Manager.Instance.ImportFileExcel(id_ncc, tbpath.Text, 1);  
+            int id_ncc = (int)cbNCC.SelectedValue;
+            if (chbTonghop.Checked == true) id_ncc = 9999;
+            int results = Import_Manager.Instance.ImportFileExcel(id_ncc, tbpath.Text, 1);
             MessageBox.Show("Đã lấy dữ liệu xong");
         }
 

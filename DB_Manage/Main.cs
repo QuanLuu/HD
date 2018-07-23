@@ -118,15 +118,15 @@ namespace DB_Manage
         }
         void getNhatKyNCC()
         {
-            DataTable data = Import_Manager.Instance.getNhatKyNCC(dtpBDLayHangNCC.Value, dtpKTLayHangNCC.Value, tbNCCNKNCC.Text, tbHHNKNCCFilter.Text);
+            DataTable data = Import_Manager.Instance.getNhatKyNCC(dtpBDLayHangNCC.Value, dtpKTLayHangNCC.Value, tbNCCNKNCC.Text, tbHHNKNCCFilter.Text, tbKHNKNCCFilter.Text, tbbiensonhatkynccfilter.Text, tbtaixenknccfilter.Text);
             dtgNKNCC.DataSource = data;
         }
         void getXeVC()
         {
             DataTable data = Import_Manager.Instance.getXe(tbBienSoFilter.Text);
             dtgXeVC.DataSource = data;
-            cbBienSoNhapKho.DisplayMember = "BIEN_SO";
-            cbBienSoNhapKho.DataSource = data;  
+            //cbBienSoNhapKho.DisplayMember = "BIEN_SO";
+            //cbBienSoNhapKho.DataSource = data;  
         }
 
         void getMaSoXuatKho()
@@ -202,7 +202,10 @@ namespace DB_Manage
             cbBienSoXuatKho.DisplayMember = "BIEN_SO_SHORT";
             cbBienSoXuatKho.ValueMember = "BIEN_SO";
             cbBienSoXuatKho.DataSource = data;
-
+            DataTable xehuydong = Import_Manager.Instance.getxehuydong();
+            cbBienSoNhapKho.DisplayMember = "BIEN_SO_SHORT";
+            cbBienSoNhapKho.ValueMember = "BIEN_SO";
+            cbBienSoNhapKho.DataSource = xehuydong;
         }
         void gettaixe()
         {
@@ -219,7 +222,8 @@ namespace DB_Manage
         void getromooc()
         {
             DataTable data = Import_Manager.Instance.getRoMoooc();
-            cbRoMocNhapKho.DisplayMember = "BIEN_SO";
+            cbRoMocNhapKho.DisplayMember = "BIEN_SO_SHORT";
+            cbRoMocNhapKho.ValueMember = "BIEN_SO";
             cbRoMocNhapKho.DataSource = data;
         }
 
@@ -272,7 +276,7 @@ namespace DB_Manage
             }
             else
             {
-                return "";
+                return "HD";
             }
         }
 
@@ -300,7 +304,7 @@ namespace DB_Manage
                 return "";
             }
         }
-        void getnhapkho()
+        public void getnhapkho()
         {
             DataTable data = Import_Manager.Instance.getnhapkho(dtpBDNhapKhoFilter.Value, dtpKTNhapKhoFilter.Value,cbNCCNhapKho.Text, tbHHNhapKhoFilter.Text, tbMaSoNhapKhoFilter.Text);
             dtgNhapKho.DataSource = data;
@@ -355,7 +359,7 @@ namespace DB_Manage
 
         void getxuatkho()
         {
-            DataTable data = Import_Manager.Instance.getxuatkho(dtpBDXuatKho.Value, dtpKTXuatKho.Value, cbNCCXuatKho.Text, tbKHXuatKhoFilter.Text, tbHHXuatKhoFilter.Text, tbMaSoXuatKhoFilter.Text);
+            DataTable data = Import_Manager.Instance.getxuatkho(dtpBDXuatKho.Value, dtpKTXuatKho.Value, cbNCCXuatKho.Text, tbKHXuatKhoFilter.Text, tbHHXuatKhoFilter.Text, tbMaSoXuatKhoFilter.Text, tbbiensoxuatkhofilter.Text, tbtxxuatkhofilter.Text);
             dtgXuatKho.DataSource = data;
         }
         void gettaikhoandangnhap()
@@ -1421,6 +1425,18 @@ namespace DB_Manage
                 return;
             }
             Action = 2;
+            if (dtgNhapKho.CurrentRow != null && dtgNhapKho.CurrentRow.Cells[0].Value.ToString() != "" && Action != 1)
+            {
+                if (Action != 0) cbNCCNhapKho.Text = dtgNhapKho.CurrentRow.Cells[1].Value.ToString();
+                dtpNhapKho.Value = DateTime.Parse(dtgNhapKho.CurrentRow.Cells[2].Value.ToString());
+                cbhhNhapKho.Text = dtgNhapKho.CurrentRow.Cells[3].Value.ToString();
+                cbMaSoNhapKho.Text = dtgNhapKho.CurrentRow.Cells[4].Value.ToString();
+                numSoBaoNhapKho.Text = dtgNhapKho.CurrentRow.Cells[5].Value.ToString();
+                cbBienSoNhapKho.Text = dtgNhapKho.CurrentRow.Cells[6].Value.ToString();
+                cbTaiXeNhapKho.Text = dtgNhapKho.CurrentRow.Cells[7].Value.ToString();
+                cbRoMocNhapKho.Text = dtgNhapKho.CurrentRow.Cells[8].Value.ToString();
+                tbGhiChuNhapKho.Text = dtgNhapKho.CurrentRow.Cells[9].Value.ToString();
+            }
             Button curBut = sender as Button;
             EnableControlDataEntry(curBut.Parent);
             panelNhapKho.Visible = true;
@@ -1446,11 +1462,21 @@ namespace DB_Manage
             { currow = dtgNhapKho.Rows.Count - 1; }
             else
             { currow = 0; }
-
+            string bienso = cbBienSoNhapKho.Text;
+            string romooc = cbRoMocNhapKho.Text;
+            if (cbBienSoNhapKho.SelectedValue != null) bienso = cbBienSoNhapKho.SelectedValue.ToString();
+            if (cbRoMocNhapKho.SelectedValue != null) romooc = cbRoMocNhapKho.SelectedValue.ToString();
             if (dtgNhapKho.Rows.Count > 1 && dtgNhapKho.CurrentRow.Cells[0].Value.ToString() != "") id = (int)dtgNhapKho.CurrentRow.Cells[0].Value;
             try
             {
-                int results = Import_Manager.Instance.UpdatedNhapKho(Action, id, dtpNhapKho.Value, cbhhNhapKho.Text, cbMaSoNhapKho.Text, (int)numSoBaoNhapKho.Value, cbBienSoNhapKho.Text, cbTaiXeNhapKho.Text, cbRoMocNhapKho.Text, tbGhiChuNhapKho.Text, tendn, cbNCCNhapKho.Text);
+                DataTable checkmaso = Import_Manager.Instance.Checkmasonhapkho(cbMaSoNhapKho.Text);
+                if(Int32.Parse(checkmaso.Rows[0][0].ToString()) > 0)
+                {
+                    MessageBox.Show("Trùng mã số, vui lòng kiểm tra lại");
+                    return;
+                }
+
+                int results = Import_Manager.Instance.UpdatedNhapKho(Action, id, dtpNhapKho.Value, cbhhNhapKho.Text, cbMaSoNhapKho.Text, (int)numSoBaoNhapKho.Value, bienso, cbTaiXeNhapKho.Text, romooc, tbGhiChuNhapKho.Text, tendn, cbNCCNhapKho.Text);
 
                 getnhapkho();
                 
@@ -1626,7 +1652,7 @@ namespace DB_Manage
 
         private void cbBienSoNhapKho_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(Action==1) cbTaiXeNhapKho.Text = getTXtheoBienSo(cbBienSoNhapKho.Text);
+            if(Action==1) cbTaiXeNhapKho.Text = getTXtheoBienSo(cbBienSoNhapKho.SelectedValue.ToString());
         }
 
         private void cbBienSoXuatKho_SelectedIndexChanged(object sender, EventArgs e)
@@ -1951,18 +1977,7 @@ namespace DB_Manage
 
         private void dtgNhapKho_SelectionChanged(object sender, EventArgs e)
         {
-            if (dtgNhapKho.CurrentRow != null && dtgNhapKho.CurrentRow.Cells[0].Value.ToString() != "" && Action != 1)
-            {
-                if (Action != 0) cbNCCNhapKho.Text = dtgNhapKho.CurrentRow.Cells[1].Value.ToString();
-                dtpNhapKho.Value = DateTime.Parse(dtgNhapKho.CurrentRow.Cells[2].Value.ToString());
-                cbhhNhapKho.Text = dtgNhapKho.CurrentRow.Cells[3].Value.ToString();
-                cbMaSoNhapKho.Text = dtgNhapKho.CurrentRow.Cells[4].Value.ToString();
-                numSoBaoNhapKho.Text = dtgNhapKho.CurrentRow.Cells[5].Value.ToString();
-                cbBienSoNhapKho.Text = dtgNhapKho.CurrentRow.Cells[6].Value.ToString();
-                cbTaiXeNhapKho.Text = dtgNhapKho.CurrentRow.Cells[7].Value.ToString();
-                cbRoMocNhapKho.Text = dtgNhapKho.CurrentRow.Cells[8].Value.ToString();
-                tbGhiChuNhapKho.Text = dtgNhapKho.CurrentRow.Cells[9].Value.ToString();
-            }
+           
         }
 
         private void dtgXuatKho_SelectionChanged(object sender, EventArgs e)
@@ -2789,6 +2804,151 @@ namespace DB_Manage
         private void dtpNgayXuatKho_ValueChanged(object sender, EventArgs e)
         {
             if (Action == 1) TbPhieuXuat.Text = taophieuxuat();
+        }
+
+        private void buttonItemMaSo_Click(object sender, EventArgs e)
+        {
+            FrmMaSo f = new FrmMaSo();
+            f.ShowDialog();
+            f.FormClosing += formmaso_close;
+        }
+        private void formmaso_close(object sender, FormClosingEventArgs e)
+        {
+            getnhapkho();
+            getxuatkho();
+        }
+
+        private void tbbiensoxuatkhofilter_TextChanged(object sender, EventArgs e)
+        {
+            getxuatkho();
+        }
+
+        private void panel26_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tbtxxuatkhofilter_TextChanged(object sender, EventArgs e)
+        {
+            getxuatkho();
+        }
+
+        private void buttonItemNXT_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTabIndex = 13;
+            dtpfromNXT.Value = DateTime.Now.AddDays(-7);
+            dtptoNXT.Value = DateTime.Now;
+        }
+        void getnxt()
+        {
+            int nxtkho = 0;
+            if (chbHHNCCNXT.Checked) nxtkho = 1;
+            DataTable data = Import_Manager.Instance.BaoCaoNXT(dtpfromNXT.Value, dtptoNXT.Value, tbHHNXT.Text, tbNCCNXT.Text, nxtkho);
+            dtgNXT.DataSource = data;
+        }
+        void chitietmathang()
+        {
+            int ctmh = 0;
+            if (chbCTMH.Checked) ctmh = 1;
+            DataTable data = Import_Manager.Instance.BaoCaoChiTietMatHang(dtpfromchitietmh.Value, dtptochitietmh.Value, tbHHCTMH.Text, tbNCCCCTMH.Text, tbMSCTMH.Text ,ctmh);
+            dtgChiTietMH.DataSource = data;
+        }
+
+        private void dtpfromNXT_ValueChanged(object sender, EventArgs e)
+        {
+            getnxt();
+        }
+
+        private void dtptoNXT_ValueChanged(object sender, EventArgs e)
+        {
+            getnxt();
+        }
+
+        private void tbHHNXT_TextChanged(object sender, EventArgs e)
+        {
+            getnxt();
+        }
+
+        private void tbNCCNXT_TextChanged(object sender, EventArgs e)
+        {
+            getnxt();
+        }
+
+        private void chbHHNCCNXT_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chbHHNCCNXT.Checked)
+            {
+                tbNCCNXT.Visible = true;
+                labelNCCNXT.Visible = true;
+            }
+            else
+            {
+                tbNCCNXT.Visible = false;
+                labelNCCNXT.Visible = false;
+            }
+            getnxt();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            getNhatKyNCC();
+        }
+
+        private void tbKHNKNCCFilter_TextChanged(object sender, EventArgs e)
+        {
+            getNhatKyNCC();
+        }
+
+        private void tbtaixenknccfilter_TextChanged(object sender, EventArgs e)
+        {
+            getNhatKyNCC();
+        }
+
+        private void buttonItemCTMH_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTabIndex = 14;
+            dtpfromchitietmh.Value = DateTime.Now.AddDays(-7);
+            dtptochitietmh.Value = DateTime.Now;
+        }
+
+        private void dtpfromchitietmh_ValueChanged(object sender, EventArgs e)
+        {
+            chitietmathang();
+        }
+
+        private void dtptochitietmh_ValueChanged(object sender, EventArgs e)
+        {
+            chitietmathang();
+        }
+
+        private void tbHHCTMH_TextChanged(object sender, EventArgs e)
+        {
+            chitietmathang();
+        }
+
+        private void tbMSCTMH_TextChanged(object sender, EventArgs e)
+        {
+            chitietmathang();
+        }
+
+        private void tbNCCCCTMH_TextChanged(object sender, EventArgs e)
+        {
+            chitietmathang();
+        }
+
+        private void chbCTMH_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbCTMH.Checked)
+            {
+                tbNCCCCTMH.Visible = true;
+                labelCTMH.Visible = true;
+            }
+            else
+            {
+                tbNCCCCTMH.Visible = false;
+                labelCTMH.Visible = false;
+            }
+            chitietmathang();
         }
     }
 }

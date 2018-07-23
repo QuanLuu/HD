@@ -83,6 +83,12 @@
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMaSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMaSo.Designer.cs">
+      <DependentUpon>FrmMaSo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Import_File.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMaSo.resx">
+      <DependentUpon>FrmMaSo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Import_File.resx">
       <DependentUpon>Import_File.cs</DependentUpon>

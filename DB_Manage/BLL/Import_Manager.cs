@@ -35,10 +35,10 @@ namespace DB_Manage.BLL
             return DataProvider.Instance.ExecuteQuery("SELECT ID, MA_HANG, TEN_HANG, KHOI_LUONG, GHI_CHU FROM DM_HANG_HOA", new object[] { });
         }
 
-        public DataTable GetAllXeVC()
-        {
-            return DataProvider.Instance.ExecuteQuery("SELECT BIEN_SO FROM DM_XE_VC_KH UNION SELECT BIEN_SO FROM DM_XE_HUY_DONG", new object[] { });
-        }
+        //public DataTable GetAllXeVC()
+        //{
+        //    return DataProvider.Instance.ExecuteQuery("SELECT BIEN_SO FROM DM_XE_VC_KH UNION SELECT BIEN_SO FROM DM_XE_HUY_DONG", new object[] { });
+        //}
         public DataTable GetNCC()
         {
             return DataProvider.Instance.ExecuteQuery("SELECT * FROM DM_NCC ", new object[] { });
@@ -68,7 +68,12 @@ namespace DB_Manage.BLL
 
         public DataTable getRoMoooc()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT * FROM DM_XE_HUY_DONG WHERE GHI_CHU LIKE 'RO_MOOC'", new object[] {  });
+            return DataProvider.Instance.ExecuteQuery("SELECT SUBSTRING(BIEN_SO, CHARINDEX('-', BIEN_SO) + 1, len(BIEN_SO) - CHARINDEX('-', BIEN_SO)) + '-' +  SUBSTRING(BIEN_SO, 1 , CHARINDEX('-', BIEN_SO) - 1) AS BIEN_SO_SHORT, BIEN_SO FROM DM_XE_HUY_DONG WHERE LEN(BIEN_SO)> 0 AND GHI_CHU LIKE 'RO_MOOC'", new object[] {  });
+        }
+
+        public DataTable Checkmasonhapkho(string maso)
+        {
+            return DataProvider.Instance.ExecuteQuery("EXEC PP_UI_CHECK_MA_NHAP_KHO @MASO", new object[] {maso });
         }
 
         public DataTable getTaiXe()
@@ -106,9 +111,9 @@ namespace DB_Manage.BLL
         {
             return DataProvider.Instance.ExecuteQuery("EXEC PP_TINH_TOAN_GIA_DIEU_CHINH @DATE_FROM , @NCC , @HH , @NOI_GN , @DUONG_BO , @DIEU_CHINH", new object[] { datefrom, ncc, hh, noign, duongbo, dieuchinh });
         }
-        public DataTable getNhatKyNCC(DateTime datefrom, DateTime dateto, string ncc, string hh)
+        public DataTable getNhatKyNCC(DateTime datefrom, DateTime dateto, string ncc, string hh, string kh, string bienso, string taixe)
         {
-            return DataProvider.Instance.ExecuteQuery("EXEC PP_UI_GET_NHAT_KY_NCC @DATE_FROM , @DATE_TO , @NCC , @HH", new object[] { datefrom, dateto, ncc, hh });
+            return DataProvider.Instance.ExecuteQuery("EXEC PP_UI_GET_NHAT_KY_NCC @DATE_FROM , @DATE_TO , @NCC , @HH , @KH , @BIENSO , @TAIXE", new object[] { datefrom, dateto, ncc, hh, kh, bienso, taixe });
         }
         public DataTable GetUser( string tendn, string mk)
         {
@@ -157,6 +162,11 @@ namespace DB_Manage.BLL
         {
             return DataProvider.Instance.ExecuteQuery("PP_UI_GET_ALL_XE_XUAT_KHO", new object[] { });
         }
+
+        public DataTable getxehuydong()
+        {
+            return DataProvider.Instance.ExecuteQuery("PP_UI_GET_XE_HUY_DONG", new object[] { });
+        }
         public DataTable gettontheomaso(string ms)
         {
             return DataProvider.Instance.ExecuteQuery("PP_UI_GET_TON_THEO_MA_SO @MS", new object[] { ms});
@@ -171,7 +181,7 @@ namespace DB_Manage.BLL
         {
             return DataProvider.Instance.ExecuteQuery("PP_KIEM_TRA_NHAP_LIEU @NCC , @LOAI_DL", new object[] { ncc, loainhaplieu });
         }
-        //[PP_KIEM_TRA_NHAP_LIEU] --
+        //[PP_NHAP_XUAT_TON] --
 
         public DataTable TinhtoanDGDC(DateTime datefrom, string ncc, string hh, string noign, int duongbo, int dieuchinh)
         {          
@@ -179,14 +189,25 @@ namespace DB_Manage.BLL
            
         }
 
+        public DataTable BaoCaoChiTietMatHang(DateTime datefrom, DateTime dateto, string hh, string ncc, string maso, int hhncc)
+        {
+            return DataProvider.Instance.ExecuteQuery("exec PP_CHI_TIET_MAT_HANG @DATE_FROM , @DATE_TO , @HH , @NCC , @MASO , @HH_NCC", new object[] { datefrom, dateto, hh, ncc, maso, hhncc });
+        }
+
+        public DataTable BaoCaoNXT(DateTime datefrom, DateTime dateto, string hh, string ncc, int hhncc)
+        {
+            return DataProvider.Instance.ExecuteQuery("exec PP_NHAP_XUAT_TON @DATE_FROM , @DATE_TO , @HH , @NCC , @HH_NCC", new object[] { datefrom, dateto, hh, ncc, hhncc });
+        }
+
+
         public DataTable getnhapkho(DateTime datefrom, DateTime dateto,string ncc, string hh, string maso)
         {
             return DataProvider.Instance.ExecuteQuery("exec PP_UI_GET_NHAT_KY_NHAP_KHO @DATE_FROM , @DATE_TO , @NCC , @HH , @MA_SO", new object[] { datefrom, dateto,ncc, hh, maso});
 
         }
-        public DataTable getxuatkho(DateTime DATE_FROM , DateTime DATE_TO ,string NCC , string KH , string HH , string MA_SO)
+        public DataTable getxuatkho(DateTime DATE_FROM , DateTime DATE_TO ,string NCC , string KH , string HH , string MA_SO, string bienso, string taixe)
         {
-            return DataProvider.Instance.ExecuteQuery("exec PP_UI_GET_NHAT_KY_XUAT_KHO @DATE_FROM , @DATE_TO , @NCC , @KH , @HH , @MA_SO", new object[] { DATE_FROM, DATE_TO, NCC, KH, HH, MA_SO });
+            return DataProvider.Instance.ExecuteQuery("exec PP_UI_GET_NHAT_KY_XUAT_KHO @DATE_FROM , @DATE_TO , @NCC , @KH , @HH , @MA_SO , @BIEN_SO , @TAIXE", new object[] { DATE_FROM, DATE_TO, NCC, KH, HH, MA_SO, bienso, taixe });
 
         }
 
@@ -288,6 +309,14 @@ namespace DB_Manage.BLL
         public int UpdateKMNCC( string query, int idkm)
         {
             return DataProvider.Instance.ExecuteNonQuery("EXEC PP_UI_UPDATE_DS_KH_KO_AP_KM @QUERY , @ID_KM", new object[] { query, idkm});
+        }
+        public int UpdateMASO(string mssai, string msdung)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("EXEC PP_UI_UPDATE_MA_SO @MASO_SAI , @MASO_DUNG", new object[] { mssai, msdung });
+        }
+        public int DeleteMASO(string mssai)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("EXEC PP_UI_DELETE_MA_SO @MASO_SAI", new object[] { mssai});
         }
     }
 
