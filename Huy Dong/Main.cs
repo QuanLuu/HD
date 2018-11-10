@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,6 +29,7 @@ namespace DB_Manage
             ribNhapXuatKho.Select();
             tabControlMain.SelectedTabIndex = 5;
             checkedListBoxQuyenTruyCap.Items.Clear();
+            datagridviewspeed();
             //GetKhoTheoUser();
             getHH();
             getNCC();
@@ -53,12 +55,60 @@ namespace DB_Manage
             //SetDropDown(this.panelNKNCC);
   
             GetDSKho();
-            tbnamKM.Text = DateTime.Now.Year.ToString();
-            tbThangKM.Text = DateTime.Now.Month.ToString();
+            getdongiavckh();
+            getDCGiaKH();
+            getDGVCKho();
+            getDonGiaDCNCC();
             tbNamCk1.Text = DateTime.Now.Year.ToString();
             tbThangCK1.Text = DateTime.Now.Month.ToString();
             dtpNGayBDTongHopSLH.Value = DateTime.Now;
             dtpNgayKTTongHopSLH.Value = DateTime.Now.AddDays(7);
+        }
+        void getDGVCKho()
+        {
+            DataTable data = Import_Manager.Instance.getDonGiaVCKho(tbspDGVCKho.Text);
+            dtgDGVCKho.DataSource = data;
+        }
+
+        void getDonGiaDCNCC()
+        {
+            DataTable data = Import_Manager.Instance.getDonGiaDCNCC(tbkhDGDCNCC.Text, tbSPDGDCNCC.Text, tbNCCDGDCNCC.Text);
+            dtgDGDCNCC.DataSource = data;
+        }
+
+        void datagridviewspeed()
+        {
+            typeof(DataGridView).InvokeMember("DoubleBuffered", BindingFlags.NonPublic |
+            BindingFlags.Instance | BindingFlags.SetProperty, null,
+            dtgNKNCC, new object[] { true });
+
+            typeof(DataGridView).InvokeMember("DoubleBuffered", BindingFlags.NonPublic |
+            BindingFlags.Instance | BindingFlags.SetProperty, null,
+            dtgTongHopSLH, new object[] { true });
+
+            typeof(DataGridView).InvokeMember("DoubleBuffered", BindingFlags.NonPublic |
+            BindingFlags.Instance | BindingFlags.SetProperty, null,
+            dtgdongiangay, new object[] { true });
+
+            typeof(DataGridView).InvokeMember("DoubleBuffered", BindingFlags.NonPublic |
+            BindingFlags.Instance | BindingFlags.SetProperty, null,
+            dtgNhapKho, new object[] { true });
+
+            typeof(DataGridView).InvokeMember("DoubleBuffered", BindingFlags.NonPublic |
+            BindingFlags.Instance | BindingFlags.SetProperty, null,
+            dtgXuatKho, new object[] { true });
+
+            typeof(DataGridView).InvokeMember("DoubleBuffered", BindingFlags.NonPublic |
+            BindingFlags.Instance | BindingFlags.SetProperty, null,
+            dtgKH, new object[] { true });
+
+            typeof(DataGridView).InvokeMember("DoubleBuffered", BindingFlags.NonPublic |
+            BindingFlags.Instance | BindingFlags.SetProperty, null,
+            dtgXeKH, new object[] { true });
+
+            typeof(DataGridView).InvokeMember("DoubleBuffered", BindingFlags.NonPublic |
+            BindingFlags.Instance | BindingFlags.SetProperty, null,
+            dtgDCGiaKH, new object[] { true });
         }
       void getHH()
         {
@@ -79,9 +129,7 @@ namespace DB_Manage
             cbHHXuatKho.BindingContext = new BindingContext();
             cbHHXuatKho.DisplayMember = "TEN_HANG";
             cbHHXuatKho.DataSource = data;
-            cbHHKM.BindingContext = new BindingContext();
-            cbHHKM.DisplayMember = "TEN_HANG";
-            cbHHKM.DataSource = data;
+           
 
             cbHHCK1.BindingContext = new BindingContext();
             cbHHCK1.DisplayMember = "TEN_HANG";
@@ -89,6 +137,18 @@ namespace DB_Manage
             cbHHCK2.BindingContext = new BindingContext();
             cbHHCK2.DisplayMember = "TEN_HANG";
             cbHHCK2.DataSource = data;
+
+            cbSPDCGiaKH.BindingContext = new BindingContext();
+            cbSPDCGiaKH.DisplayMember = "TEN_HANG";
+            cbSPDCGiaKH.DataSource = data;
+
+            cbSpDGVCKho.BindingContext = new BindingContext();
+            cbSpDGVCKho.DisplayMember = "TEN_HANG";
+            cbSpDGVCKho.DataSource = data;
+
+            cbSPDGDCNCC.BindingContext = new BindingContext();
+            cbSPDGDCNCC.DisplayMember = "TEN_HANG";
+            cbSPDGDCNCC.DataSource = data;
         }
 
         void PopulateStringGrid(DataGridView aGrid, DataTable data)
@@ -150,14 +210,7 @@ namespace DB_Manage
                 dtgCK2.DataSource = data;
         }
 
-        void getKMNCC()
-        {
-            if (tbnamKM.Text != "" && tbThangKM.Text != "")
-            {
-                DataTable data = Import_Manager.Instance.getKMNCC(Int32.Parse(tbnamKM.Text), Int32.Parse(tbThangKM.Text));
-                dtgKM.DataSource = data;
-            }
-        }
+      
         void GetDSKho()
         {
             DataTable data = Import_Manager.Instance.GetDanhSachKho();
@@ -184,7 +237,11 @@ namespace DB_Manage
             cbNCCDonGiaNgay.BindingContext = new BindingContext();
             cbNCCDonGiaNgay.DisplayMember = "MA_NCC";
             cbNCCDonGiaNgay.DataSource = data;
-           
+
+            cbNCCDGDCNCC.BindingContext = new BindingContext();
+            cbNCCDGDCNCC.DisplayMember = "MA_NCC";
+            cbNCCDGDCNCC.DataSource = data;
+
         }
 
         void getMaSoNhapKho()
@@ -423,10 +480,14 @@ namespace DB_Manage
             cbKHCK2.BindingContext = new BindingContext();
             cbKHCK2.DisplayMember = "KHACH_HANG";
             cbKHCK2.DataSource = data;
-            for (int i = 0; i< data.Rows.Count; i++)
-            {
-                chlKMKH.Items.Add(data.Rows[i][1].ToString());
-            }
+
+            cbKHDCGiaKH.BindingContext = new BindingContext();
+            cbKHDCGiaKH.DisplayMember = "KHACH_HANG";
+            cbKHDCGiaKH.DataSource = data;
+
+            cbKHDGDCNCC.BindingContext = new BindingContext();
+            cbKHDGDCNCC.DisplayMember = "KHACH_HANG";
+            cbKHDGDCNCC.DataSource = data;
         }
         private void dtgHangHoa_SelectionChanged(object sender, EventArgs e)
         {
@@ -2211,215 +2272,26 @@ namespace DB_Manage
             EnableControlDataEntry(curBut.Parent);
         }
 
-        private void btnnewKM_Click(object sender, EventArgs e)
-        {
-            if (Action != 0)
-            {
-                MessageBox.Show("Bạn chưa lưu dữ liệu");
-                return;
-            }
-            dtpNgayBDKM.Value = DateTime.Now;
-            dtpNgayKTKM.Value = DateTime.Now.AddDays(10);
-            numGiamKM.Value = 0;
-            cbDonViKM.Text = "VND";
-            Action = 1;
-            Button curBut = sender as Button;
-            EnableControlDataEntry(curBut.Parent);
-            panelKM.Visible = true;
-        }
-
-        private void btneditKM_Click(object sender, EventArgs e)
-        {
-            if (Action != 0)
-            {
-                MessageBox.Show("Bạn chưa lưu dữ liệu");
-                return;
-            }
-            Action = 2;
-            if(dtgKM.CurrentRow != null)
-            {
-                dtpNgayBDKM.Value = DateTime.Parse(dtgKM.CurrentRow.Cells[1].Value.ToString());
-                dtpNgayKTKM.Value = DateTime.Parse(dtgKM.CurrentRow.Cells[2].Value.ToString());
-                cbHHKM.Text = dtgKM.CurrentRow.Cells[3].Value.ToString();
-                numGiamKM.Value = Int32.Parse(dtgKM.CurrentRow.Cells[4].Value.ToString());
-                cbDonViKM.Text = dtgKM.CurrentRow.Cells[5].Value.ToString();
-            }
-            Button curBut = sender as Button;
-            EnableControlDataEntry(curBut.Parent);
-            panelKM.Visible = true;
-        }
-
-        private void btncancelKM_Click(object sender, EventArgs e)
-        {
-            Action = 0;  
-            Button curBut = sender as Button;
-            EnableControlDataEntry(curBut.Parent);
-            panelKM.Visible = false;
-        }
-
-        private void btnsaveKM_Click(object sender, EventArgs e)
-        {
-
-            int id = 0;
-            int currow = 0;
-            if (Action == 2)
-            { currow = dtgKM.CurrentRow.Index; }
-            else if (Action == 1)
-            { currow = dtgKM.Rows.Count - 1; }
-            else
-            { currow = 0; }
-
-            if (dtgKM.Rows.Count > 1 && dtgKM.CurrentRow.Cells[0].Value.ToString() != "") id = (int)dtgKM.CurrentRow.Cells[0].Value;
-            try
-            {
-                int results = Import_Manager.Instance.UpdateKMNCC(Action, id, dtpNgayBDKM.Value, dtpNgayKTKM.Value, cbHHKM.Text, (int)numGiamKM.Value, cbDonViKM.Text);
-
-                getKMNCC();
-
-                dtgKM.CurrentCell = dtgKM.Rows[currow].Cells[0];
-                if (Action == 1)
-                {
-                    Action = 0;
-                    btnnewKM_Click(btnnewKM, e);
-                }
-                else
-                {
-                    Action = 0;
-                    Button curBut = sender as Button;
-                    EnableControlDataEntry(curBut.Parent);
-                    panelKM.Visible = false;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+       
 
         private void buttonItemKM_Click(object sender, EventArgs e)
         {
-            getKMNCC();
+            //getKMNCC();
             tabControlMain.SelectedTabIndex = 9;
         }
 
-        private void btndeleteKM_Click(object sender, EventArgs e)
-        {
-            if (Action != 0)
-            {
-                MessageBox.Show("Bạn chưa lưu dữ liệu");
-                return;
-            }
-            Action = 3;
-            if (MessageBox.Show("Are you sure to delete?", "Information", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
-            {
-                Action = 0;
-                return;
-            }
-            try
-            {
-                int results = Import_Manager.Instance.UpdateKMNCC(Action, Int32.Parse(dtgKM.CurrentRow.Cells[0].Value.ToString()), dtpNgayBDKM.Value, dtpNgayKTKM.Value, cbHHKM.Text, (int)numGiamKM.Value, cbDonViKM.Text);
-                getKMNCC();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            Action = 0;
-            Button curBut = sender as Button;
-            EnableControlDataEntry(curBut.Parent);
-        }
+        
 
-        private void numGiamKM_ValueChanged(object sender, EventArgs e)
-        {
-            if (numGiamKM.Value > 100)
-            {
-                cbDonViKM.Text = "VND";
-            }
-            else { cbDonViKM.Text = "Bao"; }
-        }
+       
 
-        private void dtgKM_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex == -1) return;
-            if(dtgKM.CurrentRow.Cells[0].Value.ToString() != "") dtgKMKH.DataSource = Import_Manager.Instance.getDSKHkoapKM(Int32.Parse(dtgKM.CurrentRow.Cells[0].Value.ToString()));
-        }
+        
 
         private void numGiamKM_KeyPress(object sender, KeyPressEventArgs e)
         {
             
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            if (Action != 0)
-            {
-                MessageBox.Show("Bạn chưa lưu dữ liệu");
-                return;
-            }
-            for (int i=0; i < chlKMKH.Items.Count; i++)
-            {
-                chlKMKH.SetItemChecked(i, false);
-                if (dtgKMKH.Rows.Count > 1)
-                {
-                    for (int j = 0; j < dtgKMKH.Rows.Count-1; j++ )
-                    {
-                        if (chlKMKH.Items[i].ToString() == dtgKMKH.Rows[j].Cells[1].Value.ToString()) chlKMKH.SetItemChecked(i, true);
-                    }
-                }
-            }
-            tbnnewKMKH.Enabled = false;
-            btnsaveKMKH.Enabled = true;
-            btncancelKMKH.Enabled = true;
-            chlKMKH.Visible = true;
-            Action = 2;
-            
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            
-            string idkm = dtgKM.CurrentRow.Cells[0].Value.ToString(); 
-            string query = "";
-            for (int i = 0; i < chlKMKH.Items.Count; i++)
-            {
-                if(chlKMKH.GetItemChecked(i)) query += "(" + idkm + ", '" + chlKMKH.Items[i].ToString() + "'), " + "\n";    
-            }
-            if (query != "") query = query.Substring(0, query.Length - 3);
- 
-                try
-                {
-                 
-                    int result;
-                    result = Import_Manager.Instance.UpdateKMNCC(query, Int32.Parse(idkm));
-                    dtgKMKH.DataSource = Import_Manager.Instance.getDSKHkoapKM(Int32.Parse(dtgKM.CurrentRow.Cells[0].Value.ToString()));
-                    Action = 0;
-                    chlKMKH.Visible = false;
-                    tbnnewKMKH.Enabled = true;
-                    btnsaveKMKH.Enabled = false;
-                    btncancelKMKH.Enabled = false;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-        }
-
-        private void btncancelKMKH_Click(object sender, EventArgs e)
-        {
-            Action = 0;
-            chlKMKH.Visible = false;
-            tbnnewKMKH.Enabled = true;
-            btnsaveKMKH.Enabled = false;
-            btncancelKMKH.Enabled = false;
-        }
-
-        private void dtgKM_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dtgKM.CurrentRow == null) return;
-            if (dtgKM.CurrentRow.Cells[0].Value.ToString() != "") dtgKMKH.DataSource = Import_Manager.Instance.getDSKHkoapKM(Int32.Parse(dtgKM.CurrentRow.Cells[0].Value.ToString()));
-        }
-
+       
         private void btnnewck1_Click(object sender, EventArgs e)
         {
             if (Action != 0)
@@ -2553,15 +2425,7 @@ namespace DB_Manage
             EnableControlDataEntry(curBut.Parent);
         }
 
-        private void tbnamKM_TextChanged(object sender, EventArgs e)
-        {
-            getKMNCC();
-        }
-
-        private void tbThangKM_TextChanged(object sender, EventArgs e)
-        {
-            getKMNCC();
-        }
+     
 
         private void numCK1_ValueChanged(object sender, EventArgs e)
         {
@@ -2592,14 +2456,7 @@ namespace DB_Manage
             else { cbDonViCK1.Text = "Bao"; }
         }
 
-        private void numGiamKM_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (numGiamKM.Value > 100)
-            {
-                cbDonViKM.Text = "VND";
-            }
-            else { cbDonViKM.Text = "Bao"; }
-        }
+      
 
         private void tbKHCK2_TextChanged(object sender, EventArgs e)
         {
@@ -2949,6 +2806,544 @@ namespace DB_Manage
                 labelCTMH.Visible = false;
             }
             chitietmathang();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (Action != 0)
+            {
+                MessageBox.Show("Bạn chưa lưu dữ liệu");
+                return;
+            }
+            Action = 1;
+            Button curBut = sender as Button;
+            EnableControlDataEntry(curBut.Parent);
+            panelDonGiaVCKH.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (Action != 0)
+            {
+                MessageBox.Show("Bạn chưa lưu dữ liệu");
+                return;
+            }
+            if (dtgDonGiaVCKH.CurrentRow != null && dtgDonGiaVCKH.CurrentRow.Cells[1].Value.ToString() != "")
+            {
+                dtpDonGiaVCKH.Value = DateTime.Parse(dtgDonGiaVCKH.CurrentRow.Cells[1].Value.ToString());
+                cbLoaiHinhVCKH.Text = dtgDonGiaVCKH.CurrentRow.Cells[3].Value.ToString();
+                numDonGiaVCKH.Text = dtgDonGiaVCKH.CurrentRow.Cells[4].Value.ToString();
+            }
+
+            Action = 2;
+            Button curBut = sender as Button;
+            EnableControlDataEntry(curBut.Parent);
+            panelDonGiaVCKH.Visible = true;
+        }
+        void getdongiavckh()
+        {
+            DataTable data = Import_Manager.Instance.getDonGiaVCKH(tbloaihinhdongiavckh.Text);
+            dtgDonGiaVCKH.DataSource = data;
+        }
+
+        private void tbloaihinhdongiavckh_TextChanged(object sender, EventArgs e)
+        {
+            getdongiavckh();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (Action != 0)
+            {
+                MessageBox.Show("Bạn chưa lưu dữ liệu");
+                return;
+            }
+            Action = 3;
+            if (MessageBox.Show("Are you sure to delete?", "Information", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+            {
+                Action = 0;
+                return;
+            }
+            try
+            {
+                int results = Import_Manager.Instance.UpdateDonGiaVCKH(Action, Int32.Parse(dtgDonGiaVCKH.CurrentRow.Cells[0].Value.ToString()), dtpDonGiaVCKH.Value, "", "", 0, tendn);
+                getdongiavckh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            Action = 0;
+            Button curBut = sender as Button;
+            EnableControlDataEntry(curBut.Parent);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+            int id = 0;
+            int currow = 0;
+            string code = "";
+            if (Action == 2)
+            { currow = dtgDonGiaVCKH.CurrentRow.Index; }
+            else if (Action == 1)
+            { currow = dtgDonGiaVCKH.Rows.Count - 1; }
+            else
+            { currow = 0; }
+
+            if (dtgDonGiaVCKH.Rows.Count > 1 && dtgDonGiaVCKH.CurrentRow.Cells[0].Value.ToString() != "") id = (int)dtgDonGiaVCKH.CurrentRow.Cells[0].Value;
+            try
+            {
+                if (cbLoaiHinhVCKH.Text.Contains("NCC"))
+                    code = "NCC";
+                else
+                    code = "KHO";
+
+                int results = Import_Manager.Instance.UpdateDonGiaVCKH(Action, id, dtpDonGiaVCKH.Value, code, cbLoaiHinhVCKH.Text, numDonGiaVCKH.Value, tendn);
+
+                getdongiavckh();
+
+                dtgDonGiaVCKH.CurrentCell = dtgDonGiaVCKH.Rows[currow].Cells[0];
+                if (Action == 1)
+                {
+                    Action = 0;
+                    button6_Click(button6, e);
+                }
+                else
+                {
+                    Action = 0;
+                    Button curBut = sender as Button;
+                    EnableControlDataEntry(curBut.Parent);
+                    panelDonGiaVCKH.Visible = false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Action = 0;
+            Button curBut = sender as Button;
+            EnableControlDataEntry(curBut.Parent);
+            panelDonGiaVCKH.Visible = false;
+        }
+
+        private void buttonItem2_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTabIndex = 9;
+        }
+
+        private void buttonItem4_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTabIndex = 15;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (Action != 0)
+            {
+                MessageBox.Show("Bạn chưa lưu dữ liệu");
+                return;
+            }
+            numGiaDCKH.Value = 0;
+            cbLoaiHinhVCKH.Text = "";
+            cbKHDCGiaKH.Text = "";
+            Action = 1;
+            Button curBut = sender as Button;
+            EnableControlDataEntry(curBut.Parent);
+            panelDCGIaKH.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Action != 0)
+            {
+                MessageBox.Show("Bạn chưa lưu dữ liệu");
+                return;
+            }
+            if (dtgDCGiaKH.CurrentRow != null && dtgDCGiaKH.CurrentRow.Cells[1].Value.ToString() != "")
+            {
+                dtpNGayDieuChinhGiaKH.Value = DateTime.Parse(dtgDCGiaKH.CurrentRow.Cells[1].Value.ToString());
+                cbLoaiHinhDCGiaKH.Text = dtgDCGiaKH.CurrentRow.Cells[3].Value.ToString();
+                cbKHDCGiaKH.Text = dtgDCGiaKH.CurrentRow.Cells[4].Value.ToString();
+                cbSPDCGiaKH.Text = dtgDCGiaKH.CurrentRow.Cells[5].Value.ToString();
+                numGiaDCKH.Text = dtgDCGiaKH.CurrentRow.Cells[6].Value.ToString();
+            }
+
+            Action = 2;
+            Button curBut = sender as Button;
+            EnableControlDataEntry(curBut.Parent);
+            panelDCGIaKH.Visible = true;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (Action != 0)
+            {
+                MessageBox.Show("Bạn chưa lưu dữ liệu");
+                return;
+            }
+            Action = 3;
+            if (MessageBox.Show("Are you sure to delete?", "Information", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+            {
+                Action = 0;
+                return;
+            }
+            try
+            {
+                int results = Import_Manager.Instance.UpdateDieuChinhGiaKH(Action, Int32.Parse(dtgDCGiaKH.CurrentRow.Cells[0].Value.ToString()), DateTime.Now, "", "", "", "", 0, tendn);
+                getDCGiaKH();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            Action = 0;
+            Button curBut = sender as Button;
+            EnableControlDataEntry(curBut.Parent);
+        }
+        void getDCGiaKH()
+        {
+            DataTable data = Import_Manager.Instance.getDieuChinhGiaKH(tbloaihinhgiadckh.Text, tbkhdieuchinhgiakh.Text, tbspdieuchinhgiakh.Text);
+            dtgDCGiaKH.DataSource = data;
+        }
+
+        private void tbloaihinhgiadckh_TextChanged(object sender, EventArgs e)
+        {
+            getDCGiaKH();
+        }
+
+        private void tbkhdieuchinhgiakh_TextChanged(object sender, EventArgs e)
+        {
+            getDCGiaKH();
+        }
+
+        private void tbspdieuchinhgiakh_TextChanged(object sender, EventArgs e)
+        {
+            getDCGiaKH();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            
+            int id = 0;
+            int currow = 0;
+            string code = "";
+            if (cbLoaiHinhDCGiaKH.Text == "KH mua tại NCC")
+                code = "KH_NCC";
+            else if (cbLoaiHinhDCGiaKH.Text == "KH mua tại Kho")
+                code = "KH_KHO";
+            else if (cbLoaiHinhDCGiaKH.Text == "VC từ NCC tới KH")
+                code = "VC_NCC";
+            else if (cbLoaiHinhDCGiaKH.Text == "VC từ Kho tới KH")
+                code = "VC_KHO";
+            else
+                code = "";
+
+            if (Action == 2)
+            { currow = dtgDCGiaKH.CurrentRow.Index; }
+            else if (Action == 1)
+            { currow = dtgDCGiaKH.Rows.Count - 1; }
+            else
+            { currow = 0; }
+
+            if (dtgDCGiaKH.Rows.Count > 1 && dtgDCGiaKH.CurrentRow.Cells[0].Value.ToString() != "") id = (int)dtgDCGiaKH.CurrentRow.Cells[0].Value;
+            try
+            {
+                int results = Import_Manager.Instance.UpdateDieuChinhGiaKH(Action, id, dtpNGayDieuChinhGiaKH.Value, code, cbLoaiHinhDCGiaKH.Text, cbKHDCGiaKH.Text, cbSPDCGiaKH.Text, numGiaDCKH.Value, tendn);
+
+                getDCGiaKH();
+
+                dtgDCGiaKH.CurrentCell = dtgDCGiaKH.Rows[currow].Cells[0];
+                if (Action == 1)
+                {
+                    Action = 0;
+                    button10_Click(button10, e);
+                }
+                else
+                {
+                    Action = 0;
+                    Button curBut = sender as Button;
+                    EnableControlDataEntry(curBut.Parent);
+                    panelDCGIaKH.Visible = false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Action = 0;
+            Button curBut = sender as Button;
+            EnableControlDataEntry(curBut.Parent);
+            panelDCGIaKH.Visible = false;
+        }
+
+        private void tabControlMain_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbspDGVCKho_TextChanged(object sender, EventArgs e)
+        {
+            getDGVCKho();
+        }
+
+        private void buttonItem3_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTabIndex = 16;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            if (Action != 0)
+            {
+                MessageBox.Show("Bạn chưa lưu dữ liệu");
+                return;
+            }
+            cbSpDGVCKho.Text = "";
+            numDGVCKho.Value = 0;
+            Action = 1;
+            Button curBut = sender as Button;
+            EnableControlDataEntry(curBut.Parent);
+            panelDGVCKho.Visible = true;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (Action != 0)
+            {
+                MessageBox.Show("Bạn chưa lưu dữ liệu");
+                return;
+            } 
+            if (dtgDGVCKho.CurrentRow != null && dtgDGVCKho.CurrentRow.Cells[0].Value.ToString() != "")
+            {
+                dtpNgayDGVCKho.Value = DateTime.Parse(dtgDGVCKho.CurrentRow.Cells[1].Value.ToString());
+                cbSpDGVCKho.Text = dtgDGVCKho.CurrentRow.Cells[2].Value.ToString();
+                numDGVCKho.Text = dtgDGVCKho.CurrentRow.Cells[3].Value.ToString();
+            }
+
+            Action = 2;
+            Button curBut = sender as Button;
+            EnableControlDataEntry(curBut.Parent);
+            panelDGVCKho.Visible = true;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            if (Action != 0)
+            {
+                MessageBox.Show("Bạn chưa lưu dữ liệu");
+                return;
+            }
+            Action = 3;
+            if (MessageBox.Show("Are you sure to delete?", "Information", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+            {
+                Action = 0;
+                return;
+            }
+            try
+            {
+                int results = Import_Manager.Instance.UpdateDonGiaVCKho(Action, Int32.Parse(dtgDGVCKho.CurrentRow.Cells[0].Value.ToString()), DateTime.Now, "", 0, "");
+                    getDGVCKho();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            Action = 0;
+            Button curBut = sender as Button;
+            EnableControlDataEntry(curBut.Parent);
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            
+            int id = 0;
+            int currow = 0;
+           
+            if (Action == 2)
+            { currow = dtgDGVCKho.CurrentRow.Index; }
+            else if (Action == 1)
+            { currow = dtgDGVCKho.Rows.Count - 1; }
+            else
+            { currow = 0; }
+
+            if (dtgDGVCKho.Rows.Count > 1 && dtgDGVCKho.CurrentRow.Cells[0].Value.ToString() != "") id = (int)dtgDGVCKho.CurrentRow.Cells[0].Value;
+            try
+            {
+                int results = Import_Manager.Instance.UpdateDonGiaVCKho(Action, id, dtpNgayDGVCKho.Value, cbSpDGVCKho.Text, numDGVCKho.Value, tendn);
+
+                getDGVCKho();
+
+                dtgDGVCKho.CurrentCell = dtgDGVCKho.Rows[currow].Cells[0];
+                if (Action == 1)
+                {
+                    Action = 0;
+                    button15_Click(button15, e);
+                }
+                else
+                {
+                    Action = 0;
+                    Button curBut = sender as Button;
+                    EnableControlDataEntry(curBut.Parent);
+                    panelDGVCKho.Visible = false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Action = 0;
+            Button curBut = sender as Button;
+            EnableControlDataEntry(curBut.Parent);
+            panelDGVCKho.Visible = false;
+        }
+
+        private void buttonItem5_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTabIndex = 17;
+        }
+
+        private void tbkhDGDCNCC_TextChanged(object sender, EventArgs e)
+        {
+            getDonGiaDCNCC();
+        }
+
+        private void tbSPDGDCNCC_TextChanged(object sender, EventArgs e)
+        {
+            getDonGiaDCNCC();
+        }
+
+        private void tbNCCDGDCNCC_TextChanged(object sender, EventArgs e)
+        {
+            getDonGiaDCNCC();
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (Action != 0)
+            {
+                MessageBox.Show("Bạn chưa lưu dữ liệu");
+                return;
+            }
+            cbKHDGDCNCC.Text = "";
+            numDGDCNCC.Value = 0;
+            cbNCCDGDCNCC.Text = "";
+            Action = 1;
+            Button curBut = sender as Button;
+            EnableControlDataEntry(curBut.Parent);
+            panelDGDCNCC.Visible = true;
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            if (Action != 0)
+            {
+                MessageBox.Show("Bạn chưa lưu dữ liệu");
+                return;
+            }
+            if (dtgDGDCNCC.CurrentRow != null && dtgDGDCNCC.CurrentRow.Cells[0].Value.ToString() != "")
+            {
+                dtpNgayDGDCNCC.Value = DateTime.Parse(dtgDGDCNCC.CurrentRow.Cells[1].Value.ToString());
+                cbKHDGDCNCC.Text = dtgDGDCNCC.CurrentRow.Cells[2].Value.ToString();
+                cbSPDGDCNCC.Text = dtgDGDCNCC.CurrentRow.Cells[3].Value.ToString();
+                cbNCCDGDCNCC.Text = dtgDGDCNCC.CurrentRow.Cells[4].Value.ToString();
+                numDGVCKho.Text = dtgDGDCNCC.CurrentRow.Cells[5].Value.ToString();
+            }
+
+            Action = 2;
+            Button curBut = sender as Button;
+            EnableControlDataEntry(curBut.Parent);
+            panelDGDCNCC.Visible = true;
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            if (Action != 0)
+            {
+                MessageBox.Show("Bạn chưa lưu dữ liệu");
+                return;
+            }
+            Action = 3;
+            if (MessageBox.Show("Are you sure to delete?", "Information", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+            {
+                Action = 0;
+                return;
+            }
+            try
+            {
+                int results = Import_Manager.Instance.UpdateDonGiaDCNCC(Action, Int32.Parse(dtgDGDCNCC.CurrentRow.Cells[0].Value.ToString()), DateTime.Now, "", "", "", 0, "");
+                getDonGiaDCNCC();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            Action = 0;
+            Button curBut = sender as Button;
+            EnableControlDataEntry(curBut.Parent);
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            
+            int id = 0;
+            int currow = 0;
+            if (Action == 2)
+            { currow = dtgDGDCNCC.CurrentRow.Index; }
+            else if (Action == 1)
+            { currow = dtgDGDCNCC.Rows.Count - 1; }
+            else
+            { currow = 0; }
+
+            if (dtgDGDCNCC.Rows.Count > 1 && dtgDGDCNCC.CurrentRow.Cells[0].Value.ToString() != "") id = (int)dtgDGDCNCC.CurrentRow.Cells[0].Value;
+            try
+            {
+                int results = Import_Manager.Instance.UpdateDonGiaDCNCC(Action, id, dtpNGayDieuChinhGiaKH.Value, cbKHDGDCNCC.Text, cbSPDGDCNCC.Text, cbNCCDGDCNCC.Text, numDGDCNCC.Value, tendn);
+
+                getDonGiaDCNCC();
+
+                dtgDGDCNCC.CurrentCell = dtgDGDCNCC.Rows[currow].Cells[0];
+                if (Action == 1)
+                {
+                    Action = 0;
+                    button20_Click(button20, e);
+                }
+                else
+                {
+                    Action = 0;
+                    Button curBut = sender as Button;
+                    EnableControlDataEntry(curBut.Parent);
+                    panelDGDCNCC.Visible = false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            Action = 0;
+            Button curBut = sender as Button;
+            EnableControlDataEntry(curBut.Parent);
+            panelDGDCNCC.Visible = false;
         }
     }
 }

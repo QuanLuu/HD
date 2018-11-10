@@ -24,3 +24,18 @@ C:\Users\quan.luu\Documents\GitHub\DB_Manage\HD\DB_Manage\obj\Debug\HuyDong.cspr
 C:\Users\quan.luu\Documents\GitHub\DB_Manage\HD\DB_Manage\obj\Debug\QLHH_CN_HD.FrmDangNhap.resources
 C:\Users\quan.luu\Documents\GitHub\DB_Manage\HD\DB_Manage\obj\Debug\QLHH_CN_HD.FrmCheck.resources
 C:\Users\quan.luu\Documents\GitHub\DB_Manage\HD\DB_Manage\obj\Debug\QLHH_CN_HD.FrmMaSo.resources
+C:\Users\quan.luu\Documents\GitHub\DB_Manage\HD\DB_Manage\obj\Debug\HuyDong.csprojResolveAssemblyReference.cache
+C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\bin\Debug\QLHH_CN_HD.exe.config
+C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\obj\Debug\QLHH_CN_HD.exe
+C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\obj\Debug\QLHH_CN_HD.pdb
+C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\bin\Debug\QLHH_CN_HD.exe
+C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\bin\Debug\QLHH_CN_HD.pdb
+C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\bin\Debug\DevComponents.DotNetBar2.xml
+C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\obj\Debug\QLHH_CN_HD.FrmCheck.resources
+C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\obj\Debug\QLHH_CN_HD.FrmDangNhap.resources
+C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\obj\Debug\QLHH_CN_HD.FrmMaSo.resources
+C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\obj\Debug\QLHH_CN_HD.Import_File.resources
+C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\obj\Debug\DB_Manage.FrmMain.resources
+C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\obj\Debug\QLHH_CN_HD.Properties.Resources.resources
+C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\obj\Debug\HuyDong.csproj.GenerateResource.Cache

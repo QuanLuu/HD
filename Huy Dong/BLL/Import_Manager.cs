@@ -28,22 +28,35 @@ namespace DB_Manage.BLL
 
         private Import_Manager() { }
 
-       
 
+        //DM_HANG_HOA
         public DataTable GetHH()
         {
             return DataProvider.Instance.ExecuteQuery("SELECT ID, MA_HANG, TEN_HANG, KHOI_LUONG, GHI_CHU FROM DM_HANG_HOA", new object[] { });
         }
 
+        public int UpdateDMHH(int ACTION, int ID, string ma, string ten, int khoiluong, string ghichu)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("exec PP_UI_UPDATE_DM_HH @ACTION , @ID , @MA , @TEN , @KL , @GHI_CHU", new object[] { ACTION, ID, ma, ten, khoiluong, ghichu });
+        }
         //public DataTable GetAllXeVC()
         //{
         //    return DataProvider.Instance.ExecuteQuery("SELECT BIEN_SO FROM DM_XE_VC_KH UNION SELECT BIEN_SO FROM DM_XE_HUY_DONG", new object[] { });
         //}
+        //DM_NCC
         public DataTable GetNCC()
         {
             return DataProvider.Instance.ExecuteQuery("SELECT * FROM DM_NCC ", new object[] { });
         }
-
+        public DataTable GetDanhSachKho()
+        {
+            return DataProvider.Instance.ExecuteQuery("SELECT * FROM DM_NCC WHERE GHI_CHU = 'KHO'", new object[] { });
+        }
+        public int UpdateNCC(int ACTION, int ID, string ma, string ten, string ghichu)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("exec PP_UI_UPDATE_NCC @ACTION , @ID , @MA_NCC , @TEN_NCC , @GHI_CHU", new object[] { ACTION, ID, ma, ten, ghichu });
+        }
+        //DM_Khach_Hang
         public DataTable GetKH(string tenkh)
         {
             return DataProvider.Instance.ExecuteQuery("EXEC PP_UI_GET_KHACH_HANG @TEN ", new object[] {tenkh });
@@ -124,10 +137,7 @@ namespace DB_Manage.BLL
             return DataProvider.Instance.ExecuteQuery("EXEC PP_UI_GET_KHO_LAM_VIEC_USER @KHO", new object[] {kho});
         }
 
-        public DataTable GetDanhSachKho()
-        {
-            return DataProvider.Instance.ExecuteQuery("SELECT * FROM DM_NCC WHERE GHI_CHU = 'KHO'", new object[] {  });
-        }
+        
 
         public DataTable dongiatheongay(DateTime date,string ncc, string hh, string kh)
         {
@@ -199,17 +209,26 @@ namespace DB_Manage.BLL
             return DataProvider.Instance.ExecuteQuery("exec PP_NHAP_XUAT_TON @DATE_FROM , @DATE_TO , @HH , @NCC , @HH_NCC", new object[] { datefrom, dateto, hh, ncc, hhncc });
         }
 
-
+        //NHAT_KY_KHO
         public DataTable getnhapkho(DateTime datefrom, DateTime dateto,string ncc, string hh, string maso)
         {
             return DataProvider.Instance.ExecuteQuery("exec PP_UI_GET_NHAT_KY_NHAP_KHO @DATE_FROM , @DATE_TO , @NCC , @HH , @MA_SO", new object[] { datefrom, dateto,ncc, hh, maso});
 
+        }
+        public int UpdatedNhapKho(int ACTION, int ID, DateTime DATE, string HH, string MA_SO, int SO_BAO, string BIEN_SO, string TX, string RO_MOC, string GHI_CHU, string TEN_DN, string NCC)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("PP_UI_UPDATE_NHAT_KY_NHAP_KHO @ACTION , @ID , @DATE , @HH , @MA_SO , @SO_BAO , @BIEN_SO , @TX , @RO_MOC , @GHI_CHU , @TEN_DN , @NCC", new object[] { ACTION, ID, DATE, HH, MA_SO, SO_BAO, BIEN_SO, TX, RO_MOC, GHI_CHU, TEN_DN, NCC });
         }
         public DataTable getxuatkho(DateTime DATE_FROM , DateTime DATE_TO ,string NCC , string KH , string HH , string MA_SO, string bienso, string taixe)
         {
             return DataProvider.Instance.ExecuteQuery("exec PP_UI_GET_NHAT_KY_XUAT_KHO @DATE_FROM , @DATE_TO , @NCC , @KH , @HH , @MA_SO , @BIEN_SO , @TAIXE", new object[] { DATE_FROM, DATE_TO, NCC, KH, HH, MA_SO, bienso, taixe });
 
         }
+        public int UpdatedXuatKho(int ACTION, int ID, string NCC, DateTime NGAY_XUAT, string HH, string MA_SO, int SL, string BIEN_SO, string KH, string TX, int TM, int TIEN, string GHI_CHU, int ID_LOGIN, string phieuxuat)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("PP_UI_UPDATE_NHAT_KY_XUAT_HANG @ACTION , @ID , @NCC , @NGAY_XUAT , @HH , @MA_SO , @SL , @BIEN_SO , @KH , @TX , @TM , @TIEN , @GHI_CHU , @ID_LOGIN , @PX", new object[] { ACTION, ID, NCC, NGAY_XUAT, HH, MA_SO, SL, BIEN_SO, KH, TX, TM, TIEN, GHI_CHU, ID_LOGIN, phieuxuat });
+        }
+        //
 
         public DataTable getKMNCC(int nam, int thang)
         {
@@ -222,17 +241,6 @@ namespace DB_Manage.BLL
             return DataProvider.Instance.ExecuteQuery("exec PP_TONG_HOP_SO_LIEU_HANG @DATE_FROM , @DATE_TO , @NCC , @HH , @KH", new object[] { tungay, denngay, ncc, hh, kh});
 
         }
-        //
-        public int UpdateNCC(int ACTION, int ID, string ma, string ten, string ghichu)
-        {
-            return DataProvider.Instance.ExecuteNonQuery("exec PP_UI_UPDATE_NCC @ACTION , @ID , @MA_NCC , @TEN_NCC , @GHI_CHU", new object[] { ACTION, ID, ma, ten, ghichu });
-        }
-
-        public int UpdateDMHH(int ACTION, int ID, string ma, string ten, int khoiluong, string ghichu)
-        {
-            return DataProvider.Instance.ExecuteNonQuery("exec PP_UI_UPDATE_DM_HH @ACTION , @ID , @MA , @TEN , @KL , @GHI_CHU", new object[] { ACTION, ID, ma, ten, khoiluong, ghichu });
-        }
-
 
         public int UpdateDonGiaChuyenDoiNCC(int ACTION, int ID, string ncc, string nccgoc, string ghichu)
         {
@@ -263,16 +271,6 @@ namespace DB_Manage.BLL
         public int UpdatedNKHH(int ACTION, int ID, DateTime ngaybd, string ncc, string hh, string maso, string noinhan, decimal soluong, string tm, string bienso, string kh, string ctr, string thutien, string ghichu, string taixe)
         {
             return DataProvider.Instance.ExecuteNonQuery("PP_UI_UPDATE_NHAT_KY_HANG_HOANG @ACTION , @ID , @NGAY_GD , @NCC , @HH , @MA_SO , @NOI_GN , @SO_LUONG , @TM , @BIEN_SO , @KH , @CTR , @THU_TIEN , @GHI_CHU , @TAI_XE", new object[] { ACTION,  ID,  ngaybd,  ncc,  hh,  maso,  noinhan,  soluong,  tm,  bienso, kh,  ctr,  thutien,  ghichu,  taixe });
-        }
-
-        public int UpdatedNhapKho(int ACTION ,int ID ,DateTime DATE ,string HH ,string MA_SO ,int SO_BAO ,string BIEN_SO ,string TX ,string RO_MOC ,string GHI_CHU ,string TEN_DN, string NCC)
-        {
-            return DataProvider.Instance.ExecuteNonQuery("PP_UI_UPDATE_NHAT_KY_NHAP_KHO @ACTION , @ID , @DATE , @HH , @MA_SO , @SO_BAO , @BIEN_SO , @TX , @RO_MOC , @GHI_CHU , @TEN_DN , @NCC", new object[] { ACTION , ID , DATE , HH , MA_SO , SO_BAO , BIEN_SO , TX , RO_MOC , GHI_CHU , TEN_DN, NCC });
-        }
-
-        public int UpdatedXuatKho(int ACTION ,int ID ,string NCC ,DateTime NGAY_XUAT , string HH , string MA_SO ,int SL , string BIEN_SO , string KH , string TX ,int TM ,int TIEN , string GHI_CHU ,int ID_LOGIN, string phieuxuat)
-        {
-            return DataProvider.Instance.ExecuteNonQuery("PP_UI_UPDATE_NHAT_KY_XUAT_HANG @ACTION , @ID , @NCC , @NGAY_XUAT , @HH , @MA_SO , @SL , @BIEN_SO , @KH , @TX , @TM , @TIEN , @GHI_CHU , @ID_LOGIN , @PX", new object[] { ACTION, ID, NCC, NGAY_XUAT, HH, MA_SO, SL, BIEN_SO, KH, TX, TM, TIEN, GHI_CHU, ID_LOGIN, phieuxuat});
         }
 
         public int UpdateNhatKyNCC(int ACTION ,int ID ,string NCC ,DateTime DATE ,string HH ,string MASO ,string NOI_NHAN ,decimal SO_LUONG ,string BIEN_SO ,string KH ,string TX ,string GHI_CHU ,int ID_LONGIN )
@@ -314,6 +312,50 @@ namespace DB_Manage.BLL
         {
             return DataProvider.Instance.ExecuteNonQuery("EXEC PP_UI_UPDATE_MA_SO @MASO_SAI , @MASO_DUNG", new object[] { mssai, msdung });
         }
+        //DON_GIA_VAN_CHUYEN_KHACH_HANG
+
+        public DataTable getDonGiaVCKH(string loaihinh)
+        {
+            return DataProvider.Instance.ExecuteQuery("exec PP_UI_GET_DON_GIA_VAN_CHUYEN_KHACH_HANG @loai_hinh", new object[] { loaihinh });
+
+        }
+        public int UpdateDonGiaVCKH(int action, int id, DateTime ngaytinh, string code, string loaihinh, decimal dongia, string ten_user)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("EXEC PP_UI_UPDATE_DON_GIA_VAN_CHUYEN_KHACH_HANG @ACTICON , @ID , @NGAY , @CODE , @LOAI_HINH , @DON_GIA , @ID_USER", new object[] { action, id, ngaytinh, code, loaihinh, dongia, ten_user });
+        }
+        //GIA_DIEU_CHINH_KH
+        public DataTable getDieuChinhGiaKH(string loaihinh, string kh, string sp)
+        {
+            return DataProvider.Instance.ExecuteQuery("exec PP_UI_GET_GIA_DIEU_CHINH_KH @loai_hinh , @kh , @sp", new object[] { loaihinh, kh, sp });
+
+        }
+        public int UpdateDieuChinhGiaKH(int ACTION ,int ID ,DateTime DATE ,string CODE ,string LOAI_HINH ,string KH ,string SP ,decimal GIA ,string USER)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("EXEC PP_UI_UPDATE_GIA_DIEU_CHINH_KH @ACTION , @ID , @DATE , @CODE , @LOAI_HINH , @KH , @SP , @GIA , @USER", new object[] { ACTION , ID , DATE , CODE , LOAI_HINH , KH , SP , GIA , USER });
+        }
+
+        //DON_GIA_VAN_CHUYEN_KHO
+        public DataTable getDonGiaVCKho(string sp)
+        {
+            return DataProvider.Instance.ExecuteQuery("exec PP_UI_GET_DON_GIA_VAN_CHUYEN_KHO @sp", new object[] { sp });
+
+        }
+        public int UpdateDonGiaVCKho(int ACTION ,int ID ,DateTime DATE , string SP , decimal PRICE , string USER)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("EXEC PP_UI_UPDATE_DON_GIA_VAN_CHUYEN_KHO @ACTION , @ID , @DATE , @SP , @PRICE , @USER", new object[] { ACTION, ID, DATE, SP, PRICE, USER });
+        }
+        //DON_GIA_DC_THEO_NCC
+
+        public DataTable getDonGiaDCNCC(string sp, string kh, string ncc)
+        {
+            return DataProvider.Instance.ExecuteQuery("exec PP_UI_GET_DON_GIA_DC_THEO_NCC @kh , @sp , @ncc", new object[] {kh, sp, ncc });
+
+        }
+        public int UpdateDonGiaDCNCC(int ACTION, int ID, DateTime DATE, string KH, string SP, string NCC, decimal PRICE, string USER)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("EXEC PP_UI_UPDATE_DON_GIA_DC_THEO_NCC @ACTION , @ID , @DATE , @KH , @SP , @NCC , @PRICE , @USER", new object[] { ACTION , ID , DATE , KH , SP , NCC , PRICE , USER});
+        }
+        //
         public int DeleteMASO(string mssai)
         {
             return DataProvider.Instance.ExecuteNonQuery("EXEC PP_UI_DELETE_MA_SO @MASO_SAI", new object[] { mssai});
