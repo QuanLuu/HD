@@ -124,9 +124,14 @@ namespace DB_Manage.BLL
         {
             return DataProvider.Instance.ExecuteQuery("EXEC PP_TINH_TOAN_GIA_DIEU_CHINH @DATE_FROM , @NCC , @HH , @NOI_GN , @DUONG_BO , @DIEU_CHINH", new object[] { datefrom, ncc, hh, noign, duongbo, dieuchinh });
         }
+        //NHAT_KY_NCC
         public DataTable getNhatKyNCC(DateTime datefrom, DateTime dateto, string ncc, string hh, string kh, string bienso, string taixe)
         {
             return DataProvider.Instance.ExecuteQuery("EXEC PP_UI_GET_NHAT_KY_NCC @DATE_FROM , @DATE_TO , @NCC , @HH , @KH , @BIENSO , @TAIXE", new object[] { datefrom, dateto, ncc, hh, kh, bienso, taixe });
+        }
+        public int UpdateNhatKyNCC(int ACTION, int ID, string NCC, DateTime DATE, string HH, string MASO, string NOI_NHAN, decimal SO_LUONG, string BIEN_SO, string KH, string TX, string GHI_CHU, int ID_LONGIN, string quycach)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("PP_UI_UPDATE_NHAT_KY_NCC @ACTION , @ID , @NCC , @DATE , @HH , @MASO , @NOI_NHAN , @SO_LUONG , @BIEN_SO , @KH , @TX , @GHI_CHU , @ID_LONGIN , @quycach", new object[] { ACTION, ID, NCC, DATE, HH, MASO, NOI_NHAN, SO_LUONG, BIEN_SO, KH, TX, GHI_CHU, ID_LONGIN, quycach });
         }
         public DataTable GetUser( string tendn, string mk)
         {
@@ -139,9 +144,9 @@ namespace DB_Manage.BLL
 
         
 
-        public DataTable dongiatheongay(DateTime date,string ncc, string hh, string kh)
+        public DataTable dongiatheongay(string maso,string ncc, string hh, string kh, int vanchuyen)
         {
-            return DataProvider.Instance.ExecuteQuery("EXEC PP_TINH_DON_GIA_THEO_NGAY @DATE , @NCC , @HH , @KH", new object[] { date, ncc, hh, kh });
+            return DataProvider.Instance.ExecuteQuery("EXEC PP_TINH_DON_GIA_THEO_NGAY @DATE , @NCC , @HH , @KH , @vc", new object[] { maso, ncc, hh, kh, vanchuyen });
         }
 
         public DataTable gettaikhoandangnhap()
@@ -259,9 +264,9 @@ namespace DB_Manage.BLL
         {
             return DataProvider.Instance.ExecuteNonQuery("exec PP_UI_UPDATE_DM_XE_KH @ACTION , @ID , @BIEN_SO , @KH , @GHI_CHU", new object[] { ACTION, ID, bienso, KH, ghichu });
         }
-        public int UpdateDGGoc(int ACTION, int ID, DateTime date, string tenhang, string mancc, string noign, int duongbo, int dongia)
+        public int UpdateDGGoc(int ACTION, int ID, DateTime date, string tenhang, string mancc, string noign, int duongbo, int dongia, string quycach, string user)
         {
-            return DataProvider.Instance.ExecuteNonQuery("exec PP_UI_UPDATE_DON_GIA_GOC @ACTION , @ID , @DATE , @TEN_HH , @MA_NCC , @NOI_GN , @DUONG_BO , @DON_GIA", new object[] { ACTION, ID, date, tenhang, mancc, noign, duongbo, dongia });
+            return DataProvider.Instance.ExecuteNonQuery("exec PP_UI_UPDATE_DON_GIA_GOC @ACTION , @ID , @DATE , @TEN_HH , @MA_NCC , @NOI_GN , @DUONG_BO , @DON_GIA , @quy_cach , @user", new object[] { ACTION, ID, date, tenhang, mancc, noign, duongbo, dongia, quycach, user });
         }
 
         public int UpdatedDieuChinhKH(int ACTION, int ID, DateTime datefrom, DateTime dateto, string kh, string mancc, string hh,string noign, int duongbo, int dieuchinh, int dongia)
@@ -273,10 +278,6 @@ namespace DB_Manage.BLL
             return DataProvider.Instance.ExecuteNonQuery("PP_UI_UPDATE_NHAT_KY_HANG_HOANG @ACTION , @ID , @NGAY_GD , @NCC , @HH , @MA_SO , @NOI_GN , @SO_LUONG , @TM , @BIEN_SO , @KH , @CTR , @THU_TIEN , @GHI_CHU , @TAI_XE", new object[] { ACTION,  ID,  ngaybd,  ncc,  hh,  maso,  noinhan,  soluong,  tm,  bienso, kh,  ctr,  thutien,  ghichu,  taixe });
         }
 
-        public int UpdateNhatKyNCC(int ACTION ,int ID ,string NCC ,DateTime DATE ,string HH ,string MASO ,string NOI_NHAN ,decimal SO_LUONG ,string BIEN_SO ,string KH ,string TX ,string GHI_CHU ,int ID_LONGIN )
-        {
-            return DataProvider.Instance.ExecuteNonQuery("PP_UI_UPDATE_NHAT_KY_NCC @ACTION , @ID , @NCC , @DATE , @HH , @MASO , @NOI_NHAN , @SO_LUONG , @BIEN_SO , @KH , @TX , @GHI_CHU , @ID_LONGIN", new object[] { ACTION, ID, NCC, DATE, HH, MASO, NOI_NHAN, SO_LUONG, BIEN_SO, KH, TX, GHI_CHU, ID_LONGIN });
-        }
 
         public int ImportFileExcel(int idncc, string path, int idlogin)
         {
@@ -329,9 +330,9 @@ namespace DB_Manage.BLL
             return DataProvider.Instance.ExecuteQuery("exec PP_UI_GET_GIA_DIEU_CHINH_KH @loai_hinh , @kh , @sp", new object[] { loaihinh, kh, sp });
 
         }
-        public int UpdateDieuChinhGiaKH(int ACTION ,int ID ,DateTime DATE ,string CODE ,string LOAI_HINH ,string KH ,string SP ,decimal GIA ,string USER)
+        public int UpdateDieuChinhGiaKH(int ACTION ,int ID ,DateTime DATE ,string CODE ,string LOAI_HINH ,string KH ,string SP ,decimal GIA ,string USER, string quycach)
         {
-            return DataProvider.Instance.ExecuteNonQuery("EXEC PP_UI_UPDATE_GIA_DIEU_CHINH_KH @ACTION , @ID , @DATE , @CODE , @LOAI_HINH , @KH , @SP , @GIA , @USER", new object[] { ACTION , ID , DATE , CODE , LOAI_HINH , KH , SP , GIA , USER });
+            return DataProvider.Instance.ExecuteNonQuery("EXEC PP_UI_UPDATE_GIA_DIEU_CHINH_KH @ACTION , @ID , @DATE , @CODE , @LOAI_HINH , @KH , @SP , @GIA , @USER , @quycach", new object[] { ACTION , ID , DATE , CODE , LOAI_HINH , KH , SP , GIA , USER, quycach });
         }
 
         //DON_GIA_VAN_CHUYEN_KHO
@@ -340,9 +341,9 @@ namespace DB_Manage.BLL
             return DataProvider.Instance.ExecuteQuery("exec PP_UI_GET_DON_GIA_VAN_CHUYEN_KHO @sp", new object[] { sp });
 
         }
-        public int UpdateDonGiaVCKho(int ACTION ,int ID ,DateTime DATE , string SP , decimal PRICE , string USER)
+        public int UpdateDonGiaVCKho(int ACTION ,int ID ,DateTime DATE , string SP , decimal PRICE , string USER, string quycach)
         {
-            return DataProvider.Instance.ExecuteNonQuery("EXEC PP_UI_UPDATE_DON_GIA_VAN_CHUYEN_KHO @ACTION , @ID , @DATE , @SP , @PRICE , @USER", new object[] { ACTION, ID, DATE, SP, PRICE, USER });
+            return DataProvider.Instance.ExecuteNonQuery("EXEC PP_UI_UPDATE_DON_GIA_VAN_CHUYEN_KHO @ACTION , @ID , @DATE , @SP , @PRICE , @USER , @quycach", new object[] { ACTION, ID, DATE, SP, PRICE, USER, quycach });
         }
         //DON_GIA_DC_THEO_NCC
 
@@ -351,15 +352,20 @@ namespace DB_Manage.BLL
             return DataProvider.Instance.ExecuteQuery("exec PP_UI_GET_DON_GIA_DC_THEO_NCC @kh , @sp , @ncc", new object[] {kh, sp, ncc });
 
         }
-        public int UpdateDonGiaDCNCC(int ACTION, int ID, DateTime DATE, string KH, string SP, string NCC, decimal PRICE, string USER)
+        public int UpdateDonGiaDCNCC(int ACTION, int ID, DateTime DATE, string KH, string SP, string NCC, decimal PRICE, string USER, string QUYCACH)
         {
-            return DataProvider.Instance.ExecuteNonQuery("EXEC PP_UI_UPDATE_DON_GIA_DC_THEO_NCC @ACTION , @ID , @DATE , @KH , @SP , @NCC , @PRICE , @USER", new object[] { ACTION , ID , DATE , KH , SP , NCC , PRICE , USER});
+            return DataProvider.Instance.ExecuteNonQuery("EXEC PP_UI_UPDATE_DON_GIA_DC_THEO_NCC @ACTION , @ID , @DATE , @KH , @SP , @NCC , @PRICE , @USER , @quycach", new object[] { ACTION , ID , DATE , KH , SP , NCC , PRICE , USER, QUYCACH});
         }
         //
         public int DeleteMASO(string mssai)
         {
             return DataProvider.Instance.ExecuteNonQuery("EXEC PP_UI_DELETE_MA_SO @MASO_SAI", new object[] { mssai});
         }
+        public DataTable getdiadiem()
+        {
+            return DataProvider.Instance.ExecuteQuery("select distinct DIA_DIEM from DON_GIA_GOC where DIA_DIEM is not null", new object[] { });
+        }
+
     }
 
 }

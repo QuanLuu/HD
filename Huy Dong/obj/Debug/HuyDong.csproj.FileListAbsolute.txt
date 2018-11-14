@@ -39,3 +39,4 @@ C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\obj\Debug\QLHH_CN_HD.Imp
 C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\obj\Debug\DB_Manage.FrmMain.resources
 C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\obj\Debug\QLHH_CN_HD.Properties.Resources.resources
 C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\obj\Debug\HuyDong.csproj.GenerateResource.Cache
+C:\Users\quan.luu\Documents\GitHub\Huy Dong\HD\Huy Dong\obj\Debug\HuyDong.csprojResolveAssemblyReference.cache
